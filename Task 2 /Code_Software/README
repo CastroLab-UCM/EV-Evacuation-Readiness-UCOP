@@ -1,0 +1,5 @@
+The file Tool1_EnergyAndChargingNeeds helps communities estimate their energy requirements during an evacuation based on the number of electric vehicles (EVs).
+This tool also calculates the number of Level 2 and Level 3 chargers needed to meet the total energy demand during the evacuation.
+
+You can find a detailed presentation of this tool in the Presentations folder under the file 3_EnergyAndChargingNeeds, which was delivered during Workshop 2.
+The tool is also described in the paper “Planning for Electric-Vehicle Evacuations: Energy, Infrastructure, and Storage Needs”, available in the Papers folder.
