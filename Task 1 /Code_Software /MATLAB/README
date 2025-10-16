@@ -1,0 +1,11 @@
+To run the code:
+
+1. Install the Fuzzy Logic Toolbox in MATLAB.
+
+2. Download all the files provided in this folder and place them in the same directory.
+
+3. Run the main script.
+
+4. When prompted, enter the score for each indicator.
+
+5. The program will then display the final overall score.
