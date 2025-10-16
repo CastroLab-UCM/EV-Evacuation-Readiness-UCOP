@@ -3,3 +3,5 @@ This tool also calculates the number of Level 2 and Level 3 chargers needed to m
 
 You can find a detailed presentation of this tool in the Presentations folder under the file 3_EnergyAndChargingNeeds, which was delivered during Workshop 2.
 The tool is also described in the paper “Planning for Electric-Vehicle Evacuations: Energy, Infrastructure, and Storage Needs”, available in the Papers folder.
+
+In the MATLAB folder, you will find the code used for the paper titled “Planning for Electric-Vehicle Evacuations: Energy, Infrastructure, and Storage Needs.” 
