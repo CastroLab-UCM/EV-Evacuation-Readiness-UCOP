@@ -21,7 +21,7 @@ This multi-campus University of California project is led by researchers at **UC
 
 | Audience | Recommended Resources |
 | --- | --- |
-| Community and emergency-planning staff | [Readiness framework and scoring resources]([./Task%201/](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_)) |
+| Community and emergency-planning staff | [Readiness framework and scoring resources]([./Task%201/]) |
 | Energy and infrastructure planners | [Energy, charging, and investment tools](./Task%202/) |
 | Transportation planners and researchers | [Evacuation routing and scheduling tools](./Task%203/) |
 | Government and policy professionals | [Policy recommendations and best practices](./Task%204/) |
@@ -44,7 +44,7 @@ This folder provides an overview of the project, participating institutions, res
 
 ---
 
-### [Task 1: ZEV Evacuation Readiness Score]([./Task%201/](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_))
+### [Task 1: ZEV Evacuation Readiness Score]([./Task%201/])
 
 Task 1 develops methods to evaluate whether a community has sufficient infrastructure and planning capacity to support ZEV-based evacuations.
 
