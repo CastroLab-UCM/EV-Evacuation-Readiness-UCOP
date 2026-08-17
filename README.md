@@ -40,7 +40,9 @@ This folder provides an overview of the project, participating institutions, res
 - Research team and collaborators
 - Progress and final reports
 - Publications
+- Codes
 - Project presentations
+- Videos
 
 ---
 
