@@ -1,5 +1,7 @@
 # EV-Evacuation-Readiness-UCOP
-Research project led by UC Merced, UC Davis, UC Santa Cruz, and UC Berkeley to help communities prepare for evacuations using electric vehicles (EVs). Includes tools, case studies, and public policy materials developed under the UCOP initiative.
+Tools and resources to help California communities prepare for emergency evacuations involving electric vehicles (EVs) and zero-emission vehicles (ZEVs).
+
+This multi-campus University of California project is led by researchers at UC Merced, UC Davis, UC Santa Cruz, and UC Berkeley. The project combines community-readiness assessment, charging and energy planning, evacuation routing, infrastructure investment, and public-policy guidance.
 
  General : General info about the project
  
