@@ -9,13 +9,11 @@ This multi-campus University of California project is led by researchers at **UC
 - A community guide and scientific framework covering **36 resilience indicators** for ZEV evacuation readiness.
 - A prototype tool for calculating a **ZEV Evacuation Readiness Score** and identifying areas for improvement.
 - Decision-support tools for estimating evacuation energy and charging requirements.
-- Models for evaluating backup-power options and investments in resilient charging infrastructure.
 - Optimization methods for coordinating evacuation routes, departure times, charging schedules, and mobile charging stations.
 - A Mariposa County wildfire case study in which additional mobile-charging capacity reduced:
   - Maximum evacuation time by **33%**
   - Average waiting time by **44%**
-- A prioritized set of public-policy recommendations informed by community partners.
-- Three workshops involving emergency-management agencies, government organizations, national laboratories, nonprofit organizations, researchers, and charging providers.
+- A prioritized set of policy recommendations informed by community partners and three stakeholder workshops.
 
 ## Start Here
 
