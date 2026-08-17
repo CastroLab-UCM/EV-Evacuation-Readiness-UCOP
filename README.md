@@ -232,7 +232,7 @@ Before reusing a resource, please review the license and data-access information
 
 Some proprietary simulation files, community-provided data, or third-party materials may not be publicly redistributable.
 
-## Acknowledgment
+<!--## Acknowledgment
 
 
 
@@ -246,4 +246,4 @@ Some proprietary simulation files, community-provided data, or third-party mater
  
  Task 4 : Public policy to support effective ZEV-based evacuations
  
- Task 5 : Outreach and dissimination of knowledge
+ Task 5 : Outreach and dissimination of knowledge-->
