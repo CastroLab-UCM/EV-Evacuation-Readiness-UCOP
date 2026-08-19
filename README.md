@@ -44,7 +44,7 @@ This folder provides an overview of the project, participating institutions, res
 
 ---
 
-### [Task 1: ZEV Evacuation Readiness Score]([./Task%201/])
+### [Task 1: ZEV Evacuation Readiness Score](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_)
 
 Task 1 develops methods to evaluate whether a community has sufficient infrastructure and planning capacity to support ZEV-based evacuations.
 
