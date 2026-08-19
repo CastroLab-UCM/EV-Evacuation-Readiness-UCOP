@@ -20,11 +20,11 @@ This multi-campus University of California project is led by researchers at **UC
 | Audience | Recommended Resources |
 | --- | --- |
 | Community and emergency-planning staff | [Readiness framework and scoring resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_) |
-| Energy and infrastructure planners | [Energy, charging, and investment tools](./Task%202/) |
-| Transportation planners and researchers | [Evacuation routing and scheduling tools](./Task%203/) |
-| Government and policy professionals | [Policy recommendations and best practices](./Task%204/) |
-| Community partners and general audiences | [Workshop and outreach materials](./Task%205/) |
-| General readers | [Project overview, reports, team, and publications](./General/) |
+| Energy and infrastructure planners | [Energy, charging, and investment tools](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_) |
+| Transportation planners and researchers | [Evacuation routing and scheduling tools](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%203_) |
+| Government and policy professionals | [Policy recommendations and best practices](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_) |
+| Community partners and general audiences | [Workshop and outreach materials](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_) |
+| General readers | [Project overview, reports, team, and publications](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/README.md) |
 
 ## Project Components
 
