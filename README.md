@@ -90,7 +90,7 @@ The tools consider uncertainties including:
 
 ---
 
-### [Task 3: ZEV Evacuation Planning](./Task%203/)
+### [Task 3: ZEV Evacuation Planning](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%203_)
 
 Task 3 develops optimization-based methods for coordinating:
 
@@ -191,7 +191,7 @@ Project publications, technical reports, community guides, and workshop material
 - [General Project Information](./General/)
 - [Task 1 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_)
 - [Task 2 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_)
-- [Task 3 Resources](./Task%203/)
+- [Task 3 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%203_)
 - [Task 4 Resources](./Task%204/)
 - [Task 5 Resources](./Task%205/)
 
