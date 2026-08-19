@@ -131,7 +131,7 @@ Community partners helped evaluate and prioritize the proposed policies using a 
 
 ---
 
-### [Task 5: Community Engagement and Outreach](./Task%205/)
+### [Task 5: Community Engagement and Outreach](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_)
 
 Task 5 shares project tools and findings with communities, government agencies, emergency-management organizations, researchers, and industry partners.
 
@@ -193,7 +193,7 @@ Project publications, technical reports, community guides, and workshop material
 - [Task 2 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_)
 - [Task 3 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%203_)
 - [Task 4 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_)
-- [Task 5 Resources](./Task%205/)
+- [Task 5 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_)
 
 Whenever possible, each publication should include a DOI or link to its official publisher page.
 
