@@ -28,7 +28,7 @@ This multi-campus University of California project is led by researchers at **UC
 
 ## Project Components
 
-### [General Project Information](./General/)
+### [General Project Information](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/README.md)
 
 This folder provides an overview of the project, participating institutions, research goals, major findings, reports, and publications.
 
@@ -188,7 +188,7 @@ Before using a tool, consult the `README.md` in the corresponding folder for inf
 
 Project publications, technical reports, community guides, and workshop materials are available in:
 
-- [General Project Information](./General/)
+- [General Project Information](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/README.md)
 - [Task 1 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_)
 - [Task 2 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_)
 - [Task 3 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%203_)
