@@ -19,7 +19,7 @@ This multi-campus University of California project is led by researchers at **UC
 
 | Audience | Recommended Resources |
 | --- | --- |
-| Community and emergency-planning staff | [Readiness framework and scoring resources]([./Task%201/]) |
+| Community and emergency-planning staff | [Readiness framework and scoring resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_) |
 | Energy and infrastructure planners | [Energy, charging, and investment tools](./Task%202/) |
 | Transportation planners and researchers | [Evacuation routing and scheduling tools](./Task%203/) |
 | Government and policy professionals | [Policy recommendations and best practices](./Task%204/) |
