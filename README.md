@@ -115,7 +115,7 @@ A wildfire evacuation case study was developed with the **Mariposa County Office
 
 ---
 
-### [Task 4: Public-Policy Recommendations](./Task%204/)
+### [Task 4: Public-Policy Recommendations](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_)
 
 Task 4 identifies policies and best practices that local and state governments can use to improve ZEV evacuation preparedness.
 
@@ -192,7 +192,7 @@ Project publications, technical reports, community guides, and workshop material
 - [Task 1 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_)
 - [Task 2 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_)
 - [Task 3 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%203_)
-- [Task 4 Resources](./Task%204/)
+- [Task 4 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_)
 - [Task 5 Resources](./Task%205/)
 
 Whenever possible, each publication should include a DOI or link to its official publisher page.
