@@ -67,7 +67,7 @@ The framework considers factors including:
 
 ---
 
-### [Task 2: Energy and Infrastructure Decision Support](./Task%202/)
+### [Task 2: Energy and Infrastructure Decision Support](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_)
 
 Task 2 develops decision-support tools to estimate energy and charging requirements during ZEV evacuations and identify effective infrastructure investments.
 
@@ -190,7 +190,7 @@ Project publications, technical reports, community guides, and workshop material
 
 - [General Project Information](./General/)
 - [Task 1 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_)
-- [Task 2 Resources](./Task%202/)
+- [Task 2 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_)
 - [Task 3 Resources](./Task%203/)
 - [Task 4 Resources](./Task%204/)
 - [Task 5 Resources](./Task%205/)
