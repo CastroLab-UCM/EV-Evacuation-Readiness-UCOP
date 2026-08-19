@@ -189,7 +189,7 @@ Before using a tool, consult the `README.md` in the corresponding folder for inf
 Project publications, technical reports, community guides, and workshop materials are available in:
 
 - [General Project Information](./General/)
-- [Task 1 Resources](./Task%201/)
+- [Task 1 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_)
 - [Task 2 Resources](./Task%202/)
 - [Task 3 Resources](./Task%203/)
 - [Task 4 Resources](./Task%204/)
