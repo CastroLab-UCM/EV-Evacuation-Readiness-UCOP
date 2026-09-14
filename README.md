@@ -33,14 +33,19 @@ Task 1 develops methods to evaluate whether a community has sufficient infrastru
 | 1.1 | ZEV Evacuation Readiness Framework | Framework for evaluating community preparedness for ZEV-based emergency evacuations using resilience indicators | Paper | [Link]() |
 | 1.2 | ZEV Evacuation Readiness Score | Methodology and supporting material for calculating the ZEV Evacuation Readiness Score | Paper / Tool | [Link]() |
 | 1.3 | Two Readiness Assessment Tools | ZEV Score Calculator for estimating the community’s ZEV Readiness Score and Fuzzy Logic Assessment Tool for evaluating the Charging Infrastructure indicators | Code | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_/Code_Software_) |
-| 1.4 | Title | Briefly describe the resource in 1–2 sentences. | Presentation / -Videos | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_/Zoom%20Recording%20WK%233) |
+| 1.4 | Development of ZEV Evacuation Readiness Score II | Improving the preparedness of Comunities of Evacuations using ZEVs | Presentation | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%201_/Presentations/2_ScoringMethodology.pdf) |
 
 ---
 
 ### [Task 2: Energy and Infrastructure Decision Support](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_)
 
 Task 2 develops decision-support tools to estimate energy and charging requirements during ZEV evacuations and identify effective infrastructure investments.
-
+| # | Resource | Description | Type | Link |
+|---|---|---|---|---|
+| 1.1 | ZEV Evacuation Readiness Framework | Framework for evaluating community preparedness for ZEV-based emergency evacuations using resilience indicators | Paper | [Link]() |
+| 1.2 | ZEV Evacuation Readiness Score | Methodology and supporting material for calculating the ZEV Evacuation Readiness Score | Paper / Tool | [Link]() |
+| 1.3 | Two Readiness Assessment Tools | ZEV Score Calculator for estimating the community’s ZEV Readiness Score and Fuzzy Logic Assessment Tool for evaluating the Charging Infrastructure indicators | Code | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_/Code_Software_) |
+| 1.4 | Title | Briefly describe the resource in 1–2 sentences. | Presentation / -Videos | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_/Zoom%20Recording%20WK%233) |
 The tools consider uncertainties including:
 
 - Evacuation distance
