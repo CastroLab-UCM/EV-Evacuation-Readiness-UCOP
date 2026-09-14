@@ -57,11 +57,11 @@ Task 3 develops optimization and simulation methods for coordinating evacuation 
 
 | # | Resource | Description | Type | Link |
 |---|---|---|---|---|
-| 1.1 | ZEV Evacuation Readiness Framework | Framework for evaluating community preparedness for ZEV-based emergency evacuations using resilience indicators | Paper | [Link]() |
-| 1.2 | ZEV Evacuation Readiness Score | Methodology and supporting material for calculating the ZEV Evacuation Readiness Score | Paper | [Link]() |
-| 1.3 | Two Readiness Assessment Tools | ZEV Score Calculator for estimating the community’s ZEV Readiness Score and Fuzzy Logic Assessment Tool for evaluating the Charging Infrastructure indicators | Code | [Link]() |
-| 1.4 | Development of ZEV Evacuation Readiness Score II | Improving the preparedness of Comunities of Evacuations using ZEVs | Presentation | [Link]() |
-| 1.5 | ZEV Evacuation Readiness Score | Evaluating the readiness for EV-based evacuation| Video | [Link]()
+| 3.1 | ZEV Evacuation Optimization Model | Optimization framework for jointly considering evacuation routing, scheduling, and charging decisions. | Paper | [Link]() |
+| 3.2 | Mariposa County Case Study | Case study evaluating ZEV evacuation strategies under wildfire evacuation scenarios. | Paper | [Link]() |
+| 3.3 | Evacuation Planning Code | ZEV Score Calculator for estimating the community’s ZEV Readiness Score and Fuzzy Logic Assessment Tool for evaluating the Charging Infrastructure indicators | Code | [Link]() |
+| 3.4 | Mobile Charging Analysis | Analysis of mobile charging-station deployment during emergency evacuation. | Presentation | [Link]() |
+| 3.5 | ZEV Evacuation Readiness Score | Evaluating the readiness for EV-based evacuation| Video | [Link]()
 
 
 A wildfire evacuation case study was developed with the **Mariposa County Office of Emergency Services**. The resulting evacuation strategies were also evaluated using a calibrated traffic-simulation model.
