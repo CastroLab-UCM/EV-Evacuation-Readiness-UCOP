@@ -47,7 +47,7 @@ Task 2 develops decision-support tools to estimate energy and charging requireme
 | 2.1 | Energy and charging needs calculator | Estimates energy demand and charging requirements during ZEV evacuations. | Excel | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%202_/Papers/A_Multi-Objective_Optimization_Problem_for_Sizing_and_Siting_of_Power_Systems_with_the_Integration_of_DG_Units_EV_Charging_Stations_and_ESSs.pdf) |
 | 2.2 | Backup Energy Analysis | Evaluates backup-energy options for EV charging when grid power is unavailable. | Paper | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%202_/Papers/Comparative_Analysis_of_Backup_Energy_Solutions_for_Electric_Vehicle_Evacuations_During_Grid_Failures.pdf) |
 | 2.3 | Infrastructure investment analysis | Planning for electric-vehicle evacuations: energy, infrastructure, and storage needs. | Code | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_/Code_Software/MATLAB) |
-| 2.4 | Power-grid resilience analysis | Briefly describe the resource in 1–2 sentences. | Presentation / Video | [Link](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021988445944) |
+| 2.4 | Power-grid resilience analysis | Briefly describe the resource in 1–2 sentences. | Presentation / Video | [Link1](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%202_/Presentations/3_EnergyAndChargingNeeds.pptx) / [Link2](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021988445944) |
 
 ---
 
