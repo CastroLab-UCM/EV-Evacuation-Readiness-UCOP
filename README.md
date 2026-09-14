@@ -31,21 +31,6 @@ This multi-campus University of California project is led by researchers at **UC
 
 ## Project Components
 
-### [General Project Information](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/README.md)
-
-This folder provides an overview of the project, participating institutions, research goals, major findings, reports, and publications.
-
-**Main resources:**
-
-- Project overview
-- Research team and collaborators
-- Progress and final reports
-- Excel file
-- Publications
-- Codes
-- Project presentations
-- [Videos](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_/Zoom%20Recording%20WK%233)
-
 ---
 
 ### [Task 1: ZEV Evacuation Readiness Score](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_)
@@ -58,7 +43,7 @@ Task 1 develops methods to evaluate whether a community has sufficient infrastru
 | 2.1 | Title | Briefly describe the resource in 1–2 sentences. | Paper | [Link]() |
 | 2.2 | Title | Briefly describe the resource in 1–2 sentences. | Excel / Tool | [Link]() |
 | 2.3 | Simulation | Provide instructions for downloading and running the code. | Code | [Link]() |
-| 2.4 | Title | Briefly describe the resource in 1–2 sentences. | Presentation / Video | [Link]() |
+| 2.4 | Title | Briefly describe the resource in 1–2 sentences. | Presentation / -Videos | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_/Zoom%20Recording%20WK%233) |
 The framework considers factors including:
 
 - Hazard exposure
