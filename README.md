@@ -31,15 +31,17 @@ Task 1 develops methods to evaluate whether a community has sufficient infrastru
 | # | Resource | Description | Type | Link |
 |---|---|---|---|---|
 | 1.1 | ZEV Evacuation Readiness Framework | Framework for evaluating community preparedness for ZEV-based emergency evacuations using resilience indicators | Paper | [Link]() |
-| 1.2 | ZEV Evacuation Readiness Score | Methodology and supporting material for calculating the ZEV Evacuation Readiness Score | Paper / Tool | [Link]() |
+| 1.2 | ZEV Evacuation Readiness Score | Methodology and supporting material for calculating the ZEV Evacuation Readiness Score | Paper | [Link]() |
 | 1.3 | Two Readiness Assessment Tools | ZEV Score Calculator for estimating the community’s ZEV Readiness Score and Fuzzy Logic Assessment Tool for evaluating the Charging Infrastructure indicators | Code | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_/Code_Software_) |
 | 1.4 | Development of ZEV Evacuation Readiness Score II | Improving the preparedness of Comunities of Evacuations using ZEVs | Presentation | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%201_/Presentations/2_ScoringMethodology.pdf) |
+| 1.5 | ZEV Evacuation Readiness Score | Evaluating of the readiness for EV-based evacuation| Video | [Link](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021982261584)
 
 ---
 
 ### [Task 2: Energy and Infrastructure Decision Support](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_)
 
-Task 2 develops decision-support tools to estimate energy and charging requirements during ZEV evacuations and identify effective infrastructure investments.
+Task 2 develops decision-support tools to estimate energy and charging requirements during ZEV evacuations and identify effective infrastructure investments under uncertainties, such as evacuation distance, battery state of charge, charging availability, and grid outages.
+
 | # | Resource | Description | Type | Link |
 |---|---|---|---|---|
 | 1.1 | ZEV Evacuation Readiness Framework | Framework for evaluating community preparedness for ZEV-based emergency evacuations using resilience indicators | Paper | [Link]() |
