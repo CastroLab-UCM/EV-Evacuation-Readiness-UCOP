@@ -2,7 +2,7 @@
 
 Tools and resources to help California communities prepare for emergency evacuations involving electric vehicles (EVs) and zero-emission vehicles (ZEVs).
 
-This multi-campus University of California project is led by researchers at **UC Merced, UC Davis, UC Santa Cruz, and UC Berkeley**. The project combines community-readiness assessment, charging and energy planning, evacuation routing, infrastructure investment, and public-policy guidance.
+This multi-campus University of California project is led by researchers at **UC Merced, UC Davis, UC Santa Cruz, and UC Berkeley**. The project combines community-readiness assessment, charging and energy planning, evacuation routing, infrastructure investment, and public-policy guidance. Figure 1 provides an overview of a typical evacuation scenario in which a natural hazard (e.g., wildfire) triggers the evacuation of a community.
 
 <img width="1044" height="573" alt="image" src="https://github.com/user-attachments/assets/c55e0168-ae0b-495e-b7d4-4b36edaaf33f" />
 
@@ -44,8 +44,8 @@ Task 2 develops decision-support tools to estimate energy and charging requireme
 
 | # | Resource | Description | Type | Link |
 |---|---|---|---|---|
-| 2.1 | Energy and Charging Calculator | Estimates energy demand and charging requirements during ZEV evacuations. | Excel | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%202_/Papers/A_Multi-Objective_Optimization_Problem_for_Sizing_and_Siting_of_Power_Systems_with_the_Integration_of_DG_Units_EV_Charging_Stations_and_ESSs.pdf) |
-| 2.2 | Backup Energy Analysis | Evaluates backup-energy options for EV charging when grid power is unavailable. | Paper | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%202_/Papers/Comparative_Analysis_of_Backup_Energy_Solutions_for_Electric_Vehicle_Evacuations_During_Grid_Failures.pdf) |
+| 2.1 | Energy and Charging Need Calculator | Estimating energy demand and charging requirements during ZEV evacuations. | Excel | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/3_Tool1_EnergyAndChargingNeeds.xlsm) |
+| 2.2 | Backup Energy Analysis | Evaluating backup-energy options for EV charging when grid power is unavailable. | Paper | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_/Papers) |
 | 2.3 | Infrastructure Investment Analysis | Planning for electric-vehicle evacuations: energy, infrastructure, and storage needs. | Code | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_/Code_Software/MATLAB) |
 | 2.4 | Power-grid Resilience Analysis | Briefly describe the resource in 1–2 sentences. | Presentation / Video | [Link1](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%202_/Presentations/3_EnergyAndChargingNeeds.pptx) / [Link2](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021988445944) |
 
@@ -68,16 +68,12 @@ Task 3 develops optimization and simulation methods for coordinating evacuation 
 ### [Task 4: Public-Policy Recommendations](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_)
 
 Task 4 identifies and prioritizes policies and best practices that local and state governments can use to improve community preparedness for emergency evacuations involving ZEVs.
-
-Community partners helped evaluate and prioritize the proposed policies using a structured ranking process.
-
-**Main resources:**
-
-- Top 10 policy recommendations
-- Community-partner feedback
-- Policy-prioritization results
-- Best-practice documents
-- Supporting publications
+| # | Resource | Description | Type | Link |
+|---|---|---|---|---|
+| 4.1 | ZEV Evacuation Overview / Magazine Paper | Overview of challenges, research needs, and strategies for improving ZEV evacuation preparedness. | Paper | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%204_/Papers/Task4_MagazinePaper.pdf) |
+| 4.2 | Top 10 Policy Recommendations | Recommended policies and actions for improving ZEV evacuation readiness. | Paper | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%204_/Papers/PublicPolicyBrief.pdf) |
+| 4.3 |Policy Prioritization Results | Results from evaluating and ranking policy recommendations with community partners. | Presentation | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_/Presentations) |
+| 4.4 | Best Practices | Best-practice guidance for government agencies and emergency planners. | Video | [Link](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021989736428) |
 
 ---
 
@@ -85,102 +81,79 @@ Community partners helped evaluate and prioritize the proposed policies using a 
 
 Task 5 shares project tools and findings with communities, government agencies, emergency-management organizations, researchers, and industry partners.
 
-The project organized three stakeholder workshops:
+| # | Resource | Description | Type | Link |
+|---|---|---|---|---|
+| 5.1 | ZEV Evacuation Workshop 2 | All presentations given in this workshop 2. | Presentation | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_/Workshop%20%232) |
+| 5.2 | ZEV Evacuation Workshop 3 | All presentations given in this workshop 3. | Presentation | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_/Workshop%20%233) |
 
-- April 26, 2024
-- December 5, 2024
-- October 2, 2025
+## Using This Repository
 
-Participants included county emergency-services offices, state agencies, national laboratories, nonprofit organizations, city representatives, researchers, and mobile-charging providers.
+Each task folder contains the publications, tools, source code, presentations, videos, and supporting documentation associated with that research task.
 
-**Main resources:**
+### Download the Repository
 
-- Workshop presentations
-- Training materials
-- Tool demonstrations
-- Outreach documents
-- Videos
-- Community feedback
+You can obtain the project files in either of the following ways.
 
-## Key Findings
+#### Option 1: Clone the Repository Using Git
 
-The project demonstrates that ZEV evacuation readiness depends on more than the number of available charging stations. Effective planning must also consider:
+```bash
+git clone https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP.git
+cd EV-Evacuation-Readiness-UCOP
+```
 
-- Exposure to natural hazards
-- Charging-station accessibility
-- Power-grid disruptions
-- Transportation-network capacity
-- Backup and mobile charging
-- Vehicle battery limitations
-- Community engagement
-- Equitable access to evacuation resources
+#### Option 2: Download as a ZIP File
 
-Coordinating these factors can reduce evacuation delays and help communities prioritize infrastructure investments that provide the greatest resilience benefits.
+1. Click the **Code** button at the top of this GitHub repository.
+2. Select **Download ZIP**.
+3. Extract the downloaded ZIP file to your local computer.
+4. Open the folder corresponding to the task of interest.
 
-## Using the Resources
+### Use the Code and Simulation Resources
 
-Each task folder contains resources for a different aspect of ZEV evacuation planning.
+For software or simulation resources, please follow the instructions provided in the corresponding task folder.
 
-Before using a tool, consult the `README.md` in the corresponding folder for information about:
+A typical workflow is:
 
-1. The purpose and intended users of the tool
-2. Included files and expected outputs
-3. Required software and data
-4. Step-by-step usage instructions
-5. Example applications
-6. Model assumptions and limitations
-7. Validation status
-8. Citation and licensing information
+1. Select the task or resource of interest.
+2. Open its `README.md` or supporting documentation.
+3. Install the required software and dependencies.
+4. Download or prepare the required input data.
+5. Configure the necessary parameters.
+6. Run the code or simulation.
+7. Review the generated outputs and example results.
 
-> **Important:** These resources support research and emergency-planning activities. They do not replace official evacuation orders, emergency-management procedures, or professional engineering assessments.
+Each code or simulation resource should include information on:
 
-## Publications and Reports
+- Required software and dependencies
+- Input data
+- Installation and setup
+- Configuration and parameters
+- How to run the code
+- Expected outputs
+- Example applications
 
-Project publications, technical reports, community guides, and workshop materials are available in:
+### Example
 
-- [General Project Information](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/README.md)
-- [Task 1 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_)
-- [Task 2 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_)
-- [Task 3 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%203_)
-- [Task 4 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_)
-- [Task 5 Resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_)
+For example, if a resource contains Python code, the workflow may look like:
 
-Whenever possible, each publication should include a DOI or link to its official publisher page.
+```bash
+cd path/to/resource
+pip install -r requirements.txt
+python main.py
+```
 
-## Project Team and Partners
+> **Note:** The commands above are only an example. The required software and execution procedure may differ among tasks. Please refer to the `README.md` or instructions provided with each resource for the exact steps.
 
-The project includes researchers and students from:
+### Questions or Issues
 
-- University of California, Merced
-- University of California, Davis
-- University of California, Santa Cruz
-- University of California, Berkeley
+If you encounter problems when downloading or running a resource, please check its documentation first. If the issue persists, you may report it through the **Issues** section of this GitHub repository.
 
-Community engagement has included:
+> **Disclaimer:** These resources are intended to support research and emergency-planning activities and do not replace official evacuation orders or emergency-management procedures.
 
-- County emergency-services offices
-- California state agencies
-- National laboratories
-- Local governments
-- Nonprofit organizations
-- Mobile-charging providers
-- Energy and transportation researchers
-
-For project-related questions, please open a GitHub issue or contact the project team through the participating institutions.
 
 ## Citation
 
-If you use a particular tool, dataset, report, or publication, cite the corresponding resource listed in its folder.
-
-A repository-level `CITATION.cff` file will provide the recommended citation for the overall project.
-
-## License and Data Access
-
-Licensing and access conditions may differ among code, documents, datasets, publications, and third-party simulation files.
-
-Before reusing a resource, please review the license and data-access information in the corresponding folder.
-
-Some proprietary simulation files, community-provided data, or third-party materials may not be publicly redistributable.
+If you use a publication, software tool, dataset, or other resource from this repository, please cite the corresponding publication or resource listed in its task folder. 
 
 
 
