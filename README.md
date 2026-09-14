@@ -32,24 +32,8 @@ Task 1 develops methods to evaluate whether a community has sufficient infrastru
 |---|---|---|---|---|
 | 1.1 | ZEV Evacuation Readiness Framework | Framework for evaluating community preparedness for ZEV-based emergency evacuations using resilience indicators | Paper | [Link]() |
 | 1.2 | ZEV Evacuation Readiness Score | Methodology and supporting material for calculating the ZEV Evacuation Readiness Score | Paper / Tool | [Link]() |
-| 1.3 | Readiness Assessment Tool | Tool for assessing community-level ZEV evacuation preparedness and identifying areas for improvement | Code | [Link]() |
+| 1.3 | Two Readiness Assessment Tools | ZEV Score Calculator for estimating the community’s ZEV Readiness Score and Fuzzy Logic Assessment Tool for evaluating the Charging Infrastructure indicators | Code | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_/Code_Software_) |
 | 1.4 | Title | Briefly describe the resource in 1–2 sentences. | Presentation / -Videos | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_/Zoom%20Recording%20WK%233) |
-The framework considers factors including:
-
-- Hazard exposure
-- Charging infrastructure
-- Mobile and backup power
-- Transportation and routing
-- Community engagement
-- Equity and support for vulnerable populations
-
-**Main resources:**
-
-- Framework of 36 resilience indicators
-- Community readiness guide
-- Readiness-scoring methodology
-- Prototype scoring tools
-- Community case studies
 
 ---
 
