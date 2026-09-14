@@ -18,16 +18,6 @@ This multi-campus University of California project is led by researchers at **UC
   - Average waiting time by **44%**
 - A prioritized set of policy recommendations informed by community partners and three stakeholder workshops.
 
-## Start Here
-
-| Audience | Recommended Resources |
-| --- | --- |
-| Community and emergency-planning staff | [Readiness framework and scoring resources](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_) |
-| Energy and infrastructure planners | [Energy, charging, and investment tools](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_) |
-| Transportation planners and researchers | [Evacuation routing and scheduling tools](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%203_) |
-| Government and policy professionals | [Policy recommendations and best practices](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_) |
-| Community partners and general audiences | [Workshop and outreach materials](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_) |
-| General readers | [Project overview, reports, team, and publications](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/README.md) |
 
 ## Project Components
 
@@ -40,10 +30,10 @@ Task 1 develops methods to evaluate whether a community has sufficient infrastru
 
 | # | Resource | Description | Type | Link |
 |---|---|---|---|---|
-| 2.1 | Title | Briefly describe the resource in 1–2 sentences. | Paper | [Link]() |
-| 2.2 | Title | Briefly describe the resource in 1–2 sentences. | Excel / Tool | [Link]() |
-| 2.3 | Simulation | Provide instructions for downloading and running the code. | Code | [Link]() |
-| 2.4 | Title | Briefly describe the resource in 1–2 sentences. | Presentation / -Videos | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_/Zoom%20Recording%20WK%233) |
+| 1.1 | ZEV Evacuation Readiness Framework | Framework for evaluating community preparedness for ZEV-based emergency evacuations using resilience indicators | Paper | [Link]() |
+| 1.2 | ZEV Evacuation Readiness Score | Methodology and supporting material for calculating the ZEV Evacuation Readiness Score | Paper / Tool | [Link]() |
+| 1.3 | Readiness Assessment Tool | Tool for assessing community-level ZEV evacuation preparedness and identifying areas for improvement | Code | [Link]() |
+| 1.4 | Title | Briefly describe the resource in 1–2 sentences. | Presentation / -Videos | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_/Zoom%20Recording%20WK%233) |
 The framework considers factors including:
 
 - Hazard exposure
