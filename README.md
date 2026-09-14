@@ -30,8 +30,8 @@ Task 1 develops methods to evaluate whether a community has sufficient infrastru
 
 | # | Resource | Description | Type | Link |
 |---|---|---|---|---|
-| 1.1 | ZEV Evacuation Readiness Framework | Framework for evaluating community preparedness for ZEV-based emergency evacuations using resilience indicators | Paper | [Link]() |
-| 1.2 | ZEV Evacuation Readiness Score | Methodology and supporting material for calculating the ZEV Evacuation Readiness Score | Paper | [Link]() |
+| 1.1 | ZEV Evacuation Readiness Framework | Framework for evaluating community preparedness for ZEV-based emergency evacuations using resilience indicators | Paper | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%201_/Papers/Development_of_Zero-Emission_Vehicle_Evacuation_Readiness_Score_Formulation_Methodology.pdf) |
+| 1.2 | ZEV Evacuation Readiness Score | Methodology and supporting material for calculating the ZEV Evacuation Readiness Score | Paper | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%201_/Papers/Summary%20of%20ZEV%20Evacuation%20Readiness%20Indicators.pdf) |
 | 1.3 | Two Readiness Assessment Tools | ZEV Score Calculator for estimating the community’s ZEV Readiness Score and Fuzzy Logic Assessment Tool for evaluating the Charging Infrastructure indicators | Code | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_/Code_Software_) |
 | 1.4 | Development of ZEV Evacuation Readiness Score II | Improving the preparedness of Comunities of Evacuations using ZEVs | Presentation | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%201_/Presentations/2_ScoringMethodology.pdf) |
 | 1.5 | ZEV Evacuation Readiness Score | Evaluating the readiness for EV-based evacuation| Video | [Link](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021982261584)
@@ -53,15 +53,16 @@ Task 2 develops decision-support tools to estimate energy and charging requireme
 
 ### [Task 3: ZEV Evacuation Planning](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%203_)
 
-Task 3 develops optimization-based methods for coordinating:
+Task 3 develops optimization and simulation methods for coordinating evacuation routes, departure times, charging schedules, vehicle groups, and mobile charging resources during ZEV-based emergency evacuations.
 
-- Evacuation-route selection
-- Vehicle grouping
-- Departure scheduling
-- Charging-station selection
-- Charging scheduling
-- Mobile charging-station deployment
-- Priority evacuation of communities closer to hazards
+| # | Resource | Description | Type | Link |
+|---|---|---|---|---|
+| 1.1 | ZEV Evacuation Readiness Framework | Framework for evaluating community preparedness for ZEV-based emergency evacuations using resilience indicators | Paper | [Link]() |
+| 1.2 | ZEV Evacuation Readiness Score | Methodology and supporting material for calculating the ZEV Evacuation Readiness Score | Paper | [Link]() |
+| 1.3 | Two Readiness Assessment Tools | ZEV Score Calculator for estimating the community’s ZEV Readiness Score and Fuzzy Logic Assessment Tool for evaluating the Charging Infrastructure indicators | Code | [Link]() |
+| 1.4 | Development of ZEV Evacuation Readiness Score II | Improving the preparedness of Comunities of Evacuations using ZEVs | Presentation | [Link]() |
+| 1.5 | ZEV Evacuation Readiness Score | Evaluating the readiness for EV-based evacuation| Video | [Link]()
+
 
 A wildfire evacuation case study was developed with the **Mariposa County Office of Emergency Services**. The resulting evacuation strategies were also evaluated using a calibrated traffic-simulation model.
 
