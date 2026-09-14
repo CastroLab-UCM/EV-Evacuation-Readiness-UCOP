@@ -4,6 +4,9 @@ Tools and resources to help California communities prepare for emergency evacuat
 
 This multi-campus University of California project is led by researchers at **UC Merced, UC Davis, UC Santa Cruz, and UC Berkeley**. The project combines community-readiness assessment, charging and energy planning, evacuation routing, infrastructure investment, and public-policy guidance.
 
+<img width="1044" height="573" alt="image" src="https://github.com/user-attachments/assets/c55e0168-ae0b-495e-b7d4-4b36edaaf33f" />
+
+
 ## Project Highlights
 
 - A community guide and scientific framework covering **36 resilience indicators** for ZEV evacuation readiness.
