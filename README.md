@@ -57,11 +57,11 @@ Task 3 develops optimization and simulation methods for coordinating evacuation 
 
 | # | Resource | Description | Type | Link |
 |---|---|---|---|---|
-| 3.1 | ZEV Evacuation Optimization Model | Optimization framework for jointly considering evacuation routing, scheduling, and charging decisions. | Paper | [Link]() |
-| 3.2 | Mariposa County Case Study | Case study evaluating ZEV evacuation strategies under wildfire evacuation scenarios. | Paper | [Link]() |
+| 3.1 | ZEV Evacuation Optimization Model | Optimization framework for jointly considering evacuation routing, scheduling, and charging decisions. | Paper | [Link1](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Papers/Optimization_of_Electric_Vehicle_Evacuation_Integrating_Mobile_Charging_Stations_and_Considering_Vehicle_Diversity.pdf) / [Link2](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Papers/Optimization_of_Electric_Vehicle_Evacuation_Integrating_Mobile_Charging_Stations_and_Considering_Vehicle_Diversity.pdf) |
+| 3.2 | Mariposa County Case Study | Case study evaluating ZEV evacuation strategies under wildfire evacuation scenarios using a calibrated traffic-simulation model. | Paper | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Zoom%20Recording%20WK%233/4_Evacuation%20Scenario%20Design%20For%20Mariposa.pdf) |
 | 3.3 | Evacuation Planning and Control Code | Optimal Control of Emergency Evacuations Leveraging Equivalent Circuit Models | Code | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%203_/Code_Software_/ECM_Optimization) |
-| 3.4 | Mobile Charging Analysis | Analysis of mobile charging-station deployment during emergency evacuation. | Presentation | [Link]() |
-| 3.5 | ZEV Evacuation Readiness Score | Evaluating the readiness for EV-based evacuation| Video | [Link]()
+| 3.4 | Mobile Charging Analysis | Analysis of mobile charging-station deployment during emergency evacuation. | Presentation | [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Presentations/MECC2025_ECM_optimization_Joseph_Moyalan.pptx) |
+| 3.5 | Mariposa Evacuation Scenario Modeling | Modeling a real-world evacuation scenario in Mariposa| Video | [Link](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021998232416)
 
 
 A wildfire evacuation case study was developed with the **Mariposa County Office of Emergency Services**. The resulting evacuation strategies were also evaluated using a calibrated traffic-simulation model.
