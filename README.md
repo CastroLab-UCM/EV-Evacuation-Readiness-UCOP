@@ -1,8 +1,6 @@
 # EV-Evacuation-Readiness-UCOP
 
-Tools and resources to help California communities prepare for emergency evacuations involving electric vehicles (EVs) and zero-emission vehicles (ZEVs).
-
-This multi-campus University of California project is led by researchers at **UC Merced, UC Davis, UC Santa Cruz, and UC Berkeley**. The project combines community-readiness assessment, charging and energy planning, evacuation routing, infrastructure investment, and public-policy guidance. As shown in Figure 1, it provides an overview of a typical evacuation scenario in which a natural hazard (e.g., wildfire) triggers the evacuation of a community.
+This multi-campus University of California project is led by researchers at **UC Merced, UC Davis, UC Santa Cruz, and UC Berkeley**. The project combines community-readiness assessment, charging and energy planning, evacuation routing, infrastructure investment, and public-policy guidance to help California communities prepare for emergency evacuations involving electric vehicles (EVs) and zero-emission vehicles (ZEVs). As shown in Figure 1, it provides an overview of a typical evacuation scenario in which a natural hazard (e.g., wildfire) triggers the evacuation of a community.
 
 <img width="1044" height="573" alt="image" src="https://github.com/user-attachments/assets/c55e0168-ae0b-495e-b7d4-4b36edaaf33f" />
 
