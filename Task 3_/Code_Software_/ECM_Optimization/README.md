@@ -10,7 +10,7 @@ This guide describes an installation and development workflow for Windows operat
 ## Repository Structure
 
 ```text
-Mariposa/
+ECM_optimization/
 ├── Optimization_code.py                   # Main ECM-based evacuation optimization
 ├── MILP_solve_tmax_unidirectional.py      # Maximum evacuation-time objective
 ├── MILP_solve_t_avg_unidirectional.py     # Average evacuation-time objective
