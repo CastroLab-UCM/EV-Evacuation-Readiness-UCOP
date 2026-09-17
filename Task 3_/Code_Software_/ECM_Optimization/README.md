@@ -14,10 +14,7 @@ ECM_optimization/
 ├── MILP_solve_t_avg_unidirectional.py     # Average evacuation-time objective
 ├── MILP_solve_t_avg_sd_unidirectional.py  # Average/deviation-based objective
 ├── Optimization_code_MCS_utility_plot.py  # MCS utilization analysis and plotting
-├── Additional_Plots.py                    # Additional result visualization
-├── plot_map_networkx_unidirectional.py     # Transportation-network visualization
-├── Mariposa_analysis.xlsx                 # Analysis and simulation results
-├── Mariposa_plots.xlsx                    # Data used for generating plots
+├── plot_map_networkx_unidirectional.py    # Transportation-network visualization
 ├── requirements.txt                       # List of additional Python packages to be installed 
 │
 ├── GeoJson/                               # Mariposa transportation-network data
