@@ -4,8 +4,10 @@ This repository contains the source code associated with the paper “Equivalent
 The repository includes the optimization codes and supporting files used to generate the numerical results and case studies presented in the paper.
 
 ### 1. OS Compatibility
-The installation and development workflow described in this guide is intended for Windows operating systems (Windows 10 and 11). It has not yet been tested on macOS or Linux, although it is expected to work with minor or no modifications if the required dependencies are installed correctly.
+This guide describes an installation and development workflow for Windows operating systems (Windows 10 and 11). It has not been tested on macOS or Linux, although it should work with minor or no modifications if the required dependencies are installed correctly.
 
 ### 2. Project Architecture
 ECM_optimization/ <br>
-|--- README.md
+|--- README.md <br>
+|--- Optimization_code.py     # main executable code <br>
+
