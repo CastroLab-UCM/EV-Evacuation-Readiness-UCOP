@@ -10,7 +10,7 @@ This multi-campus University of California project is led by researchers at **UC
 - A community guide and scientific framework covering **36 resilience indicators** for ZEV evacuation readiness. [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%201_/Papers/Task1_A_ZEVEvacuation_JournalPaper_v2.pdf)
 - A prototype tool for calculating a **ZEV Evacuation Readiness Score** and identifying areas for improvement. [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%201_/Papers/Summary%20of%20ZEV%20Evacuation%20Readiness%20Indicators.pdf)
 - Decision-support tools for estimating evacuation energy and charging requirements. [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_/Papers)
-- Optimization methods for coordinating evacuation routes, departure times, charging schedules, and mobile charging stations. 
+- Optimization methods for coordinating evacuation routes, departure times, charging schedules, and mobile charging stations. [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%203_/Papers)
 - A Mariposa County wildfire case study in which additional mobile-charging capacity reduced:
   - Maximum evacuation time by **33%**
   - Average waiting time by **44%**
