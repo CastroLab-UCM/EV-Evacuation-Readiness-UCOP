@@ -9,6 +9,6 @@ This guide describes an installation and development workflow for Windows operat
 ### 2. Project Architecture
 ECM_optimization/ <br>
 |--- README.md <br>
-|--- Optimization_code.py  :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   # main executable code <br>
+|--- Optimization_code.py  :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   # main executable code <br>
 |--- Optimization_code_MCS_utility_plot.py :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  # code to plot MCS utilization ratio <br>
 
