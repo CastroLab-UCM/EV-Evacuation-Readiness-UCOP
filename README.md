@@ -7,7 +7,7 @@ This multi-campus University of California project is led by researchers at **UC
 
 ## Project Highlights
 
-- A community guide and scientific framework covering **36 resilience indicators** for ZEV evacuation readiness.
+- A community guide and scientific framework covering **36 resilience indicators** for ZEV evacuation readiness. [Link](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%201_/Papers/Task1_A_ZEVEvacuation_JournalPaper_v2.pdf)
 - A prototype tool for calculating a **ZEV Evacuation Readiness Score** and identifying areas for improvement.
 - Decision-support tools for estimating evacuation energy and charging requirements.
 - Optimization methods for coordinating evacuation routes, departure times, charging schedules, and mobile charging stations.
