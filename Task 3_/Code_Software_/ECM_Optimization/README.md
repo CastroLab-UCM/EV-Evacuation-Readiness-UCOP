@@ -8,4 +8,4 @@ The installation and development workflow described in this guide is intended fo
 
 ### 2. Project Architecture
 ECM_optimization/ <br>
-|-- README.md
+|--- README.md
