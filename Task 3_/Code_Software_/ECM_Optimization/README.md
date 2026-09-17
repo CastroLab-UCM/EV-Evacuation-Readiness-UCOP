@@ -18,6 +18,7 @@ ECM_optimization/
 ├── plot_map_networkx_unidirectional.py     # Transportation-network visualization
 ├── Mariposa_analysis.xlsx                 # Analysis and simulation results
 ├── Mariposa_plots.xlsx                    # Data used for generating plots
+├── requirements.txt                       # List of additional Python packages to be installed 
 │
 ├── GeoJson/                               # Mariposa transportation-network data
 │   ├── centroids.geojson
@@ -27,7 +28,12 @@ ECM_optimization/
 │   ├── turnings.geojson
 │   └── LinkFlowStatistics_NormalFlow_v20250916a.txt
 │
-└── Uncoordinated evac planning/           # Baseline evacuation-planning approach
+├── Miscellaneous Plots/                       # Additional plots for some sensitivity analysis w.r.t. baseline parameters
+|   ├── Additional_Plots.py                    # Additional result visualization
+|   ├── Mariposa_analysis.xlsx                 # Analysis and simulation results
+|   ├── Mariposa_plots.xlsx                    # Data used for generating plots
+| 
+└── Uncoordinated evac planning/               # Baseline evacuation-planning approach
     ├── baseline_algorithm_MCS_plotting.py
     └── config.py
 ```
