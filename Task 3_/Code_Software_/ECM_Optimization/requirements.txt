@@ -2,5 +2,4 @@ numpy==2.2.0
 matplotlib==3.10.0
 pandas==2.2.3
 haversine==2.9.0
-gurobipy==13.0.0
 networkx==3.4.2
