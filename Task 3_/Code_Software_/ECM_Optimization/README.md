@@ -7,8 +7,6 @@ The repository includes the optimization codes and supporting files used to gene
 This guide describes an installation and development workflow for Windows operating systems (Windows 10 and 11). It has not been tested on macOS or Linux, although it should work with minor or no modifications if the required dependencies are installed correctly.
 
 ### 2. Project Architecture
-## Repository Structure
-
 ```text
 ECM_optimization/
 ├── Optimization_code.py                   # Main ECM-based evacuation optimization
