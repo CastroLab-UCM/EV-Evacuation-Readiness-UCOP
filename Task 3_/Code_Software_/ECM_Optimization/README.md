@@ -12,3 +12,27 @@ ECM_optimization/ <br>
 |--- Optimization_code.py  :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   # main executable code <br>
 |--- Optimization_code_MCS_utility_plot.py :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  # code to plot MCS utilization ratio <br>
 
+
+Mariposa/
+├── Optimization_code.py                  # Main ECM-based evacuation optimization
+├── MILP_solve_tmax_unidirectional.py     # Optimization using maximum evacuation-time objective
+├── MILP_solve_t_avg_unidirectional.py    # Optimization using average evacuation-time objective
+├── MILP_solve_t_avg_sd_unidirectional.py # Optimization using average/deviation-based objective
+├── Optimization_code_MCS_utility_plot.py # MCS utilization analysis and plotting
+├── Additional_Plots.py                   # Additional result visualization
+├── plot_map_networkx_unidirectional.py    # Transportation-network visualization
+├── Mariposa_analysis.xlsx                # Analysis/results data
+├── Mariposa_plots.xlsx                   # Data used for result plots
+│
+├── GeoJson/                              # Mariposa transportation-network data
+│   ├── centroids.geojson
+│   ├── centroid_connections.geojson
+│   ├── nodes.geojson
+│   ├── sections.geojson
+│   ├── turnings.geojson
+│   └── LinkFlowStatistics_NormalFlow_v20250916a.txt
+│
+└── Uncoordinated evac planning/          # Baseline/uncoordinated evacuation method
+    ├── baseline_algorithm_MCS_plotting.py
+    └── config.py
+
