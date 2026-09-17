@@ -68,53 +68,7 @@ The output should indicate Python 3.12.
 
 ---
 
-###### 2. Clone the Repository
-
-Clone this repository using:
-
-```bash
-git clone <repository-url>
-```
-
-Then navigate to the repository directory:
-
-```bash
-cd <repository-name>
-```
-
----
-
-###### 3. Create a Virtual Environment
-
-It is recommended to create a separate Python virtual environment for the project.
-
-########## Windows
-
-```bash
-python -m venv .venv
-```
-
-Activate the environment:
-
-```bash
-.venv\Scripts\activate
-```
-
-########## macOS / Linux
-
-```bash
-python3 -m venv .venv
-```
-
-Activate the environment:
-
-```bash
-source .venv/bin/activate
-```
-
----
-
-###### 4. Install the Required Python Packages
+###### 2. Install the Required Python Packages
 
 Upgrade `pip` first:
 
@@ -132,7 +86,7 @@ Alternatively, the packages can be installed individually as needed.
 
 ---
 
-###### 5. Install Gurobi
+###### 3. Install Gurobi
 
 The optimization problems in this repository are solved using **Gurobi Optimizer**.
 
@@ -150,7 +104,7 @@ python -c "import gurobipy; print(gurobipy.gurobi.version())"
 
 ---
 
-###### 6. Configure a Gurobi License
+###### 4. Configure a Gurobi License
 
 A valid Gurobi license is required to solve the optimization problems.
 
@@ -172,7 +126,7 @@ If no license-related error is displayed, Gurobi should be ready to use.
 
 ---
 
-###### 7. Run the Code
+###### 5. Run the Code
 
 After installing all dependencies and configuring Gurobi, run the desired Python script from the repository directory. For example:
 
