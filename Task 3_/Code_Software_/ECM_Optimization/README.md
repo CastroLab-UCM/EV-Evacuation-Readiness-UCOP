@@ -126,7 +126,7 @@ If no license-related error is displayed, Gurobi should be ready to use.
 
 ---
 
-###### 5. Run the Code
+### 4. Run the Code
 
 After installing all dependencies and configuring Gurobi, run the desired Python script from the repository directory. For example:
 
