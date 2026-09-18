@@ -29,10 +29,10 @@ Task 1 develops methods to evaluate whether a community has sufficient infrastru
 | # | Title of Resource | Resource Description | Type | ICON |
 |---|---|---|---|---|
 | 1.1 | ZEV Evacuation Readiness Framework | Framework for evaluating community preparedness for ZEV-based emergency evacuations using resilience indicators | 📄 [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%201_/Papers/Development_of_Zero-Emission_Vehicle_Evacuation_Readiness_Score_Formulation_Methodology.pdf) |
-| 1.2 | ZEV Evacuation Readiness Score | Methodology and supporting material for calculating the ZEV evacuation readiness score | [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%201_/Papers/Summary%20of%20ZEV%20Evacuation%20Readiness%20Indicators.pdf) |
-| 1.3 | Two Readiness Assessment Tools | ZEV score calculator for estimating the community’s ZEV readiness score and fuzzy logic assessment tool for evaluating the charging infrastructure indicators | [Code](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_/Code_Software_) |
-| 1.4 | Development of ZEV Evacuation Readiness Score II | Improving the preparedness of comunities of evacuations using ZEVs | [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%201_/Presentations/2_ScoringMethodology.pdf) |
-| 1.5 | ZEV Evacuation Readiness Score | Evaluating the readiness for EV-based evacuation| [Video](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021982261584) |
+| 1.2 | ZEV Evacuation Readiness Score | Methodology and supporting material for calculating the ZEV evacuation readiness score | 📄 [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%201_/Papers/Summary%20of%20ZEV%20Evacuation%20Readiness%20Indicators.pdf) |
+| 1.3 | Two Readiness Assessment Tools | ZEV score calculator for estimating the community’s ZEV readiness score and fuzzy logic assessment tool for evaluating the charging infrastructure indicators |💻 [Code](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%201_/Code_Software_) |
+| 1.4 | Development of ZEV Evacuation Readiness Score II | Improving the preparedness of comunities of evacuations using ZEVs |📊 [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%201_/Presentations/2_ScoringMethodology.pdf) |
+| 1.5 | ZEV Evacuation Readiness Score | Evaluating the readiness for EV-based evacuation|🎥 [Video](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021982261584) |
 
 ---
 
@@ -43,9 +43,9 @@ Task 2 develops decision-support tools to estimate energy and charging requireme
 | # | Title of Resource | Resource Description | Type |
 |---|---|---|---|---|
 | 2.1 | Energy and Charging Need Calculator | Estimating energy demand and charging requirements during ZEV evacuations. | [Excel](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/3_Tool1_EnergyAndChargingNeeds.xlsm) |
-| 2.2 | Backup Energy Analysis | Evaluating backup-energy options for EV charging when grid power is unavailable. | [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_/Papers) |
-| 2.3 | Infrastructure Investment Analysis | Planning for electric-vehicle evacuations: energy, infrastructure, and storage needs. | [Code](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_/Code_Software/MATLAB) |
-| 2.4 | Power-grid Resilience Analysis | Estimating energy and charging requirements under uncertainties. | [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%202_/Presentations/3_EnergyAndChargingNeeds.pptx) / Video(https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021988445944) |
+| 2.2 | Backup Energy Analysis | Evaluating backup-energy options for EV charging when grid power is unavailable. | 📄 [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_/Papers) |
+| 2.3 | Infrastructure Investment Analysis | Planning for electric-vehicle evacuations: energy, infrastructure, and storage needs. |💻 [Code](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_/Code_Software/MATLAB) |
+| 2.4 | Power-grid Resilience Analysis | Estimating energy and charging requirements under uncertainties. |📊 [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%202_/Presentations/3_EnergyAndChargingNeeds.pptx) /🎥 Video(https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021988445944) |
 
 ---
 
@@ -55,23 +55,23 @@ Task 3 develops optimization and simulation methods for coordinating evacuation 
 
 | # | Title of Resource | Resource Description | Type |
 |---|---|---|---|---|
-| 3.1 | ZEV Evacuation Optimization Model | Optimization framework for jointly considering evacuation routing, scheduling, and charging decisions. | [Paper1](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Papers/Optimization_of_Electric_Vehicle_Evacuation_Integrating_Mobile_Charging_Stations_and_Considering_Vehicle_Diversity.pdf) / [Paper2](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Papers/Optimization_of_Electric_Vehicle_Evacuation_Integrating_Mobile_Charging_Stations_and_Considering_Vehicle_Diversity.pdf) |
-| 3.2 | Mariposa County Case Study | Case study evaluating ZEV evacuation strategies under wildfire evacuation scenarios using a calibrated traffic-simulation model. | [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Zoom%20Recording%20WK%233/4_Evacuation%20Scenario%20Design%20For%20Mariposa.pdf) |
-| 3.3 | Evacuation Planning and Control Code | Optimal control of emergency evacuations leveraging equivalent circuit models | [Code](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%203_/Code_Software_/ECM_Optimization) |
-| 3.4 | Mobile Charging Analysis | Analysis of mobile charging-station deployment during emergency evacuation. | [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Presentations/MECC2025_ECM_optimization_Joseph_Moyalan.pptx) |
-| 3.5 | Mariposa Evacuation Scenario Modeling | Modeling a real-world evacuation scenario in Mariposa| [Video](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021998232416)
+| 3.1 | ZEV Evacuation Optimization Model | Optimization framework for jointly considering evacuation routing, scheduling, and charging decisions. |📄 [Paper1](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Papers/Optimization_of_Electric_Vehicle_Evacuation_Integrating_Mobile_Charging_Stations_and_Considering_Vehicle_Diversity.pdf) / 📄 [Paper2](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Papers/Optimization_of_Electric_Vehicle_Evacuation_Integrating_Mobile_Charging_Stations_and_Considering_Vehicle_Diversity.pdf) |
+| 3.2 | Mariposa County Case Study | Case study evaluating ZEV evacuation strategies under wildfire evacuation scenarios using a calibrated traffic-simulation model. |📄 [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Zoom%20Recording%20WK%233/4_Evacuation%20Scenario%20Design%20For%20Mariposa.pdf) |
+| 3.3 | Evacuation Planning and Control Code | Optimal control of emergency evacuations leveraging equivalent circuit models |💻 [Code](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%203_/Code_Software_/ECM_Optimization) |
+| 3.4 | Mobile Charging Analysis | Analysis of mobile charging-station deployment during emergency evacuation. |📊 [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Presentations/MECC2025_ECM_optimization_Joseph_Moyalan.pptx) |
+| 3.5 | Mariposa Evacuation Scenario Modeling | Modeling a real-world evacuation scenario in Mariposa|🎥 [Video](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021998232416)
 
 ---
 
 ### [Task 4: Public-Policy Recommendations](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_)
 
 Task 4 identifies and prioritizes policies and best practices that local and state governments can use to improve community preparedness for emergency evacuations involving ZEVs.
-| # | Title of Resource | Resource Description | Type |
+| # | Title of Resource | Resource Description | Type ||
 |---|---|---|---|---|
-| 4.1 | ZEV Evacuation Overview / Magazine Paper | Overview of challenges, research needs, and strategies for improving ZEV evacuation preparedness. | [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%204_/Papers/Task4_MagazinePaper.pdf) |
-| 4.2 | Top 10 Policy Recommendations | Recommended policies and actions for improving ZEV evacuation readiness. | [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%204_/Papers/PublicPolicyBrief.pdf) |
-| 4.3 |Policy Prioritization Results | Results from evaluating and ranking policy recommendations with community partners. | [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_/Presentations) |
-| 4.4 | Best Practices | Best-practice guidance for government agencies and emergency planners. | [Video](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021989736428) |
+| 4.1 | ZEV Evacuation Overview / Magazine Paper | Overview of challenges, research needs, and strategies for improving ZEV evacuation preparedness. |📄 [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%204_/Papers/Task4_MagazinePaper.pdf) |
+| 4.2 | Top 10 Policy Recommendations | Recommended policies and actions for improving ZEV evacuation readiness. |📄 [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%204_/Papers/PublicPolicyBrief.pdf) |
+| 4.3 |Policy Prioritization Results | Results from evaluating and ranking policy recommendations with community partners. |📊 [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_/Presentations) |
+| 4.4 | Best Practices | Best-practice guidance for government agencies and emergency planners. |🎥 [Video](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021989736428) |
 
 ---
 
@@ -81,9 +81,9 @@ Task 5 shares project tools and findings with communities, government agencies, 
 
 | # | Title of Resource | Resource Description | Type |
 |---|---|---|---|---|
-| 5.1 | ZEV Evacuation Workshop 1 | All presentations delievered at Workshop 1 on April 26, 2024. | [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_/Workshop%20%231) |
-| 5.2 | ZEV Evacuation Workshop 2 | All presentations delievered at Workshop 2 on December 5, 2024. | [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_/Workshop%20%232) |
-| 5.3 | ZEV Evacuation Workshop 3 | All presentations delievered at Workshop 3 on October 2, 2025. | [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_/Workshop%20%233) |
+| 5.1 | ZEV Evacuation Workshop 1 | All presentations delievered at Workshop 1 on April 26, 2024. |📊 [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_/Workshop%20%231) |
+| 5.2 | ZEV Evacuation Workshop 2 | All presentations delievered at Workshop 2 on December 5, 2024. |📊 [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_/Workshop%20%232) |
+| 5.3 | ZEV Evacuation Workshop 3 | All presentations delievered at Workshop 3 on October 2, 2025. |📊 [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_/Workshop%20%233) |
 
 ## Using This Repository
 
