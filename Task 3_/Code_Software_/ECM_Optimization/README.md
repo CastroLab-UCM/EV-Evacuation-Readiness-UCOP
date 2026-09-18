@@ -31,8 +31,8 @@ ECM_optimization/
 |   ├── Mariposa_plots.xlsx                    # Data used for generating plots
 | 
 └── Uncoordinated evac planning/               # Baseline evacuation-planning approach
-    ├── baseline_algorithm_MCS_plotting.py
-    └── config.py
+|   ├── baseline_algorithm_MCS_plotting.py
+|   └── config.py
 |
 └── images/
     ├── optimization_done.png
