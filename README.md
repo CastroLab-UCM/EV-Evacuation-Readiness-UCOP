@@ -26,7 +26,7 @@ This multi-campus University of California project is led by researchers at **UC
 Task 1 develops methods to evaluate whether a community has sufficient infrastructure and planning capacity to support ZEV-based evacuations.
 ### Resources
 
-| # | Title of Resource | Resource Description | Type |
+| # | Title of Resource | Resource Description | Type | |
 |---|---|---|---|---|
 | 1.1 | ZEV Evacuation Readiness Framework | Framework for evaluating community preparedness for ZEV-based emergency evacuations using resilience indicators | [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%201_/Papers/Development_of_Zero-Emission_Vehicle_Evacuation_Readiness_Score_Formulation_Methodology.pdf) |
 | 1.2 | ZEV Evacuation Readiness Score | Methodology and supporting material for calculating the ZEV evacuation readiness score | [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%201_/Papers/Summary%20of%20ZEV%20Evacuation%20Readiness%20Indicators.pdf) |
