@@ -33,6 +33,14 @@ ECM_optimization/
 └── Uncoordinated evac planning/               # Baseline evacuation-planning approach
     ├── baseline_algorithm_MCS_plotting.py
     └── config.py
+|
+└── images/
+    ├── optimization_done.png
+    ├── optimization_MCS_done.png
+    ├── image_1.png
+    ├── image_2.png
+    ├── image_3.png
+    └── image_4.png
 ```
 ### 3. Installation
 
