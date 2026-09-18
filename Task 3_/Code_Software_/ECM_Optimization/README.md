@@ -175,9 +175,10 @@ The script also generates **seven routing plots**, one for each OD pair consider
 
 Example routing plots are shown below:
 
-![Example routing result 1](images/image_1.png)
-
-![Example routing result 2](images/image_2.png)
+<p align="center">
+  <img src="images/image_3.png" width="49%" />
+  <img src="images/image_4.png" width="49%" />
+</p>
 
 ---
 
@@ -212,9 +213,10 @@ The script also generates **seven routing plots**, corresponding to the consider
 
 Example outputs are shown below:
 
-![Example MCS routing result](images/image_3.png)
-
-![Example MCS utilization result](images/image_4.png)
+<p align="center">
+  <img src="images/image_3.png" width="49%" />
+  <img src="images/image_4.png" width="49%" />
+</p>
 
 Make sure that the required input files and folders remain in their expected locations within the repository.
 
