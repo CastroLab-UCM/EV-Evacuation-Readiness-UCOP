@@ -137,13 +137,84 @@ If no license-related error is displayed, Gurobi should be ready to use.
 
 ---
 
-### 4. Run the Code
+### 4. Running the Code
 
-After installing all dependencies and configuring Gurobi, run the desired Python script from the repository directory. For example:
+The repository contains two main optimization scripts:
+
+- `Optimization_code.py`
+- `Optimization_code_MCS_utility_plot.py`
+
+Both scripts solve the evacuation-planning problem using Gurobi and generate route visualizations for the considered origin-destination (OD) pairs.
+
+###### 1. Running `Optimization_code.py`
+
+Run the main optimization script using:
 
 ```bash
 python Optimization_code.py
 ```
+
+If the optimization is completed successfully, the terminal will display a message indicating that an optimal solution has been found, together with information such as the objective value, optimality gap, and computation time.
+
+Example:
+
+```text
+Optimal solution found
+Best objective ...
+Best bound ...
+gap 0.0000%
+Computation time: ... seconds
+Optimization is done
+```
+
+An example of the successful terminal output is shown below:
+
+![Successful optimization output](images/optimization_done.png)
+
+The script also generates **seven routing plots**, one for each OD pair considered in the simulation. The optimal evacuation route for each OD pair is highlighted in blue.
+
+Example routing plots are shown below:
+
+![Example routing result 1](images/image_1.png)
+
+![Example routing result 2](images/image_2.png)
+
+---
+
+###### 2. Running `Optimization_code_MCS_utility_plot.py`
+
+Run the MCS-utilization analysis script using:
+
+```bash
+python Optimization_code_MCS_utility_plot.py
+```
+
+This script solves the evacuation optimization problem while also evaluating the utilization of the deployed Mobile Charging Stations (MCSs).
+
+If the script runs successfully, the terminal displays the optimization status, objective value, best bound, optimality gap, and the total number of MCS units used.
+
+Example:
+
+```text
+Time limit reached
+Best objective ...
+Best bound ...
+gap ...
+Optimization is done
+Total MCS used: ...
+```
+
+An example of the terminal output is shown below:
+
+![MCS optimization output](images/optimization_MCS_done.png)
+
+The script also generates **seven routing plots**, corresponding to the considered OD pairs, together with additional information related to MCS deployment and utilization.
+
+Example outputs are shown below:
+
+![Example MCS routing result](images/image_3.png)
+
+![Example MCS utilization result](images/image_4.png)
 
 Make sure that the required input files and folders remain in their expected locations within the repository.
 
