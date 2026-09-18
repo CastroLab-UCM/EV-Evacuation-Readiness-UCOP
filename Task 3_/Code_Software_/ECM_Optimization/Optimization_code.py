@@ -2,18 +2,22 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 import MILP_solve_t_avg_unidirectional # type: ignore
+import MILP_solve_tmax_unidirectional # type: ignore
+import MILP_solve_t_avg_sd_unidirectional # type: ignore
+import plot_map_networkx_unidirectional # type: ignore
 import json 
-import matplotlib.colors as colors
 import pandas as pd # type: ignore
 from haversine import haversine, Unit # type: ignore
-import networkx as nx # type: ignore
 from pathlib import Path
+import time
 
+start_time = time.time()
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "GeoJson"
 
 ## extract background traffic
 
+# df = pd.read_csv('C:\\Users\\josep\\Documents\\Codes\\IEEE journal\\Mariposa\\GeoJson\\LinkFlowStatistics_NormalFlow_v20250916a.txt')
 df = pd.read_csv(DATA_DIR / 'LinkFlowStatistics_NormalFlow_v20250916a.txt')
 
 # Standardize column names (in case of trailing spaces)
@@ -60,17 +64,15 @@ with open(DATA_DIR / 'turnings.geojson', 'r') as f:
 #################################################################################################################
 #################################################################################################################
 
+############# Actual parameters #################################################################################
 start_node_centroid = np.array([51736,51731,50668,50662,50659,50677,50637])
 goal_node_centroid = np.array([50623,50626,50606,50611,50614,51851,51874])
+num_od_pair = start_node_centroid.size  # change this parameter for multiple od pair
+init_flow = 0.5*np.array([60,60,60,60,60,60,60])              # change this parameter for multiple od pair
+init_range = 2*np.array([[10,10,10,10,10,10,10]])     # change this parameter for multiple od pair
+#################################################################################################################
 
-# start_node_centroid = np.array([51736,51731,50659,50653,50647,50677])
-# goal_node_centroid = np.array([50623,50626,50623,50626,50623,50626])
 
-# start_node_centroid = np.array([51736,51731,50659,50647])
-# goal_node_centroid = np.array([50623,50626,50623,50623])
-
-# start_node_centroid = np.array([50640,50640])
-# goal_node_centroid = np.array([50626,50626])
 start_node = []
 goal_node = []
 
@@ -90,23 +92,6 @@ for start,goal in zip(start_node_centroid, goal_node_centroid):
 
 start_node =np.array(start_node)
 goal_node =np.array(goal_node)
-# start_node =np.array([48524,48524])
-# goal_node =np.array([49424,49424])
-
-num_od_pair = 7  # change this parameter for multiple od pair
-# init_range = 40*np.ones((1, num_od_pair))      # change this parameter for multiple od pair
-
-
-init_flow = (60/80)*np.array([80,80,80,80,80,80,80])              # change this parameter for multiple od pair
-# init_range = np.array([[40,40,150,200,40,150,150,200,40,150]])     # change this parameter for multiple od pair
-# init_flow = np.array([80,80,80,80])              # change this parameter for multiple od pair
-# init_range = np.array([[40,40,40,40]])     # change this parameter for multiple od pair
-
-# init_flow = np.array([20,10,80,10,80,80,70,10,50,20])              # change this parameter for multiple od pair
-# init_range = np.array([[150,150,150,49,150,150,150,150,150,49]])     # change this parameter for multiple od pair
-
-# init_flow = np.array([10,10])              # change this parameter for multiple od pair
-init_range = 2*np.array([[10,10,10,10,10,10,10]])     # change this parameter for multiple od pair
 
 
 
@@ -176,16 +161,10 @@ link_capacity = np.array(link_capacity)
 num_nodes = len(pos_nodes)
 num_links = len(basic_edges)
 
-road_travel_time = np.zeros(num_links) 
 road_dist = np.zeros(num_links)
-edge_information = []
 
 for i in range(num_links):
     road_dist[i] = haversine(pos_nodes[basic_edges[i][0]][::-1],pos_nodes[basic_edges[i][1]][::-1],unit=Unit.KILOMETERS)
-    road_travel_time[i] = (1/link_speed[i])*road_dist[i]
-    edge_information.append((basic_edges[i][0],basic_edges[i][1],{'travel_time':road_travel_time[i],
-                                                                  'road_limit':link_capacity[i],
-                                                                  'travel_dist':road_dist[i]}))
 
 road_travel_time = (1/link_speed)*road_dist
 
@@ -257,8 +236,6 @@ MCS_loc = np.zeros(num_links)
 FCS_loc_group = np.zeros((num_FCS_location,num_links),dtype=int)
 MCS_loc_group = np.zeros((num_MCS_location,num_links),dtype=int)
 
-FCS_loc_flow = np.zeros(num_links)
-
 FCS_count = 0
 MCS_count = 0
 FCS_ignored = [2,3,4]
@@ -303,21 +280,23 @@ for location in  centroids["features"]:
                     else:
                         FCS_loc_group[FCS_count,*index[0]] = 1
                         FCS_loc[index[0]] = 1
-                        FCS_loc_flow[index[0]] = FCS_flow_limit_vector[FCS_count]
+
+                        
 
                     FCS_check = 1
 
                     FCS_charging_time[index[0]] = stoppage_time
                     FCS_charged_dist[index[0]] = stoppage_time*FCS_range_per_hour[FCS_count]
 
+                    
+
         # print(MCS_loc_group[MCS_count,*index[0]])
         MCS_count += MCS_check
         FCS_count += FCS_check
 
-FCS_loc_indices = np.nonzero(FCS_loc)[0]
-MCS_loc_indices = np.nonzero(MCS_loc)[0]           
+            
 
-multiple_MCS_number = 20
+multiple_MCS_number = 20      # Total number of MCS allowed per site
 
 MCS_power_kW = 150
 MCS_range_per_hour = (3.3*1.6)*MCS_power_kW
@@ -325,34 +304,61 @@ MCS_range_per_hour = (3.3*1.6)*MCS_power_kW
 MCS_ports = 5
 MCS_flow_limit = MCS_ports*scaling_factor
 
-num_MCS = 25
+num_MCS = 25   # Total number of MCS available   
 MCS_flow_limit_vector = MCS_flow_limit*np.ones(num_MCS_location)
 
 MCS_charging_time = stoppage_time*np.ones(num_links)
 MCS_charged_dist = MCS_range_per_hour*MCS_charging_time
 
 
+# FCS_loc_trial = np.zeros(num_links)
+# FCS_loc_group_trial = np.zeros((num_FCS_location,num_links),dtype=int)
 
-FCS_loc_trial = np.zeros(num_links)
-FCS_loc_group_trial = np.zeros((num_FCS_location,num_links),dtype=int)
+
+
 
 
 #################### Optimization and plotting #################################################################
 ################################################################################################################
 ################################################################################################################
 ################################################################################################################
+solve_parameter = "avg"
 
 
-solution = MILP_solve_t_avg_unidirectional.solve(Network_matrix,od_pair_matrix,num_links,num_od_pair,
-                            road_travel_time,FCS_charging_time,MCS_charging_time,
-                            road_dist,FCS_charged_dist,MCS_charged_dist,init_range,
-                            link_capacity,FCS_flow_limit_vector,
-                            init_flow,num_MCS,FCS_loc,MCS_loc,num_nodes,basic_edges,start_node,
-                            multiple_MCS_number,MCS_flow_limit,
-                            num_FCS_location,num_MCS_location,FCS_loc_group,MCS_loc_group,max_EV_FCS,max_EV_MCS)
+
+if solve_parameter == "worst":
+
+    solution = MILP_solve_tmax_unidirectional.solve(Network_matrix,od_pair_matrix,num_links,num_od_pair,
+                                road_travel_time,FCS_charging_time,MCS_charging_time,
+                                road_dist,FCS_charged_dist,MCS_charged_dist,init_range,
+                                link_capacity,FCS_flow_limit_vector,
+                                init_flow,num_MCS,FCS_loc,MCS_loc,num_nodes,basic_edges,start_node,
+                                multiple_MCS_number,MCS_flow_limit,
+                                num_FCS_location,num_MCS_location,FCS_loc_group,MCS_loc_group,max_EV_FCS,max_EV_MCS)
     
+if solve_parameter == "avg":
 
+    solution = MILP_solve_t_avg_unidirectional.solve(Network_matrix,od_pair_matrix,num_links,num_od_pair,
+                                road_travel_time,FCS_charging_time,MCS_charging_time,
+                                road_dist,FCS_charged_dist,MCS_charged_dist,init_range,
+                                link_capacity,FCS_flow_limit_vector,
+                                init_flow,num_MCS,FCS_loc,MCS_loc,num_nodes,basic_edges,start_node,
+                                multiple_MCS_number,MCS_flow_limit,
+                                num_FCS_location,num_MCS_location,FCS_loc_group,MCS_loc_group,max_EV_FCS,max_EV_MCS)
 
+if solve_parameter == "deviation":
+
+    solution = MILP_solve_t_avg_sd_unidirectional.solve(Network_matrix,od_pair_matrix,num_links,num_od_pair,
+                                road_travel_time,FCS_charging_time,MCS_charging_time,
+                                road_dist,FCS_charged_dist,MCS_charged_dist,init_range,
+                                link_capacity,FCS_flow_limit_vector,
+                                init_flow,num_MCS,FCS_loc,MCS_loc,num_nodes,basic_edges,start_node,
+                                multiple_MCS_number,MCS_flow_limit,
+                                num_FCS_location,num_MCS_location,FCS_loc_group,MCS_loc_group,max_EV_FCS,max_EV_MCS)
+
+end_time = time.time()
+elapsed_time = end_time - start_time
+print(f"Computation time: {elapsed_time:.6f} seconds")
 
 
     # np.save('solution.npy', solution, allow_pickle=True)
@@ -383,8 +389,6 @@ print("Optimization is done")
 #         print('aux: ', var.X)
 #     if var.VarName.startswith('deltaT'):
 #         print('deltaT: ', var.X)
-FCS_switch = [var for var in solution.getVars() if var.VarName.startswith("FCS_switch")]
-MCS_switch = [var for var in solution.getVars() if var.VarName.startswith("MCS_switch")]
 
 
 r_switch_values = [[solution.getVarByName(f"road_switch[{i},{j}]").X for j in range(num_od_pair)] for i in range(num_links)]
@@ -394,23 +398,14 @@ FCS_switch_values = np.array(FCS_switch_values)
 MCS_switch_values = [[solution.getVarByName(f"MCS_switch[{i},{j}]").X for j in range(num_od_pair)] for i in range(num_links)]
 MCS_switch_values = np.array(MCS_switch_values)
 
-number_of_MCS = [solution.getVarByName(f"MCS_number[{0},{j}]").X for j in range(num_MCS_location)]
-number_of_MCS = np.array(number_of_MCS)
-number_of_MCS_FCS = [solution.getVarByName(f"FCS_with_MCS_number[{0},{j}]").X for j in range(num_FCS_location)]
-number_of_MCS_FCS = np.array(number_of_MCS_FCS)
-print('Total MCS used:',number_of_MCS.sum()+number_of_MCS_FCS.sum())
-MCS_number_scaled = MCS_loc_group * number_of_MCS[:, np.newaxis]
-MCS_number = MCS_number_scaled.sum(axis=0)
-
-
-FCS_number_scaled = FCS_loc_group * number_of_MCS_FCS[:, np.newaxis]
-FCS_number = FCS_number_scaled.sum(axis=0)
-
 Switch_total = 60*(r_switch_values + FCS_switch_values + MCS_switch_values)
 
 flow_normalised = Switch_total.sum(axis=1)/link_capacity
-flow_total = Switch_total.sum(axis=1)
 
+data = {'Normalised_flow':flow_normalised}
+df = pd.DataFrame(data)
+
+df.to_excel('Normalised_flow.xlsx', sheet_name='200', index=False, header=True)
 
 evac_time = []
 evac_dist = []
@@ -431,229 +426,46 @@ for i in range(num_od_pair):
 # print(evac_time)
 # print(evac_dist)
 
+data = {'Evac time':evac_time}
+df = pd.DataFrame(data)
 
 
-######### Plotting ################################################################################################
-###################################################################################################################
+sum_switches = r_switch_values + FCS_switch_values + MCS_switch_values
+road_size = np.sum(sum_switches,axis=0)
+basic_edges_numpy = np.array(basic_edges)
 
 
-####################  Plotting the Normalised vehicle flow for edges ##############################################
-###################################################################################################################
 
-G = nx.Graph()
 
-G.add_edges_from(edge_information)
+#################### Plotting ##################################################################################
+################################################################################################################
+################################################################################################################
+################################################################################################################
 
-for (edge, flow) in zip(basic_edges, flow_normalised):
-    # print(edge[1])
-    G.edges[edge]['flow'] = flow
+# start = [[-120.4390,37.539],[-120.0241,37.137],[-120.3189,37.329],[-120.0083,37.417]]
+# goal = [[-119.6424,37.294],[-119.6424,37.294],[-119.6424,37.294],[-119.65512,37.3350]]
 
-node_size = 1
-node_color = 'black'
+# start = [[-119.9919,37.52],[-120.0427,37.456],[-119.9495,37.484],[-119.9602,37.496],[-119.9602,37.496],[-119.9602,37.496]]
+# goal = [[-120.4341,37.541],[-120.3060,37.274],[-119.7873,36.956],[-120.0348,36.961],[-120.0348,36.961],[-120.0348,36.961]]
 
-for i in pos_nodes.keys():
-    if i in start_node:
-        G.nodes[i]['color'] = node_color
-        G.nodes[i]['size'] = node_size
-        G.nodes[i]['MCS_num'] = 0
-        G.nodes[i]['congestion'] = 0
+# start = [-119.9919,37.52]
+# goal = [-120.4341,37.541]
+        
+# for i in range(num_od_pair):
 
-    elif i in goal_node:
-        G.nodes[i]['color'] = node_color
-        G.nodes[i]['size'] = node_size
-        G.nodes[i]['MCS_num'] = 0
-        G.nodes[i]['congestion'] = 0
+#     if num_od_pair == 1:
+#         plot_map_networkx_bidirectional.plot_mariposa(solution,0,num_od_pair,init_flow,FCS_loc,num_nodes,num_links,pos_nodes,basic_edges,start,goal)
+#     else:
+#         plot_map_networkx_bidirectional.plot_mariposa(solution,i,num_od_pair,init_flow[i],FCS_loc,num_nodes,num_links,pos_nodes,basic_edges,start[i],goal[i])
 
+for i in range(num_od_pair):
+
+    if num_od_pair == 1:
+        plot_map_networkx_unidirectional.plot_mariposa(solution,0,num_od_pair,init_flow,FCS_loc,num_nodes,num_links,pos_nodes,basic_edges,FCS_loc_group,MCS_loc_group)
     else:
-        G.nodes[i]['color'] = node_color
-        G.nodes[i]['size'] = node_size
-        G.nodes[i]['MCS_num'] = 0
-        G.nodes[i]['congestion'] = 0
-
-
-FCS_indices = FCS_switch_values.sum(axis=1)
-MCS_indices = MCS_switch_values.sum(axis=1)
-r_indices = r_switch_values.sum(axis=1)
-
-count_FCS = 0
-
-
-for i in range(num_links):
-
-    if FCS_indices[i] >= 1:
-        count_FCS += 1
-        FCS_node = num_nodes+count_FCS
-        G.remove_edge(basic_edges[i][0],basic_edges[i][1])
-        G.add_node(FCS_node,color=node_color,size=node_size,MCS_num=int(FCS_number[i]),congestion=((flow_total[i])/((FCS_loc_flow[i])+(int(FCS_number[i])*MCS_flow_limit*(FCS_indices[i]+MCS_indices[i]+r_indices[i])))))
-        FCS_x = (0.5*pos_nodes[basic_edges[i][0]][0]) + (0.5*pos_nodes[basic_edges[i][1]][0])
-        FCS_y = (0.5*pos_nodes[basic_edges[i][0]][1]) + (0.5*pos_nodes[basic_edges[i][1]][1])
-        travel_time_temp = 0.5*road_travel_time[i]
-        road_dist_temp = 0.5*road_dist[i]
-        G.add_edges_from([(basic_edges[i][0], FCS_node,{'flow':flow_normalised[i],'travel_time':travel_time_temp,'road_limit':link_capacity[i],'travel_dist':road_dist_temp}),\
-                        (FCS_node, basic_edges[i][1],{'flow':flow_normalised[i],'travel_time':travel_time_temp,'road_limit':link_capacity[i],'travel_dist':road_dist_temp})])
-
-
-        pos_nodes[FCS_node] = (FCS_x, FCS_y)
+        plot_map_networkx_unidirectional.plot_mariposa(solution,i,num_od_pair,init_flow[i],FCS_loc,num_nodes,num_links,pos_nodes,basic_edges,FCS_loc_group,MCS_loc_group)
 
 
 
-count_MCS1 = 0
-
-
-for i in range(num_links):
-
-    if MCS_indices[i] >= 1:
-        count_MCS1 += 1
-        MCS_node1 = num_nodes+count_FCS+count_MCS1
-        G.remove_edge(basic_edges[i][0],basic_edges[i][1])
-        G.add_node(MCS_node1,color=node_color,size=node_size,MCS_num= int(MCS_number[i]),congestion=((flow_total[i])/(int(MCS_number[i])*MCS_flow_limit*(FCS_indices[i]+MCS_indices[i]+r_indices[i]))))
-        MCS_x = (0.5*pos_nodes[basic_edges[i][0]][0]) + (0.5*pos_nodes[basic_edges[i][1]][0])
-        MCS_y = (0.5*pos_nodes[basic_edges[i][0]][1]) + (0.5*pos_nodes[basic_edges[i][1]][1])
-        travel_time_temp = 0.5*road_travel_time[i]
-        road_dist_temp = 0.5*road_dist[i]
-        G.add_edges_from([(basic_edges[i][0], MCS_node1,{'flow':flow_normalised[i],'travel_time':travel_time_temp,'road_limit':link_capacity[i],'travel_dist':road_dist_temp}),\
-                        (MCS_node1, basic_edges[i][1],{'flow':flow_normalised[i],'travel_time':travel_time_temp,'road_limit':link_capacity[i],'travel_dist':road_dist_temp})])
-
-
-        pos_nodes[MCS_node1] = (MCS_x, MCS_y)
-
-# count_MCS2 = 0
-
-# for jj in range(num_od_pair):
-#     for i in range(num_links):
-#         if MCS_switch_values[i,jj] == 1:
-#             count_MCS2 += 1
-#             MCS_node2 = num_nodes+count_FCS+count_MCS2
-#             G.nodes[MCS_node2]['congestion'] = ((init_flow[jj])/(int(MCS_number[i])*MCS_flow_limit))
-
-
-for u, v in G.edges:
-        w = G[u][v]['flow']
-
-        if w>= 0 and w<0.2:
-            G[u][v]['thickness'] = 1.5
-            G[u][v]['color'] = 'lightgreen'
-        if w>=0.2 and w<0.4:
-            G[u][v]['thickness'] = 3
-            G[u][v]['color'] = 'lawngreen'
-        if w>=0.4 and w<0.6:
-            G[u][v]['thickness'] = 4.5
-            G[u][v]['color'] = 'greenyellow'
-        if w>=0.6 and w<0.8:
-            G[u][v]['thickness'] = 6
-            G[u][v]['color'] = 'yellowgreen'
-        if w>=0.8 and w<=1:
-            G[u][v]['thickness'] = 7.5
-            G[u][v]['color'] = 'yellow'
-        if w>1 and w<1.2:
-            G[u][v]['thickness'] = 9
-            G[u][v]['color'] = 'orange'
-        if w>=1.2 and w<1.4:
-            G[u][v]['thickness'] = 10.5
-            G[u][v]['color'] = 'orangered'
-        if w>=1.4:
-            G[u][v]['thickness'] = 12
-            G[u][v]['color'] = 'red'
-
-color_range = [0,0.2,0.4,0.6,0.8,1.0,1.2,1.4,2]
-color_names = ['lightgreen','lawngreen','greenyellow','yellowgreen','yellow','orange','orangered','red']
-
-cmap = colors.ListedColormap(color_names)
-norm = colors.BoundaryNorm(color_range, cmap.N)
-
-edge_thicknesses = [G[u][v]['thickness'] for u, v in G.edges()]
-edge_colors = [G[u][v]['color'] for u, v in G.edges()]
-node_colors = [data.get('color') for _, data in G.nodes(data=True)]
-node_sizes = [data.get('size') for _, data in G.nodes(data=True)]
-
-node_labels = {list(pos_nodes.keys())[i]:list(pos_nodes.keys())[i] for i in range(num_nodes)}   # to label only basic nodes
-
-fig, axs = plt.subplots(dpi=100)
-
-plt.margins(0.1)
-
-nx.draw(G,node_color=node_colors,node_size=node_sizes,pos=pos_nodes,edge_color=edge_colors,width=edge_thicknesses,ax=axs,
-        with_labels=False,labels=node_labels,font_color="purple",font_size=10)
-# Extract edge labels
-edge_labels = nx.get_edge_attributes(G, 'road_limit')
- # Add colorbar legend
-sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
-sm.set_array([])  # Only needed for matplotlib < 3.1
-cbar = plt.colorbar(sm, ax=axs, orientation='vertical')
-cbar.set_label('Normalised Flow values', rotation=270, labelpad=30,fontsize=28) # labelpad sets the gap between label ticks and the colorlegend title
-cbar.ax.tick_params(labelsize=20)  # Change tick label font size
-
-
-####################  Plotting the Normalised vehicle flow for charging nodes #####################################
-###################################################################################################################
-count_MCS_temp = 0
-for i in range(num_links):
-
-    if MCS_indices[i] >= 1:
-        count_MCS_temp += 1
-        MCS_node_temp = num_nodes+count_FCS+count_MCS_temp
-        w = G.nodes[MCS_node_temp]['congestion']
-
-        if w>= 0 and w<0.2:
-            G.nodes[MCS_node_temp]['size'] = 500
-            G.nodes[MCS_node_temp]['color'] = 'lightgreen'
-        if w>=0.2 and w<0.4:
-            G.nodes[MCS_node_temp]['size'] = 500
-            G.nodes[MCS_node_temp]['color'] = 'yellowgreen'
-        if w>=0.4 and w<0.6:
-            G.nodes[MCS_node_temp]['size'] = 500
-            G.nodes[MCS_node_temp]['color'] = 'darkkhaki'
-        if w>=0.6 and w<0.8:
-            G.nodes[MCS_node_temp]['size'] = 500
-            G.nodes[MCS_node_temp]['color'] = 'khaki'
-        if w>=0.8 and w<=1:
-            G.nodes[MCS_node_temp]['size'] = 500
-            G.nodes[MCS_node_temp]['color'] = 'navajowhite'
-        if w>1 and w<1.2:
-            G.nodes[MCS_node_temp]['size'] = 500
-            G.nodes[MCS_node_temp]['color'] = 'lightsalmon'
-        if w>=1.2 and w<1.4:
-            G.nodes[MCS_node_temp]['size'] = 500
-            G.nodes[MCS_node_temp]['color'] = 'salmon'
-        if w>=1.4:
-            G.nodes[MCS_node_temp]['size'] = 500
-            G.nodes[MCS_node_temp]['color'] = 'coral'
-
-for u, v in G.edges:
-    G[u][v]['thickness'] = 1
-    G[u][v]['color'] = 'black'
-
-color_range = [0,0.2,0.4,0.6,0.8,1.0,1.2,1.4,2]
-color_names = ['lightgreen','yellowgreen','darkkhaki','khaki','navajowhite','lightsalmon','salmon','coral']
-
-cmap = colors.ListedColormap(color_names)
-norm = colors.BoundaryNorm(color_range, cmap.N)
-
-edge_thicknesses = [G[u][v]['thickness'] for u, v in G.edges()]
-edge_colors = [G[u][v]['color'] for u, v in G.edges()]
-node_colors = [data.get('color') for _, data in G.nodes(data=True)]
-node_sizes = [data.get('size') for _, data in G.nodes(data=True)]
-
-# node_labels = {list(pos_nodes.keys())[i]:list(pos_nodes.keys())[i] for i in range(num_nodes)}   # to label only basic nodes
-
-node_labels = {
-        node: G.nodes[node]['MCS_num']
-        for node, attrs in G.nodes(data=True)
-        if attrs.get('MCS_num') > 0
-    }
-
-fig, axs = plt.subplots(dpi=100)
-nx.draw(G,node_color=node_colors,node_size=node_sizes,pos=pos_nodes,edge_color=edge_colors,width=edge_thicknesses,ax=axs,
-        with_labels=True,labels=node_labels,font_color="purple",font_size=20)
-# Extract edge labels
-edge_labels = nx.get_edge_attributes(G, 'road_limit')
-plt.margins(0.1)
- # Add colorbar legend
-sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
-sm.set_array([])  # Only needed for matplotlib < 3.1
-cbar = plt.colorbar(sm, ax=axs, orientation='vertical')
-cbar.set_label('MCS utilization ratio', rotation=270, labelpad=30,fontsize=28) # labelpad sets the gap between label ticks and the colorlegend title
-cbar.ax.tick_params(labelsize=20)  # Change tick label font size
-# plt.savefig("my_plot.png", dpi=300, bbox_inches="tight")
 
 plt.show() 
