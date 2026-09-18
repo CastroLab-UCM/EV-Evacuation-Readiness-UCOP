@@ -176,8 +176,8 @@ The script also generates **seven routing plots**, one for each OD pair consider
 Example routing plots are shown below:
 
 <p align="center">
-  <img src="images/image_3.png" width="49%" />
-  <img src="images/image_4.png" width="49%" />
+  <img src="images/image_1.png" width="49%" />
+  <img src="images/image_2.png" width="49%" />
 </p>
 
 ---
