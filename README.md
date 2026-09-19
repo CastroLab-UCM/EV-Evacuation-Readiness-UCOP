@@ -34,6 +34,22 @@ Task 1 develops methods to evaluate whether a community has sufficient infrastru
 | 1.4 | Development of ZEV Evacuation Readiness Score II | Improving the preparedness of comunities of evacuations using ZEVs |🖥️ [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%201_/Presentations/2_ScoringMethodology.pdf) |
 | 1.5 | ZEV Evacuation Readiness Score | Evaluating the readiness for EV-based evacuation|🎥 [Video](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021982261584) |
 
+### References
+
+**[T1.1]** Osman Saleem, Clotilde Robert, Keith Corzine, Leila Parsa, 
+Ricardo de Castro, Sam Markolf, and Gavin Wang (2025), 
+*"A Framework of Resilience Indicators for Zero-Emission Vehicle Emergency Preparedness,"* 
+journal paper, *under review*.
+
+**[T1.2]** Osman Saleem and Clotilde Robert (2025), 
+*"Are Your Community Ready to Evacuate with Zero-Emission Vehicles?"* 
+University of California, Project Report.
+
+**[T1.3]** O. Saleem, K. Corzine, L. Parsa, and R. de Castro (2024), 
+*"Development of Zero-Emission Vehicle Evacuation Readiness Score Formulation Methodology,"* 
+2024 IEEE 67th International Midwest Symposium on Circuits and Systems (MWSCAS), 
+Springfield, MA, USA.
+
 ---
 
 ### [Task 2: Energy and Infrastructure Decision Support](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_)
