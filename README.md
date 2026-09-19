@@ -131,6 +131,12 @@ Task 4 identifies and prioritizes policies and best practices that local and sta
 | 4.3 |Policy Prioritization Results | Results from evaluating and ranking policy recommendations with community partners. |🖥️ [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_/Presentations) |
 | 4.4 | Best Practices | Best-practice guidance for government agencies and emergency planners. |🎥 [Video](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021989736428) |
 
+### References
+**[T4.1]** R. de Castro, J. Moyalan, C. Robert, S. Markolf, S. Kurtz, F. ZareAfifi, 
+X. Lin, Q. Gan, O. Saleem, S. Lakeh, K. Corzine, and L. Parsa (2026), 
+*"Improving Readiness of Communities for Evacuations with Electric Vehicles,"* 
+IEEE Electrification Magazine, *in press*.
+
 ---
 
 ### [Task 5: Community Engagement and Outreach](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_)
@@ -145,6 +151,22 @@ Task 5 shares project tools and findings with communities, government agencies, 
 | 5.4 |Round Table Discussion | EV-based evacuation readiness and indicator scoring tables  | 🖥️[Presentation]() |
 | 5.5 | Simulation of Charging Energy/power for EV Evacuation | EV-based evacuation readiness and indicator scoring tables  | 📊[Excel]() |
 | 5.6 | Priorizxation of Policies Using Q-sort | EV-based evacuation readiness and indicator scoring tables  | 🖥️[Presentation]() |
+
+### References
+**[T5.1]** R. de Castro, S. Markolf, S. Feng, S. Kurtz, C. Robert, J. Moyalan, 
+X. Lin, X. Tang, K. Corzine, O. Saleem, S. A. Lakeh, L. Parsa, S. Moura, and Q. Gan, 
+*"Improving Preparedness of Communities for Evacuations Using ZEVs,"* 
+University of California, Workshop Slides, April 26, 2024.
+
+**[T5.2]** R. de Castro, S. Markolf, S. Feng, S. Kurtz, C. Robert, J. Moyalan, 
+X. Lin, X. Tang, K. Corzine, O. Saleem, S. A. Lakeh, L. Parsa, S. Moura, and Q. Gan, 
+*"Improving Preparedness of Communities for Evacuations Using ZEVs,"* 
+University of California, Workshop Slides, December 5, 2024.
+
+**[T5.3]** R. de Castro, S. Markolf, S. Feng, S. Kurtz, C. Robert, J. Moyalan, 
+X. Lin, X. Tang, K. Corzine, O. Saleem, S. A. Lakeh, L. Parsa, S. Moura, and Q. Gan, 
+*"Improving Preparedness of Communities for Evacuations Using ZEVs,"* 
+University of California, Workshop Slides, October 2, 2025.
 
 ## Using This Repository
 
