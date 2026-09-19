@@ -101,11 +101,6 @@ Task 3 develops optimization and simulation methods for coordinating evacuation 
 *"Optimal Planning of Emergency Evacuations Leveraging Equivalent Circuit Models,"* 
 ASME Letters in Dynamic Systems and Control.
 
-<a id="t35"></a>
-**[T3.4]** S. Feng, X. Tang, X. Lin, S. Moura, R. de Castro, J. Moyalan, S. Markolf, and Q. Gan (2025), 
-*"Optimizing Emergency Evacuation Planning of Zero-Emission Vehicles,"* 
-journal paper, *under review*.
-
 ---
 
 ### [Task 4: Public-Policy Recommendations](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_)
