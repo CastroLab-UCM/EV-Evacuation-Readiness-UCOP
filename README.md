@@ -89,34 +89,21 @@ Task 3 develops optimization and simulation methods for coordinating evacuation 
 
 ### References
 
-<a id="t31"></a>
 **[T3.1]** X. Tang, S. Kuang, X. Lin, R. de Castro, Q. Gan, S. Moura, and S. Feng (2025), 
 *"Optimization of Electric Vehicle Evacuation Integrating Mobile Charging Stations and Considering Vehicle Diversity,"* 
 2025 American Control Conference (ACC), Denver, CO, USA.
 
-<a id="t32"></a>
 **[T3.2]** X. Tang, X. Lin, S. Moura, R. de Castro, S. Markolf, S. Feng, and Q. Gan (2024), 
 *"Enhancing Large-Scale Evacuations of Electric Vehicles through Integration of Mobile Charging Stations,"* 
 27th IEEE International Conference on Intelligent Transportation Systems (ITSC), Edmonton, Canada.
 
-<a id="t33"></a>
-**[T3.3]** X. Tang, X. Lin, S. Moura, R. de Castro, J. Moyalan, S. Markolf, S. Feng, and Q. Gan (2025), 
-*"Coordinated Optimization of Electric Vehicle Evacuation with Mobile Charging Stations: A MILP-Based Scheduling Framework,"* 
-journal paper, *under review*.
-
-<a id="t34"></a>
-**[T3.4]** J. Moyalan, R. de Castro, S. Feng, X. Tang, X. Lin, and S. Moura (2025), 
+**[T3.3]** J. Moyalan, R. de Castro, S. Feng, X. Tang, X. Lin, and S. Moura (2025), 
 *"Optimal Planning of Emergency Evacuations Leveraging Equivalent Circuit Models,"* 
 ASME Letters in Dynamic Systems and Control.
 
 <a id="t35"></a>
-**[T3.5]** S. Feng, X. Tang, X. Lin, S. Moura, R. de Castro, J. Moyalan, S. Markolf, and Q. Gan (2025), 
+**[T3.4]** S. Feng, X. Tang, X. Lin, S. Moura, R. de Castro, J. Moyalan, S. Markolf, and Q. Gan (2025), 
 *"Optimizing Emergency Evacuation Planning of Zero-Emission Vehicles,"* 
-journal paper, *under review*.
-
-<a id="t36"></a>
-**[T3.6]** J. Moyalan, R. de Castro, et al., 
-*"Equivalent Circuit Model Based Electric Vehicle Evacuation with Mobile Charging Stations,"* 
 journal paper, *under review*.
 
 ---
