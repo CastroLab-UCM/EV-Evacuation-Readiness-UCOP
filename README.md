@@ -41,7 +41,7 @@ Ricardo de Castro, Sam Markolf, and Gavin Wang (2025),
 *"A Framework of Resilience Indicators for Zero-Emission Vehicle Emergency Preparedness,"* 
 journal paper, *under review*.
 
-**[T1.2]** Osman Saleem and Clotilde Robert (2025), 
+**[T1.2]** O.Saleem and C. Robert (2025), 
 *"Are Your Community Ready to Evacuate with Zero-Emission Vehicles?"* 
 University of California, Project Report.
 
@@ -73,7 +73,7 @@ Task 2 develops decision-support tools to estimate energy and charging requireme
 *"Comparative Analysis of Backup Energy Solutions for Electric Vehicle Evacuations During Grid Failures,"* 
 13th IEEE Electrical Energy Storage Applications and Technologies (EESAT), USA.
 
-**[T2.3]** Saeed Aliamooei-Lakeh, Keith Corzine, Leila Parsa, and Ricardo de Castro (2024), *"A Multi-Objective Optimization Problem for Sizing and Siting of Power Systems with the Integration of DG Units, EV Charging Stations, and ESSs,"*  
+**[T2.3]** S. Aliamooei-Lakeh, K. Corzine, L. Parsa, and R. de Castro (2024), *"A Multi-Objective Optimization Problem for Sizing and Siting of Power Systems with the Integration of DG Units, EV Charging Stations, and ESSs,"*  
 2024 IEEE 67th International Midwest Symposium on Circuits and Systems (MWSCAS), Springfield, MA, USA.
 
 ---
