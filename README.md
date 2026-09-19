@@ -84,9 +84,9 @@ Task 5 shares project tools and findings with communities, government agencies, 
 | 5.1 | ZEV Evacuation Workshop 1 | All presentations delievered at Workshop 1 on April 26, 2024. |🖥️ [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_/Workshop%20%231) |
 | 5.2 | ZEV Evacuation Workshop 2 | All presentations delievered at Workshop 2 on December 5, 2024. |🖥️ [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_/Workshop%20%232) |
 | 5.3 | ZEV Evacuation Workshop 3 | All presentations delievered at Workshop 3 on October 2, 2025. |🖥️ [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_/Workshop%20%233) |
-| 5.4 | Scoring Table | EV-based evacuation readiness and indicator scoring tables  | [Tool]() |
-| 5.5 | Scoring Table | EV-based evacuation readiness and indicator scoring tables  | [Tool]() |
-| 5.6 | Scoring Table | EV-based evacuation readiness and indicator scoring tables  | [Tool]() |
+| 5.4 |Round Table Discussion | EV-based evacuation readiness and indicator scoring tables  | 🖥️[Presentation]() |
+| 5.5 | Simulation of Charging Energy/power for EV Evacuation | EV-based evacuation readiness and indicator scoring tables  | 📊[Excel]() |
+| 5.6 | Priorizxation of Policies Using Q-sort | EV-based evacuation readiness and indicator scoring tables  | 🖥️[Presentation]() |
 
 ## Using This Repository
 
@@ -141,9 +141,9 @@ If you encounter problems when downloading or running a resource, please check i
 > **Disclaimer:** These resources are intended to support research and emergency-planning activities and do not replace official evacuation orders or emergency-management procedures.
 
 
-## Citation
+## Acknowledgement
 
-If you use a publication, software tool, dataset, or other resource from this repository, please cite the corresponding publication or resource listed in its task folder. 
+The authors would gratefully thank the support  
 
 
 
