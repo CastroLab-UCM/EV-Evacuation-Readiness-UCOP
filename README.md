@@ -73,8 +73,7 @@ Task 2 develops decision-support tools to estimate energy and charging requireme
 *"Comparative Analysis of Backup Energy Solutions for Electric Vehicle Evacuations During Grid Failures,"* 
 13th IEEE Electrical Energy Storage Applications and Technologies (EESAT), USA.
 
-**[T2.3]** Saeed Aliamooei-Lakeh, Keith Corzine, Leila Parsa, and Ricardo de Castro (2024),  
-*"A Multi-Objective Optimization Problem for Sizing and Siting of Power Systems with the Integration of DG Units, EV Charging Stations, and ESSs,"*  
+**[T2.3]** Saeed Aliamooei-Lakeh, Keith Corzine, Leila Parsa, and Ricardo de Castro (2024), *"A Multi-Objective Optimization Problem for Sizing and Siting of Power Systems with the Integration of DG Units, EV Charging Stations, and ESSs,"*  
 2024 IEEE 67th International Midwest Symposium on Circuits and Systems (MWSCAS), Springfield, MA, USA.
 
 ---
