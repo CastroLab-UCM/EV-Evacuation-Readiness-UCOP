@@ -9,6 +9,7 @@ import json
 import pandas as pd # type: ignore
 from haversine import haversine, Unit # type: ignore
 from pathlib import Path
+from gurobipy import GRB
 import time
 
 start_time = time.time()
@@ -68,7 +69,7 @@ with open(DATA_DIR / 'turnings.geojson', 'r') as f:
 start_node_centroid = np.array([51736,51731,50668,50662,50659,50677,50637])
 goal_node_centroid = np.array([50623,50626,50606,50611,50614,51851,51874])
 num_od_pair = start_node_centroid.size  # change this parameter for multiple od pair
-init_flow = 0.5*np.array([60,60,60,60,60,60,60])              # change this parameter for multiple od pair
+init_flow = np.array([60,60,60,60,60,60,60])              # change this parameter for multiple od pair
 init_range = 2*np.array([[10,10,10,10,10,10,10]])     # change this parameter for multiple od pair
 #################################################################################################################
 
@@ -356,116 +357,316 @@ if solve_parameter == "deviation":
                                 multiple_MCS_number,MCS_flow_limit,
                                 num_FCS_location,num_MCS_location,FCS_loc_group,MCS_loc_group,max_EV_FCS,max_EV_MCS)
 
-end_time = time.time()
-elapsed_time = end_time - start_time
-print(f"Computation time: {elapsed_time:.6f} seconds")
+
+# ============================================================
+# CHECK OPTIMIZATION STATUS
+# ============================================================
+# IMPORTANT:
+# The rest of this script is executed ONLY when Gurobi has at
+# least one feasible solution (solution.SolCount > 0).
+#
+# This avoids relying on sys.exit/SystemExit, which some IDEs
+# or interactive environments may catch instead of terminating
+# the entire script.
+# ============================================================
+
+has_feasible_solution = solution.SolCount > 0
+
+if solution.Status == GRB.OPTIMAL:
+
+    print("\n" + "="*60)
+    print("OPTIMIZATION COMPLETED SUCCESSFULLY")
+    print("Solution status: OPTIMAL")
+    print(f"Number of feasible solutions found: {solution.SolCount}")
+    print("="*60 + "\n")
 
 
-    # np.save('solution.npy', solution, allow_pickle=True)
+elif solution.Status == GRB.TIME_LIMIT:
 
+    print("\n" + "="*60)
+    print("OPTIMIZATION TIME LIMIT EXPIRED")
+    print(f"Number of feasible solutions found: {solution.SolCount}")
 
-    # solution = np.load('solution.npy', allow_pickle=True).item()
-
-# solution = MILP_solve_t_avg_v2.solve(Network_matrix,od_pair_matrix,num_links,num_od_pair,
-#                  road_travel_time,FCS_charging_time,MCS_charging_time,
-#                  road_dist,FCS_charged_dist,MCS_charged_dist,init_range,
-#                  link_capacity,FCS_flow_limit_vector,
-#                  init_flow,num_MCS,FCS_loc,MCS_loc,num_nodes,basic_edges,start_node,
-#                  multiple_MCS_number,MCS_flow_limit)
-
-
-#################### saving output #############################################################################
-################################################################################################################
-################################################################################################################
-################################################################################################################
-# for v in solution.getVars():
-#     if v.VarName.startswith("max_time"):
-#         print('%s %g' % (v.VarName, v.X))
-
-print("Optimization is done")
-
-# for var in solution.getVars():
-#     if var.VarName.startswith('temp_var'):
-#         print('aux: ', var.X)
-#     if var.VarName.startswith('deltaT'):
-#         print('deltaT: ', var.X)
-
-
-r_switch_values = [[solution.getVarByName(f"road_switch[{i},{j}]").X for j in range(num_od_pair)] for i in range(num_links)]
-r_switch_values = np.array(r_switch_values)
-FCS_switch_values = [[solution.getVarByName(f"FCS_switch[{i},{j}]").X for j in range(num_od_pair)] for i in range(num_links)]
-FCS_switch_values = np.array(FCS_switch_values)
-MCS_switch_values = [[solution.getVarByName(f"MCS_switch[{i},{j}]").X for j in range(num_od_pair)] for i in range(num_links)]
-MCS_switch_values = np.array(MCS_switch_values)
-
-Switch_total = 60*(r_switch_values + FCS_switch_values + MCS_switch_values)
-
-flow_normalised = Switch_total.sum(axis=1)/link_capacity
-
-data = {'Normalised_flow':flow_normalised}
-df = pd.DataFrame(data)
-
-df.to_excel('Normalised_flow.xlsx', sheet_name='200', index=False, header=True)
-
-evac_time = []
-evac_dist = []
-for i in range(num_od_pair):
-
-    total_time = np.dot(road_travel_time,r_switch_values[:,i])+\
-                np.dot(road_travel_time,FCS_switch_values[:,i])+\
-                np.dot(FCS_charging_time,FCS_switch_values[:,i])+\
-                np.dot(road_travel_time,MCS_switch_values[:,i])+\
-                np.dot(MCS_charging_time,MCS_switch_values[:,i])
-    
-    total_dist = np.dot(road_dist,r_switch_values[:,i])+\
-                np.dot(road_dist,FCS_switch_values[:,i])+\
-                np.dot(road_dist,MCS_switch_values[:,i])
-    
-    evac_time.append(total_time)
-    evac_dist.append(total_dist)
-# print(evac_time)
-# print(evac_dist)
-
-data = {'Evac time':evac_time}
-df = pd.DataFrame(data)
-
-
-sum_switches = r_switch_values + FCS_switch_values + MCS_switch_values
-road_size = np.sum(sum_switches,axis=0)
-basic_edges_numpy = np.array(basic_edges)
-
-
-
-
-#################### Plotting ##################################################################################
-################################################################################################################
-################################################################################################################
-################################################################################################################
-
-# start = [[-120.4390,37.539],[-120.0241,37.137],[-120.3189,37.329],[-120.0083,37.417]]
-# goal = [[-119.6424,37.294],[-119.6424,37.294],[-119.6424,37.294],[-119.65512,37.3350]]
-
-# start = [[-119.9919,37.52],[-120.0427,37.456],[-119.9495,37.484],[-119.9602,37.496],[-119.9602,37.496],[-119.9602,37.496]]
-# goal = [[-120.4341,37.541],[-120.3060,37.274],[-119.7873,36.956],[-120.0348,36.961],[-120.0348,36.961],[-120.0348,36.961]]
-
-# start = [-119.9919,37.52]
-# goal = [-120.4341,37.541]
-        
-# for i in range(num_od_pair):
-
-#     if num_od_pair == 1:
-#         plot_map_networkx_bidirectional.plot_mariposa(solution,0,num_od_pair,init_flow,FCS_loc,num_nodes,num_links,pos_nodes,basic_edges,start,goal)
-#     else:
-#         plot_map_networkx_bidirectional.plot_mariposa(solution,i,num_od_pair,init_flow[i],FCS_loc,num_nodes,num_links,pos_nodes,basic_edges,start[i],goal[i])
-
-for i in range(num_od_pair):
-
-    if num_od_pair == 1:
-        plot_map_networkx_unidirectional.plot_mariposa(solution,0,num_od_pair,init_flow,FCS_loc,num_nodes,num_links,pos_nodes,basic_edges,FCS_loc_group,MCS_loc_group)
+    if has_feasible_solution:
+        print("A feasible solution was found before the time limit.")
+        print("Optimality was not proven.")
+        print("The program will continue using the best feasible solution found.")
     else:
-        plot_map_networkx_unidirectional.plot_mariposa(solution,i,num_od_pair,init_flow[i],FCS_loc,num_nodes,num_links,pos_nodes,basic_edges,FCS_loc_group,MCS_loc_group)
+        print("NO FEASIBLE SOLUTION WAS FOUND BEFORE THE TIME LIMIT.")
+        print("The remaining calculations and plots will NOT be executed.")
+        print("Consider increasing TIME_LIMIT_SECONDS in")
+        print("MILP_solve_t_avg_unidirectional.py and running again.")
+
+    print("="*60 + "\n")
+
+
+elif solution.Status == GRB.INFEASIBLE:
+
+    print("\n" + "="*60)
+    print("OPTIMIZATION IS INFEASIBLE")
+    print("No feasible solution exists for the current optimization model.")
+    print("The remaining calculations and plots will NOT be executed.")
+    print("="*60 + "\n")
+
+
+elif has_feasible_solution:
+
+    print("\n" + "="*60)
+    print("OPTIMIZATION TERMINATED WITHOUT PROVING OPTIMALITY")
+    print(f"Gurobi status code: {solution.Status}")
+    print(f"Number of feasible solutions found: {solution.SolCount}")
+    print("The program will continue using the best feasible solution found.")
+    print("="*60 + "\n")
+
+
+else:
+
+    print("\n" + "="*60)
+    print("NO FEASIBLE SOLUTION WAS FOUND")
+    print(f"Gurobi status code: {solution.Status}")
+    print(f"Number of feasible solutions found: {solution.SolCount}")
+    print("The remaining calculations and plots will NOT be executed.")
+    print("Consider increasing TIME_LIMIT_SECONDS in")
+    print("MILP_solve_t_avg_unidirectional.py and running again.")
+    print("="*60 + "\n")
+
+
+# ============================================================
+# RUN POST-PROCESSING ONLY IF A FEASIBLE SOLUTION EXISTS
+# ============================================================
+
+if has_feasible_solution:
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    print(f"Computation time: {elapsed_time:.6f} seconds")
+
+
+        # np.save('solution.npy', solution, allow_pickle=True)
+
+
+        # solution = np.load('solution.npy', allow_pickle=True).item()
+
+    # solution = MILP_solve_t_avg_v2.solve(Network_matrix,od_pair_matrix,num_links,num_od_pair,
+    #                  road_travel_time,FCS_charging_time,MCS_charging_time,
+    #                  road_dist,FCS_charged_dist,MCS_charged_dist,init_range,
+    #                  link_capacity,FCS_flow_limit_vector,
+    #                  init_flow,num_MCS,FCS_loc,MCS_loc,num_nodes,basic_edges,start_node,
+    #                  multiple_MCS_number,MCS_flow_limit)
+
+
+    #################### saving output #############################################################################
+    ################################################################################################################
+    ################################################################################################################
+    ################################################################################################################
+    # for v in solution.getVars():
+    #     if v.VarName.startswith("max_time"):
+    #         print('%s %g' % (v.VarName, v.X))
+
+    print("Optimization is done")
+
+    # for var in solution.getVars():
+    #     if var.VarName.startswith('temp_var'):
+    #         print('aux: ', var.X)
+    #     if var.VarName.startswith('deltaT'):
+    #         print('deltaT: ', var.X)
+
+
+    r_switch_values = [[solution.getVarByName(f"road_switch[{i},{j}]").X for j in range(num_od_pair)] for i in range(num_links)]
+    r_switch_values = np.array(r_switch_values)
+    FCS_switch_values = [[solution.getVarByName(f"FCS_switch[{i},{j}]").X for j in range(num_od_pair)] for i in range(num_links)]
+    FCS_switch_values = np.array(FCS_switch_values)
+    MCS_switch_values = [[solution.getVarByName(f"MCS_switch[{i},{j}]").X for j in range(num_od_pair)] for i in range(num_links)]
+    MCS_switch_values = np.array(MCS_switch_values)
+
+    # Number of MCS units deployed at each candidate MCS location
+    number_of_MCS = np.array([
+        solution.getVarByName(f"MCS_number[0,{j}]").X
+        for j in range(num_MCS_location)
+    ])
+
+    # Number of MCS units deployed to support each FCS location
+    number_of_MCS_FCS = np.array([
+        solution.getVarByName(f"FCS_with_MCS_number[0,{j}]").X
+        for j in range(num_FCS_location)
+    ])
+
+    Switch_total = 60*(r_switch_values + FCS_switch_values + MCS_switch_values)
+
+    flow_normalised = Switch_total.sum(axis=1)/link_capacity
+
+    data = {'Normalised_flow':flow_normalised}
+    df = pd.DataFrame(data)
+
+    df.to_excel('Normalised_flow.xlsx', sheet_name='200', index=False, header=True)
+
+    evac_time = []
+    evac_dist = []
+    for i in range(num_od_pair):
+
+        total_time = np.dot(road_travel_time,r_switch_values[:,i])+\
+                    np.dot(road_travel_time,FCS_switch_values[:,i])+\
+                    np.dot(FCS_charging_time,FCS_switch_values[:,i])+\
+                    np.dot(road_travel_time,MCS_switch_values[:,i])+\
+                    np.dot(MCS_charging_time,MCS_switch_values[:,i])
+    
+        total_dist = np.dot(road_dist,r_switch_values[:,i])+\
+                    np.dot(road_dist,FCS_switch_values[:,i])+\
+                    np.dot(road_dist,MCS_switch_values[:,i])
+    
+        evac_time.append(total_time)
+        evac_dist.append(total_dist)
+
+    # ============================================================
+    # TERMINAL SUMMARY TABLE FOR EACH OD PAIR
+    # ============================================================
+    # Time quantities are converted from hours to minutes.
+    # "MCS Used" is the number of MCS charging stops selected
+    # along the corresponding OD route.
+    # ============================================================
+
+    summary_rows = []
+
+    for i in range(num_od_pair):
+
+        travel_time_hr = (
+            np.dot(road_travel_time, r_switch_values[:, i])
+            + np.dot(road_travel_time, FCS_switch_values[:, i])
+            + np.dot(road_travel_time, MCS_switch_values[:, i])
+        )
+
+        charging_time_hr = (
+            np.dot(FCS_charging_time, FCS_switch_values[:, i])
+            + np.dot(MCS_charging_time, MCS_switch_values[:, i])
+        )
+
+        total_evacuation_time_hr = travel_time_hr + charging_time_hr
+
+        # ------------------------------------------------------------
+        # Number of MCS units used by this OD pair
+        # ------------------------------------------------------------
+        # MCS_loc_group[k, :] identifies the network links associated
+        # with candidate MCS location k. If this OD pair uses any such
+        # link through MCS_switch, include the deployed MCS_number[k].
+        #
+        # Likewise, FCS_loc_group[k, :] identifies FCS location k. If
+        # this OD pair charges at that FCS, include the number of MCS
+        # units assigned to support that FCS.
+        # ------------------------------------------------------------
+
+        mcs_location_used = (
+            (MCS_loc_group @ MCS_switch_values[:, i]) > 0.5
+        ).astype(int)
+
+        fcs_location_used = (
+            (FCS_loc_group @ FCS_switch_values[:, i]) > 0.5
+        ).astype(int)
+
+        mcs_at_mcs_locations = float(
+            np.dot(number_of_MCS, mcs_location_used)
+        )
+
+        mcs_supporting_fcs = float(
+            np.dot(number_of_MCS_FCS, fcs_location_used)
+        )
+
+        mcs_used = int(round(
+            mcs_at_mcs_locations + mcs_supporting_fcs
+        ))
+
+        if num_od_pair == 1:
+            initial_flow_i = float(np.asarray(init_flow).reshape(-1)[0])
+            initial_range_i = float(np.asarray(init_range).reshape(-1)[0])
+        else:
+            initial_flow_i = float(init_flow[i])
+            initial_range_i = float(init_range[0, i])
+
+        summary_rows.append({
+            "OD Pair": f"{start_node_centroid[i]} -> {goal_node_centroid[i]}",
+            "Charging Time (min)": 60 * charging_time_hr,
+            "Travel Time (min)": 60 * travel_time_hr,
+            "Total Evac. Time (min)": 60 * total_evacuation_time_hr,
+            "MCS Used": mcs_used,
+            "Initial Flow": initial_flow_i,
+            "Initial Range (km)": initial_range_i,
+        })
+
+    summary_df = pd.DataFrame(summary_rows)
+
+    # Add a TOTAL row for initial flow and initial range.
+    total_row = pd.DataFrame([{
+        "OD Pair": "TOTAL",
+        "Charging Time (min)": np.nan,
+        "Travel Time (min)": np.nan,
+        "Total Evac. Time (min)": np.nan,
+        # Global deployed MCS count (do not sum per-OD values,
+        # because the same deployed MCS can support multiple OD pairs).
+        "MCS Used": int(round(np.sum(number_of_MCS) + np.sum(number_of_MCS_FCS))),
+        "Initial Flow": float(np.sum(init_flow)),
+        "Initial Range (km)": float(np.sum(init_range)),
+    }])
+
+    summary_df = pd.concat([summary_df, total_row], ignore_index=True)
+
+    print("\n" + "=" * 125)
+    print("OD-PAIR OPTIMIZATION SUMMARY")
+    print("=" * 125)
+
+    print(
+        summary_df.to_string(
+            index=False,
+            na_rep="-",
+            formatters={
+                "Charging Time (min)": lambda x: f"{x:.2f}",
+                "Travel Time (min)": lambda x: f"{x:.2f}",
+                "Total Evac. Time (min)": lambda x: f"{x:.2f}",
+                "Initial Flow": lambda x: f"{x:.2f}",
+                "Initial Range (km)": lambda x: f"{x:.2f}",
+            },
+        )
+    )
+
+    print("=" * 125 + "\n")
+
+    data = {'Evac time':evac_time}
+    df = pd.DataFrame(data)
+
+
+    sum_switches = r_switch_values + FCS_switch_values + MCS_switch_values
+    road_size = np.sum(sum_switches,axis=0)
+    basic_edges_numpy = np.array(basic_edges)
 
 
 
 
-plt.show() 
+    #################### Plotting ##################################################################################
+    ################################################################################################################
+    ################################################################################################################
+    ################################################################################################################
+
+    # start = [[-120.4390,37.539],[-120.0241,37.137],[-120.3189,37.329],[-120.0083,37.417]]
+    # goal = [[-119.6424,37.294],[-119.6424,37.294],[-119.6424,37.294],[-119.65512,37.3350]]
+
+    # start = [[-119.9919,37.52],[-120.0427,37.456],[-119.9495,37.484],[-119.9602,37.496],[-119.9602,37.496],[-119.9602,37.496]]
+    # goal = [[-120.4341,37.541],[-120.3060,37.274],[-119.7873,36.956],[-120.0348,36.961],[-120.0348,36.961],[-120.0348,36.961]]
+
+    # start = [-119.9919,37.52]
+    # goal = [-120.4341,37.541]
+        
+    # for i in range(num_od_pair):
+
+    #     if num_od_pair == 1:
+    #         plot_map_networkx_bidirectional.plot_mariposa(solution,0,num_od_pair,init_flow,FCS_loc,num_nodes,num_links,pos_nodes,basic_edges,start,goal)
+    #     else:
+    #         plot_map_networkx_bidirectional.plot_mariposa(solution,i,num_od_pair,init_flow[i],FCS_loc,num_nodes,num_links,pos_nodes,basic_edges,start[i],goal[i])
+
+    for i in range(num_od_pair):
+
+        if num_od_pair == 1:
+            plot_map_networkx_unidirectional.plot_mariposa(solution,0,num_od_pair,init_flow,FCS_loc,num_nodes,num_links,pos_nodes,basic_edges,FCS_loc_group,MCS_loc_group)
+        else:
+            plot_map_networkx_unidirectional.plot_mariposa(solution,i,num_od_pair,init_flow[i],FCS_loc,num_nodes,num_links,pos_nodes,basic_edges,FCS_loc_group,MCS_loc_group)
+
+
+
+
+    plt.show() 

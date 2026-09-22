@@ -140,9 +140,10 @@ def solve(Network_matrix,od_pair_matrix,num_links,num_od_pair,
     obj_term1 = 0.02*(MCS_limit @ np.ones((num_MCS_location,1))) + (FCS_MCS_limit @ np.ones((num_FCS_location,1)))
 
     emerg_evac.setObjective((1/num_od_pair)*(tmax @ np.ones([num_od_pair,1])) + obj_term + obj_term1, GRB.MINIMIZE)
-    # emerg_evac.setObjective(obj_term1, GRB.MINIMIZE)
 
-    emerg_evac.setParam("TimeLimit", 60)
+    TIME_LIMIT_SECONDS = 60
+    emerg_evac.setParam("TimeLimit", TIME_LIMIT_SECONDS)
+
     # emerg_evac.setParam("MIPGap", 21)
 
     emerg_evac.optimize()

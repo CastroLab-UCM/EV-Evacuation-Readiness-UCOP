@@ -8,6 +8,7 @@ import pandas as pd # type: ignore
 from haversine import haversine, Unit # type: ignore
 import networkx as nx # type: ignore
 from pathlib import Path
+from gurobipy import GRB
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "GeoJson"
@@ -368,292 +369,369 @@ solution = MILP_solve_t_avg_unidirectional.solve(Network_matrix,od_pair_matrix,n
 #                  multiple_MCS_number,MCS_flow_limit)
 
 
-#################### saving output #############################################################################
-################################################################################################################
-################################################################################################################
-################################################################################################################
-# for v in solution.getVars():
-#     if v.VarName.startswith("max_time"):
-#         print('%s %g' % (v.VarName, v.X))
+# ============================================================
+# CHECK OPTIMIZATION STATUS
+# ============================================================
+# The rest of this script is executed ONLY when Gurobi has at
+# least one feasible solution.
+#
+# If the time limit is reached:
+#   - SolCount > 0  -> continue with the best feasible solution
+#   - SolCount == 0 -> skip all remaining calculations/plots
+# ============================================================
 
-print("Optimization is done")
+has_feasible_solution = solution.SolCount > 0
 
-# for var in solution.getVars():
-#     if var.VarName.startswith('temp_var'):
-#         print('aux: ', var.X)
-#     if var.VarName.startswith('deltaT'):
-#         print('deltaT: ', var.X)
-FCS_switch = [var for var in solution.getVars() if var.VarName.startswith("FCS_switch")]
-MCS_switch = [var for var in solution.getVars() if var.VarName.startswith("MCS_switch")]
+if solution.Status == GRB.OPTIMAL:
 
-
-r_switch_values = [[solution.getVarByName(f"road_switch[{i},{j}]").X for j in range(num_od_pair)] for i in range(num_links)]
-r_switch_values = np.array(r_switch_values)
-FCS_switch_values = [[solution.getVarByName(f"FCS_switch[{i},{j}]").X for j in range(num_od_pair)] for i in range(num_links)]
-FCS_switch_values = np.array(FCS_switch_values)
-MCS_switch_values = [[solution.getVarByName(f"MCS_switch[{i},{j}]").X for j in range(num_od_pair)] for i in range(num_links)]
-MCS_switch_values = np.array(MCS_switch_values)
-
-number_of_MCS = [solution.getVarByName(f"MCS_number[{0},{j}]").X for j in range(num_MCS_location)]
-number_of_MCS = np.array(number_of_MCS)
-number_of_MCS_FCS = [solution.getVarByName(f"FCS_with_MCS_number[{0},{j}]").X for j in range(num_FCS_location)]
-number_of_MCS_FCS = np.array(number_of_MCS_FCS)
-print('Total MCS used:',number_of_MCS.sum()+number_of_MCS_FCS.sum())
-MCS_number_scaled = MCS_loc_group * number_of_MCS[:, np.newaxis]
-MCS_number = MCS_number_scaled.sum(axis=0)
+    print("\n" + "="*60)
+    print("OPTIMIZATION COMPLETED SUCCESSFULLY")
+    print("Solution status: OPTIMAL")
+    print(f"Number of feasible solutions found: {solution.SolCount}")
+    print("="*60 + "\n")
 
 
-FCS_number_scaled = FCS_loc_group * number_of_MCS_FCS[:, np.newaxis]
-FCS_number = FCS_number_scaled.sum(axis=0)
+elif solution.Status == GRB.TIME_LIMIT:
 
-Switch_total = 60*(r_switch_values + FCS_switch_values + MCS_switch_values)
+    print("\n" + "="*60)
+    print("OPTIMIZATION TIME LIMIT EXPIRED")
+    print(f"Number of feasible solutions found: {solution.SolCount}")
 
-flow_normalised = Switch_total.sum(axis=1)/link_capacity
-flow_total = Switch_total.sum(axis=1)
-
-
-evac_time = []
-evac_dist = []
-for i in range(num_od_pair):
-
-    total_time = np.dot(road_travel_time,r_switch_values[:,i])+\
-                np.dot(road_travel_time,FCS_switch_values[:,i])+\
-                np.dot(FCS_charging_time,FCS_switch_values[:,i])+\
-                np.dot(road_travel_time,MCS_switch_values[:,i])+\
-                np.dot(MCS_charging_time,MCS_switch_values[:,i])
-    
-    total_dist = np.dot(road_dist,r_switch_values[:,i])+\
-                np.dot(road_dist,FCS_switch_values[:,i])+\
-                np.dot(road_dist,MCS_switch_values[:,i])
-    
-    evac_time.append(total_time)
-    evac_dist.append(total_dist)
-# print(evac_time)
-# print(evac_dist)
-
-
-
-######### Plotting ################################################################################################
-###################################################################################################################
-
-
-####################  Plotting the Normalised vehicle flow for edges ##############################################
-###################################################################################################################
-
-G = nx.Graph()
-
-G.add_edges_from(edge_information)
-
-for (edge, flow) in zip(basic_edges, flow_normalised):
-    # print(edge[1])
-    G.edges[edge]['flow'] = flow
-
-node_size = 1
-node_color = 'black'
-
-for i in pos_nodes.keys():
-    if i in start_node:
-        G.nodes[i]['color'] = node_color
-        G.nodes[i]['size'] = node_size
-        G.nodes[i]['MCS_num'] = 0
-        G.nodes[i]['congestion'] = 0
-
-    elif i in goal_node:
-        G.nodes[i]['color'] = node_color
-        G.nodes[i]['size'] = node_size
-        G.nodes[i]['MCS_num'] = 0
-        G.nodes[i]['congestion'] = 0
-
+    if has_feasible_solution:
+        print("A feasible solution was found before the time limit.")
+        print("Optimality was not proven.")
+        print("The program will continue using the best feasible solution found.")
     else:
-        G.nodes[i]['color'] = node_color
-        G.nodes[i]['size'] = node_size
-        G.nodes[i]['MCS_num'] = 0
-        G.nodes[i]['congestion'] = 0
+        print("NO FEASIBLE SOLUTION WAS FOUND BEFORE THE TIME LIMIT.")
+        print("The remaining calculations and plots will NOT be executed.")
+        print("Consider increasing the Gurobi time limit in")
+        print("MILP_solve_t_avg_unidirectional.py and running again.")
+
+    print("="*60 + "\n")
 
 
-FCS_indices = FCS_switch_values.sum(axis=1)
-MCS_indices = MCS_switch_values.sum(axis=1)
-r_indices = r_switch_values.sum(axis=1)
+elif solution.Status == GRB.INFEASIBLE:
 
-count_FCS = 0
-
-
-for i in range(num_links):
-
-    if FCS_indices[i] >= 1:
-        count_FCS += 1
-        FCS_node = num_nodes+count_FCS
-        G.remove_edge(basic_edges[i][0],basic_edges[i][1])
-        G.add_node(FCS_node,color=node_color,size=node_size,MCS_num=int(FCS_number[i]),congestion=((flow_total[i])/((FCS_loc_flow[i])+(int(FCS_number[i])*MCS_flow_limit*(FCS_indices[i]+MCS_indices[i]+r_indices[i])))))
-        FCS_x = (0.5*pos_nodes[basic_edges[i][0]][0]) + (0.5*pos_nodes[basic_edges[i][1]][0])
-        FCS_y = (0.5*pos_nodes[basic_edges[i][0]][1]) + (0.5*pos_nodes[basic_edges[i][1]][1])
-        travel_time_temp = 0.5*road_travel_time[i]
-        road_dist_temp = 0.5*road_dist[i]
-        G.add_edges_from([(basic_edges[i][0], FCS_node,{'flow':flow_normalised[i],'travel_time':travel_time_temp,'road_limit':link_capacity[i],'travel_dist':road_dist_temp}),\
-                        (FCS_node, basic_edges[i][1],{'flow':flow_normalised[i],'travel_time':travel_time_temp,'road_limit':link_capacity[i],'travel_dist':road_dist_temp})])
+    print("\n" + "="*60)
+    print("OPTIMIZATION IS INFEASIBLE")
+    print("No feasible solution exists for the current optimization model.")
+    print("The remaining calculations and plots will NOT be executed.")
+    print("="*60 + "\n")
 
 
-        pos_nodes[FCS_node] = (FCS_x, FCS_y)
+elif has_feasible_solution:
+
+    print("\n" + "="*60)
+    print("OPTIMIZATION TERMINATED WITHOUT PROVING OPTIMALITY")
+    print(f"Gurobi status code: {solution.Status}")
+    print(f"Number of feasible solutions found: {solution.SolCount}")
+    print("The program will continue using the best feasible solution found.")
+    print("="*60 + "\n")
+
+
+else:
+
+    print("\n" + "="*60)
+    print("NO FEASIBLE SOLUTION WAS FOUND")
+    print(f"Gurobi status code: {solution.Status}")
+    print(f"Number of feasible solutions found: {solution.SolCount}")
+    print("The remaining calculations and plots will NOT be executed.")
+    print("Consider increasing the Gurobi time limit in")
+    print("MILP_solve_t_avg_unidirectional.py and running again.")
+    print("="*60 + "\n")
+
+
+# ============================================================
+# RUN POST-PROCESSING AND PLOTTING ONLY IF A FEASIBLE SOLUTION EXISTS
+# ============================================================
+
+if has_feasible_solution:
+    #################### saving output #############################################################################
+    ################################################################################################################
+    ################################################################################################################
+    ################################################################################################################
+    # for v in solution.getVars():
+    #     if v.VarName.startswith("max_time"):
+    #         print('%s %g' % (v.VarName, v.X))
+
+    print("Optimization is done")
+
+    # for var in solution.getVars():
+    #     if var.VarName.startswith('temp_var'):
+    #         print('aux: ', var.X)
+    #     if var.VarName.startswith('deltaT'):
+    #         print('deltaT: ', var.X)
+    FCS_switch = [var for var in solution.getVars() if var.VarName.startswith("FCS_switch")]
+    MCS_switch = [var for var in solution.getVars() if var.VarName.startswith("MCS_switch")]
+
+
+    r_switch_values = [[solution.getVarByName(f"road_switch[{i},{j}]").X for j in range(num_od_pair)] for i in range(num_links)]
+    r_switch_values = np.array(r_switch_values)
+    FCS_switch_values = [[solution.getVarByName(f"FCS_switch[{i},{j}]").X for j in range(num_od_pair)] for i in range(num_links)]
+    FCS_switch_values = np.array(FCS_switch_values)
+    MCS_switch_values = [[solution.getVarByName(f"MCS_switch[{i},{j}]").X for j in range(num_od_pair)] for i in range(num_links)]
+    MCS_switch_values = np.array(MCS_switch_values)
+
+    number_of_MCS = [solution.getVarByName(f"MCS_number[{0},{j}]").X for j in range(num_MCS_location)]
+    number_of_MCS = np.array(number_of_MCS)
+    number_of_MCS_FCS = [solution.getVarByName(f"FCS_with_MCS_number[{0},{j}]").X for j in range(num_FCS_location)]
+    number_of_MCS_FCS = np.array(number_of_MCS_FCS)
+    print('Total MCS used:',number_of_MCS.sum()+number_of_MCS_FCS.sum())
+    MCS_number_scaled = MCS_loc_group * number_of_MCS[:, np.newaxis]
+    MCS_number = MCS_number_scaled.sum(axis=0)
+
+
+    FCS_number_scaled = FCS_loc_group * number_of_MCS_FCS[:, np.newaxis]
+    FCS_number = FCS_number_scaled.sum(axis=0)
+
+    Switch_total = 60*(r_switch_values + FCS_switch_values + MCS_switch_values)
+
+    flow_normalised = Switch_total.sum(axis=1)/link_capacity
+    flow_total = Switch_total.sum(axis=1)
+
+
+    evac_time = []
+    evac_dist = []
+    for i in range(num_od_pair):
+
+        total_time = np.dot(road_travel_time,r_switch_values[:,i])+\
+                    np.dot(road_travel_time,FCS_switch_values[:,i])+\
+                    np.dot(FCS_charging_time,FCS_switch_values[:,i])+\
+                    np.dot(road_travel_time,MCS_switch_values[:,i])+\
+                    np.dot(MCS_charging_time,MCS_switch_values[:,i])
+    
+        total_dist = np.dot(road_dist,r_switch_values[:,i])+\
+                    np.dot(road_dist,FCS_switch_values[:,i])+\
+                    np.dot(road_dist,MCS_switch_values[:,i])
+    
+        evac_time.append(total_time)
+        evac_dist.append(total_dist)
+    # print(evac_time)
+    # print(evac_dist)
 
 
 
-count_MCS1 = 0
+    ######### Plotting ################################################################################################
+    ###################################################################################################################
 
 
-for i in range(num_links):
+    ####################  Plotting the Normalised vehicle flow for edges ##############################################
+    ###################################################################################################################
 
-    if MCS_indices[i] >= 1:
-        count_MCS1 += 1
-        MCS_node1 = num_nodes+count_FCS+count_MCS1
-        G.remove_edge(basic_edges[i][0],basic_edges[i][1])
-        G.add_node(MCS_node1,color=node_color,size=node_size,MCS_num= int(MCS_number[i]),congestion=((flow_total[i])/(int(MCS_number[i])*MCS_flow_limit*(FCS_indices[i]+MCS_indices[i]+r_indices[i]))))
-        MCS_x = (0.5*pos_nodes[basic_edges[i][0]][0]) + (0.5*pos_nodes[basic_edges[i][1]][0])
-        MCS_y = (0.5*pos_nodes[basic_edges[i][0]][1]) + (0.5*pos_nodes[basic_edges[i][1]][1])
-        travel_time_temp = 0.5*road_travel_time[i]
-        road_dist_temp = 0.5*road_dist[i]
-        G.add_edges_from([(basic_edges[i][0], MCS_node1,{'flow':flow_normalised[i],'travel_time':travel_time_temp,'road_limit':link_capacity[i],'travel_dist':road_dist_temp}),\
-                        (MCS_node1, basic_edges[i][1],{'flow':flow_normalised[i],'travel_time':travel_time_temp,'road_limit':link_capacity[i],'travel_dist':road_dist_temp})])
+    G = nx.Graph()
 
+    G.add_edges_from(edge_information)
 
-        pos_nodes[MCS_node1] = (MCS_x, MCS_y)
+    for (edge, flow) in zip(basic_edges, flow_normalised):
+        # print(edge[1])
+        G.edges[edge]['flow'] = flow
 
-# count_MCS2 = 0
+    node_size = 1
+    node_color = 'black'
 
-# for jj in range(num_od_pair):
-#     for i in range(num_links):
-#         if MCS_switch_values[i,jj] == 1:
-#             count_MCS2 += 1
-#             MCS_node2 = num_nodes+count_FCS+count_MCS2
-#             G.nodes[MCS_node2]['congestion'] = ((init_flow[jj])/(int(MCS_number[i])*MCS_flow_limit))
+    for i in pos_nodes.keys():
+        if i in start_node:
+            G.nodes[i]['color'] = node_color
+            G.nodes[i]['size'] = node_size
+            G.nodes[i]['MCS_num'] = 0
+            G.nodes[i]['congestion'] = 0
 
+        elif i in goal_node:
+            G.nodes[i]['color'] = node_color
+            G.nodes[i]['size'] = node_size
+            G.nodes[i]['MCS_num'] = 0
+            G.nodes[i]['congestion'] = 0
 
-for u, v in G.edges:
-        w = G[u][v]['flow']
-
-        if w>= 0 and w<0.2:
-            G[u][v]['thickness'] = 1.5
-            G[u][v]['color'] = 'lightgreen'
-        if w>=0.2 and w<0.4:
-            G[u][v]['thickness'] = 3
-            G[u][v]['color'] = 'lawngreen'
-        if w>=0.4 and w<0.6:
-            G[u][v]['thickness'] = 4.5
-            G[u][v]['color'] = 'greenyellow'
-        if w>=0.6 and w<0.8:
-            G[u][v]['thickness'] = 6
-            G[u][v]['color'] = 'yellowgreen'
-        if w>=0.8 and w<=1:
-            G[u][v]['thickness'] = 7.5
-            G[u][v]['color'] = 'yellow'
-        if w>1 and w<1.2:
-            G[u][v]['thickness'] = 9
-            G[u][v]['color'] = 'orange'
-        if w>=1.2 and w<1.4:
-            G[u][v]['thickness'] = 10.5
-            G[u][v]['color'] = 'orangered'
-        if w>=1.4:
-            G[u][v]['thickness'] = 12
-            G[u][v]['color'] = 'red'
-
-color_range = [0,0.2,0.4,0.6,0.8,1.0,1.2,1.4,2]
-color_names = ['lightgreen','lawngreen','greenyellow','yellowgreen','yellow','orange','orangered','red']
-
-cmap = colors.ListedColormap(color_names)
-norm = colors.BoundaryNorm(color_range, cmap.N)
-
-edge_thicknesses = [G[u][v]['thickness'] for u, v in G.edges()]
-edge_colors = [G[u][v]['color'] for u, v in G.edges()]
-node_colors = [data.get('color') for _, data in G.nodes(data=True)]
-node_sizes = [data.get('size') for _, data in G.nodes(data=True)]
-
-node_labels = {list(pos_nodes.keys())[i]:list(pos_nodes.keys())[i] for i in range(num_nodes)}   # to label only basic nodes
-
-fig, axs = plt.subplots(dpi=100)
-
-plt.margins(0.1)
-
-nx.draw(G,node_color=node_colors,node_size=node_sizes,pos=pos_nodes,edge_color=edge_colors,width=edge_thicknesses,ax=axs,
-        with_labels=False,labels=node_labels,font_color="purple",font_size=10)
-# Extract edge labels
-edge_labels = nx.get_edge_attributes(G, 'road_limit')
- # Add colorbar legend
-sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
-sm.set_array([])  # Only needed for matplotlib < 3.1
-cbar = plt.colorbar(sm, ax=axs, orientation='vertical')
-cbar.set_label('Normalised Flow values', rotation=270, labelpad=30,fontsize=28) # labelpad sets the gap between label ticks and the colorlegend title
-cbar.ax.tick_params(labelsize=20)  # Change tick label font size
+        else:
+            G.nodes[i]['color'] = node_color
+            G.nodes[i]['size'] = node_size
+            G.nodes[i]['MCS_num'] = 0
+            G.nodes[i]['congestion'] = 0
 
 
-####################  Plotting the Normalised vehicle flow for charging nodes #####################################
-###################################################################################################################
-count_MCS_temp = 0
-for i in range(num_links):
+    FCS_indices = FCS_switch_values.sum(axis=1)
+    MCS_indices = MCS_switch_values.sum(axis=1)
+    r_indices = r_switch_values.sum(axis=1)
 
-    if MCS_indices[i] >= 1:
-        count_MCS_temp += 1
-        MCS_node_temp = num_nodes+count_FCS+count_MCS_temp
-        w = G.nodes[MCS_node_temp]['congestion']
+    count_FCS = 0
 
-        if w>= 0 and w<0.2:
-            G.nodes[MCS_node_temp]['size'] = 500
-            G.nodes[MCS_node_temp]['color'] = 'lightgreen'
-        if w>=0.2 and w<0.4:
-            G.nodes[MCS_node_temp]['size'] = 500
-            G.nodes[MCS_node_temp]['color'] = 'yellowgreen'
-        if w>=0.4 and w<0.6:
-            G.nodes[MCS_node_temp]['size'] = 500
-            G.nodes[MCS_node_temp]['color'] = 'darkkhaki'
-        if w>=0.6 and w<0.8:
-            G.nodes[MCS_node_temp]['size'] = 500
-            G.nodes[MCS_node_temp]['color'] = 'khaki'
-        if w>=0.8 and w<=1:
-            G.nodes[MCS_node_temp]['size'] = 500
-            G.nodes[MCS_node_temp]['color'] = 'navajowhite'
-        if w>1 and w<1.2:
-            G.nodes[MCS_node_temp]['size'] = 500
-            G.nodes[MCS_node_temp]['color'] = 'lightsalmon'
-        if w>=1.2 and w<1.4:
-            G.nodes[MCS_node_temp]['size'] = 500
-            G.nodes[MCS_node_temp]['color'] = 'salmon'
-        if w>=1.4:
-            G.nodes[MCS_node_temp]['size'] = 500
-            G.nodes[MCS_node_temp]['color'] = 'coral'
 
-for u, v in G.edges:
-    G[u][v]['thickness'] = 1
-    G[u][v]['color'] = 'black'
+    for i in range(num_links):
 
-color_range = [0,0.2,0.4,0.6,0.8,1.0,1.2,1.4,2]
-color_names = ['lightgreen','yellowgreen','darkkhaki','khaki','navajowhite','lightsalmon','salmon','coral']
+        if FCS_indices[i] >= 1:
+            count_FCS += 1
+            FCS_node = num_nodes+count_FCS
+            G.remove_edge(basic_edges[i][0],basic_edges[i][1])
+            G.add_node(FCS_node,color=node_color,size=node_size,MCS_num=int(FCS_number[i]),congestion=((flow_total[i])/((FCS_loc_flow[i])+(int(FCS_number[i])*MCS_flow_limit*(FCS_indices[i]+MCS_indices[i]+r_indices[i])))))
+            FCS_x = (0.5*pos_nodes[basic_edges[i][0]][0]) + (0.5*pos_nodes[basic_edges[i][1]][0])
+            FCS_y = (0.5*pos_nodes[basic_edges[i][0]][1]) + (0.5*pos_nodes[basic_edges[i][1]][1])
+            travel_time_temp = 0.5*road_travel_time[i]
+            road_dist_temp = 0.5*road_dist[i]
+            G.add_edges_from([(basic_edges[i][0], FCS_node,{'flow':flow_normalised[i],'travel_time':travel_time_temp,'road_limit':link_capacity[i],'travel_dist':road_dist_temp}),\
+                            (FCS_node, basic_edges[i][1],{'flow':flow_normalised[i],'travel_time':travel_time_temp,'road_limit':link_capacity[i],'travel_dist':road_dist_temp})])
 
-cmap = colors.ListedColormap(color_names)
-norm = colors.BoundaryNorm(color_range, cmap.N)
 
-edge_thicknesses = [G[u][v]['thickness'] for u, v in G.edges()]
-edge_colors = [G[u][v]['color'] for u, v in G.edges()]
-node_colors = [data.get('color') for _, data in G.nodes(data=True)]
-node_sizes = [data.get('size') for _, data in G.nodes(data=True)]
+            pos_nodes[FCS_node] = (FCS_x, FCS_y)
 
-# node_labels = {list(pos_nodes.keys())[i]:list(pos_nodes.keys())[i] for i in range(num_nodes)}   # to label only basic nodes
 
-node_labels = {
-        node: G.nodes[node]['MCS_num']
-        for node, attrs in G.nodes(data=True)
-        if attrs.get('MCS_num') > 0
-    }
 
-fig, axs = plt.subplots(dpi=100)
-nx.draw(G,node_color=node_colors,node_size=node_sizes,pos=pos_nodes,edge_color=edge_colors,width=edge_thicknesses,ax=axs,
-        with_labels=True,labels=node_labels,font_color="purple",font_size=20)
-# Extract edge labels
-edge_labels = nx.get_edge_attributes(G, 'road_limit')
-plt.margins(0.1)
- # Add colorbar legend
-sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
-sm.set_array([])  # Only needed for matplotlib < 3.1
-cbar = plt.colorbar(sm, ax=axs, orientation='vertical')
-cbar.set_label('MCS utilization ratio', rotation=270, labelpad=30,fontsize=28) # labelpad sets the gap between label ticks and the colorlegend title
-cbar.ax.tick_params(labelsize=20)  # Change tick label font size
-# plt.savefig("my_plot.png", dpi=300, bbox_inches="tight")
+    count_MCS1 = 0
 
-plt.show() 
+
+    for i in range(num_links):
+
+        if MCS_indices[i] >= 1:
+            count_MCS1 += 1
+            MCS_node1 = num_nodes+count_FCS+count_MCS1
+            G.remove_edge(basic_edges[i][0],basic_edges[i][1])
+            G.add_node(MCS_node1,color=node_color,size=node_size,MCS_num= int(MCS_number[i]),congestion=((flow_total[i])/(int(MCS_number[i])*MCS_flow_limit*(FCS_indices[i]+MCS_indices[i]+r_indices[i]))))
+            MCS_x = (0.5*pos_nodes[basic_edges[i][0]][0]) + (0.5*pos_nodes[basic_edges[i][1]][0])
+            MCS_y = (0.5*pos_nodes[basic_edges[i][0]][1]) + (0.5*pos_nodes[basic_edges[i][1]][1])
+            travel_time_temp = 0.5*road_travel_time[i]
+            road_dist_temp = 0.5*road_dist[i]
+            G.add_edges_from([(basic_edges[i][0], MCS_node1,{'flow':flow_normalised[i],'travel_time':travel_time_temp,'road_limit':link_capacity[i],'travel_dist':road_dist_temp}),\
+                            (MCS_node1, basic_edges[i][1],{'flow':flow_normalised[i],'travel_time':travel_time_temp,'road_limit':link_capacity[i],'travel_dist':road_dist_temp})])
+
+
+            pos_nodes[MCS_node1] = (MCS_x, MCS_y)
+
+    # count_MCS2 = 0
+
+    # for jj in range(num_od_pair):
+    #     for i in range(num_links):
+    #         if MCS_switch_values[i,jj] == 1:
+    #             count_MCS2 += 1
+    #             MCS_node2 = num_nodes+count_FCS+count_MCS2
+    #             G.nodes[MCS_node2]['congestion'] = ((init_flow[jj])/(int(MCS_number[i])*MCS_flow_limit))
+
+
+    for u, v in G.edges:
+            w = G[u][v]['flow']
+
+            if w>= 0 and w<0.2:
+                G[u][v]['thickness'] = 1.5
+                G[u][v]['color'] = 'lightgreen'
+            if w>=0.2 and w<0.4:
+                G[u][v]['thickness'] = 3
+                G[u][v]['color'] = 'lawngreen'
+            if w>=0.4 and w<0.6:
+                G[u][v]['thickness'] = 4.5
+                G[u][v]['color'] = 'greenyellow'
+            if w>=0.6 and w<0.8:
+                G[u][v]['thickness'] = 6
+                G[u][v]['color'] = 'yellowgreen'
+            if w>=0.8 and w<=1:
+                G[u][v]['thickness'] = 7.5
+                G[u][v]['color'] = 'yellow'
+            if w>1 and w<1.2:
+                G[u][v]['thickness'] = 9
+                G[u][v]['color'] = 'orange'
+            if w>=1.2 and w<1.4:
+                G[u][v]['thickness'] = 10.5
+                G[u][v]['color'] = 'orangered'
+            if w>=1.4:
+                G[u][v]['thickness'] = 12
+                G[u][v]['color'] = 'red'
+
+    color_range = [0,0.2,0.4,0.6,0.8,1.0,1.2,1.4,2]
+    color_names = ['lightgreen','lawngreen','greenyellow','yellowgreen','yellow','orange','orangered','red']
+
+    cmap = colors.ListedColormap(color_names)
+    norm = colors.BoundaryNorm(color_range, cmap.N)
+
+    edge_thicknesses = [G[u][v]['thickness'] for u, v in G.edges()]
+    edge_colors = [G[u][v]['color'] for u, v in G.edges()]
+    node_colors = [data.get('color') for _, data in G.nodes(data=True)]
+    node_sizes = [data.get('size') for _, data in G.nodes(data=True)]
+
+    node_labels = {list(pos_nodes.keys())[i]:list(pos_nodes.keys())[i] for i in range(num_nodes)}   # to label only basic nodes
+
+    fig, axs = plt.subplots(dpi=100)
+
+    plt.margins(0.1)
+
+    nx.draw(G,node_color=node_colors,node_size=node_sizes,pos=pos_nodes,edge_color=edge_colors,width=edge_thicknesses,ax=axs,
+            with_labels=False,labels=node_labels,font_color="purple",font_size=10)
+    # Extract edge labels
+    edge_labels = nx.get_edge_attributes(G, 'road_limit')
+     # Add colorbar legend
+    sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
+    sm.set_array([])  # Only needed for matplotlib < 3.1
+    cbar = plt.colorbar(sm, ax=axs, orientation='vertical')
+    cbar.set_label('Normalised Flow values', rotation=270, labelpad=30,fontsize=28) # labelpad sets the gap between label ticks and the colorlegend title
+    cbar.ax.tick_params(labelsize=20)  # Change tick label font size
+
+
+    ####################  Plotting the Normalised vehicle flow for charging nodes #####################################
+    ###################################################################################################################
+    count_MCS_temp = 0
+    for i in range(num_links):
+
+        if MCS_indices[i] >= 1:
+            count_MCS_temp += 1
+            MCS_node_temp = num_nodes+count_FCS+count_MCS_temp
+            w = G.nodes[MCS_node_temp]['congestion']
+
+            if w>= 0 and w<0.2:
+                G.nodes[MCS_node_temp]['size'] = 500
+                G.nodes[MCS_node_temp]['color'] = 'lightgreen'
+            if w>=0.2 and w<0.4:
+                G.nodes[MCS_node_temp]['size'] = 500
+                G.nodes[MCS_node_temp]['color'] = 'yellowgreen'
+            if w>=0.4 and w<0.6:
+                G.nodes[MCS_node_temp]['size'] = 500
+                G.nodes[MCS_node_temp]['color'] = 'darkkhaki'
+            if w>=0.6 and w<0.8:
+                G.nodes[MCS_node_temp]['size'] = 500
+                G.nodes[MCS_node_temp]['color'] = 'khaki'
+            if w>=0.8 and w<=1:
+                G.nodes[MCS_node_temp]['size'] = 500
+                G.nodes[MCS_node_temp]['color'] = 'navajowhite'
+            if w>1 and w<1.2:
+                G.nodes[MCS_node_temp]['size'] = 500
+                G.nodes[MCS_node_temp]['color'] = 'lightsalmon'
+            if w>=1.2 and w<1.4:
+                G.nodes[MCS_node_temp]['size'] = 500
+                G.nodes[MCS_node_temp]['color'] = 'salmon'
+            if w>=1.4:
+                G.nodes[MCS_node_temp]['size'] = 500
+                G.nodes[MCS_node_temp]['color'] = 'coral'
+
+    for u, v in G.edges:
+        G[u][v]['thickness'] = 1
+        G[u][v]['color'] = 'black'
+
+    color_range = [0,0.2,0.4,0.6,0.8,1.0,1.2,1.4,2]
+    color_names = ['lightgreen','yellowgreen','darkkhaki','khaki','navajowhite','lightsalmon','salmon','coral']
+
+    cmap = colors.ListedColormap(color_names)
+    norm = colors.BoundaryNorm(color_range, cmap.N)
+
+    edge_thicknesses = [G[u][v]['thickness'] for u, v in G.edges()]
+    edge_colors = [G[u][v]['color'] for u, v in G.edges()]
+    node_colors = [data.get('color') for _, data in G.nodes(data=True)]
+    node_sizes = [data.get('size') for _, data in G.nodes(data=True)]
+
+    # node_labels = {list(pos_nodes.keys())[i]:list(pos_nodes.keys())[i] for i in range(num_nodes)}   # to label only basic nodes
+
+    node_labels = {
+            node: G.nodes[node]['MCS_num']
+            for node, attrs in G.nodes(data=True)
+            if attrs.get('MCS_num') > 0
+        }
+
+    fig, axs = plt.subplots(dpi=100)
+    nx.draw(G,node_color=node_colors,node_size=node_sizes,pos=pos_nodes,edge_color=edge_colors,width=edge_thicknesses,ax=axs,
+            with_labels=True,labels=node_labels,font_color="purple",font_size=20)
+    # Extract edge labels
+    edge_labels = nx.get_edge_attributes(G, 'road_limit')
+    plt.margins(0.1)
+     # Add colorbar legend
+    sm = plt.cm.ScalarMappable(cmap=cmap, norm=norm)
+    sm.set_array([])  # Only needed for matplotlib < 3.1
+    cbar = plt.colorbar(sm, ax=axs, orientation='vertical')
+    cbar.set_label('MCS utilization ratio', rotation=270, labelpad=30,fontsize=28) # labelpad sets the gap between label ticks and the colorlegend title
+    cbar.ax.tick_params(labelsize=20)  # Change tick label font size
+    # plt.savefig("my_plot.png", dpi=300, bbox_inches="tight")
+
+    plt.show() 
