@@ -136,6 +136,7 @@ Task 5 shares project tools and findings with communities, government agencies, 
 | 5.4 |Round Table Discussion | Indicator scoring criteria and reference tables for roundtable evaluation of EV evacuation readiness.  | 📄 [Scoring Guide](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%205_/1_RoundTable_Appendix3_InteractiveSessionWK3_UCOP.pdf) |
 | 5.5 | Estimating Energy and Charging Needs for EV Evacuations | Activity for estimating EV evacuation charging energy, infrastructure, and backup-storage needs using the simulation tool.  | 📄 [Activity Guide](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%205_/2_Estimating%20Energy%20and%20Charging%20Needs%20for%20EV%20Evacuations.docx) |
 | 5.6 | Prioritization of Policies Using Q-sort |  Q-sort activity for comparing and prioritizing EV evacuation policies and strategies based on participant perspectives.  | 📄 [Activity Guide](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%205_/3_Qsorting_PriortizationPolicies.docx) |
+| 5.7 | Instruction for optimization code in Task 3 | Word document for describing the steps and details of the Python code in Task 3.  | 📄 [Instruction Document]() |
 
 ### References
 **[T5.1]** R. de Castro, S. Markolf, S. Feng, S. Kurtz, C. Robert, J. Moyalan, 
