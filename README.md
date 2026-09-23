@@ -111,7 +111,7 @@ ASME Letters in Dynamic Systems and Control.
 Task 4 identifies and prioritizes policies and best practices that local and state governments can use to improve community preparedness for emergency evacuations involving ZEVs.
 | # | Title of Resource | Resource Description | Type |
 |---|---|---|---|
-| 4.1 | ZEV Evacuation Overview / Magazine Paper |  Scientific paper for overview of challenges, research needs, and strategies for improving ZEV evacuation preparedness. |📄 [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%204_/Papers/Task4_MagazinePaper.pdf) |
+| 4.1 | ZEV Evacuation Overview / Magazine Paper |  Scientific paper [T4.1] for overview of challenges, research needs, and strategies for improving ZEV evacuation preparedness. |📄 [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%204_/Papers/Task4_MagazinePaper.pdf) |
 | 4.2 | Top 10 Policy Recommendations |  Scientific paper for recommended policies and actions for improving ZEV evacuation readiness. |📄 [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%204_/Papers/PublicPolicyBrief.pdf) |
 | 4.3 |Policy Prioritization Results | Results from evaluating and ranking policy recommendations with community partners. |🖥️ [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_/Presentations) |
 | 4.4 | Best Practices | Presentation of policy considerations for effective EV-based evacuations. |🎥 [Video](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021989736428) |
@@ -135,7 +135,7 @@ Task 5 shares project tools and findings with communities, government agencies, 
 | 5.3 | ZEV Evacuation Workshop 3 | All presentations delievered at Workshop 3 on October 2, 2025. |🖥️ [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%205_/Workshop%20%233) |
 | 5.4 |Round Table Discussion | Indicator scoring criteria and reference tables for roundtable evaluation of EV evacuation readiness.  | 📄 [Scoring Guide](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%205_/1_RoundTable_Appendix3_InteractiveSessionWK3_UCOP.pdf) |
 | 5.5 | Estimating Energy and Charging Needs for EV Evacuations | Activity for estimating EV evacuation charging energy, infrastructure, and backup-storage needs using the simulation tool.  | 📄 [Activity Guide](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%205_/2_Estimating%20Energy%20and%20Charging%20Needs%20for%20EV%20Evacuations.docx) |
-| 5.6 | Priorizxation of Policies Using Q-sort |  Q-sort activity for comparing and prioritizing EV evacuation policies and strategies based on participant perspectives.  | 📄 [Activity Guide](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%205_/3_Qsorting_PriortizationPolicies.docx) |
+| 5.6 | Prioritization of Policies Using Q-sort |  Q-sort activity for comparing and prioritizing EV evacuation policies and strategies based on participant perspectives.  | 📄 [Activity Guide](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%205_/3_Qsorting_PriortizationPolicies.docx) |
 
 ### References
 **[T5.1]** R. de Castro, S. Markolf, S. Feng, S. Kurtz, C. Robert, J. Moyalan, 
