@@ -114,7 +114,7 @@ Task 4 identifies and prioritizes policies and best practices that local and sta
 | 4.1 | ZEV Evacuation Overview / Magazine Paper |  Scientific paper for overview of challenges, research needs, and strategies for improving ZEV evacuation preparedness. |📄 [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%204_/Papers/Task4_MagazinePaper.pdf) |
 | 4.2 | Top 10 Policy Recommendations |  Scientific paper for recommended policies and actions for improving ZEV evacuation readiness. |📄 [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%204_/Papers/PublicPolicyBrief.pdf) |
 | 4.3 |Policy Prioritization Results | Results from evaluating and ranking policy recommendations with community partners. |🖥️ [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%204_/Presentations) |
-| 4.4 | Best Practices | Best-practice guidance for government agencies and emergency planners. |🎥 [Video](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021989736428) |
+| 4.4 | Best Practices | Presentation of policy considerations for effective EV-based evacuations. |🎥 [Video](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021989736428) |
 
 ### References
 **[T4.1]** R. de Castro, J. Moyalan, C. Robert, S. Markolf, S. Kurtz, F. ZareAfifi, 
