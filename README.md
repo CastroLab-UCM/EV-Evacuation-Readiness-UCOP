@@ -85,10 +85,10 @@ Task 3 develops optimization and simulation methods for coordinating evacuation 
 | # | Title of Resource | Resource Description | Type |
 |---|---|---|---|
 | 3.1 | ZEV Evacuation Optimization Model |  Scientific papers [T3.1-T3.2] for optimization framework of jointly considering evacuation routing, scheduling, and charging decisions. |📄 [Paper1](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Papers/Optimization_of_Electric_Vehicle_Evacuation_Integrating_Mobile_Charging_Stations_and_Considering_Vehicle_Diversity.pdf) / 📄 [Paper2](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Papers/Optimization_of_Electric_Vehicle_Evacuation_Integrating_Mobile_Charging_Stations_and_Considering_Vehicle_Diversity.pdf) |
-| 3.2 | Mariposa County Case Study | Case study [T3.3] evaluating ZEV evacuation strategies under wildfire evacuation scenarios using a calibrated traffic-simulation model. |📄 [Paper](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Zoom%20Recording%20WK%233/4_Evacuation%20Scenario%20Design%20For%20Mariposa.pdf) |
+| 3.2 | Mariposa County Case Study | Case study evaluating ZEV evacuation strategies under wildfire evacuation scenarios using a calibrated traffic-simulation model. |📄 [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Zoom%20Recording%20WK%233/4_Evacuation%20Scenario%20Design%20For%20Mariposa.pdf) |
 | 3.3 | Evacuation Planning and Control Code | Python code for optimal control of emergency evacuations leveraging equivalent circuit models |💻 [Code](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%203_/Code_Software_/ECM_Optimization) |
-| 3.4 | Mobile Charging Analysis | A tool for analysis of mobile charging-station deployment during emergency evacuation. |🖥️ [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Presentations/MECC2025_ECM_optimization_Joseph_Moyalan.pptx) |
-| 3.5 | Mariposa Evacuation Scenario Modeling | A video for modeling a real-world evacuation scenario in Mariposa|🎥 [Video](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021998232416)
+| 3.4 | Mobile Charging Analysis | Analysis of optimal mobile charging-station deployment during emergency evacuation. |🖥️ [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Presentations/MECC2025_ECM_optimization_Joseph_Moyalan.pptx) |
+| 3.5 | Mariposa Evacuation Scenario Modeling | A video describing the modeling of a real-world evacuation scenario in Mariposa|🎥 [Video](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021998232416)
 
 ### References
 
