@@ -46,7 +46,7 @@ The framework provides multi-tiered layers to balance computational complexity w
 Install required dependencies via `pip`:
 
 ```bash
-pip install pyomo igraph numpy pandas openpyxl pynverse matplotlib
+pip install igraph numpy pandas openpyxl pynverse matplotlib
 ```
 
 ---
