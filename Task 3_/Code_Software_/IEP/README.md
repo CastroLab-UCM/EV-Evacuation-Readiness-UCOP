@@ -20,6 +20,8 @@ The framework provides multi-tiered layers to balance computational complexity w
 ```text
 ``text
 .
+```text
+.
 ├── configs.py                    # Platform paths, layer selection, and simulation parameters
 ├── constants.py                  # Physical constants (vehicle range, battery spec, hazard locations)
 ├── layer_lib_test.py             # Unit tests for route sorting and data structures
@@ -29,14 +31,13 @@ The framework provides multi-tiered layers to balance computational complexity w
 ├── rules.py                      # Pyomo objective functions and mathematical constraints
 ├── sumo_lib_test.py              # Unit tests for SUMO network generation logic
 ├── sumo_lib.py                   # Network XML generation and SUMO co-simulation runner
-├── mariposa_small/               # Map definitions and network data folder
-│   ├── mariposa_small_od_demand.csv  # OD pairs and demand size
-│   ├── mariposa_small_xy.csv         # Spatial node coordinates
-│   ├── mariposa_small.csv            # Graph edge definitions, weights, and road capacities
-│   ├── mariposa_small.edges.xml      # SUMO edge XML definitions
-│   └── mariposa_small.nodes.xml      # SUMO node XML definitions
+└── mariposa_small/               # Map definitions and network data folder
+    ├── mariposa_small_od_demand.csv  # OD pairs and demand size
+    ├── mariposa_small_xy.csv         # Spatial node coordinates
+    ├── mariposa_small.csv            # Graph edge definitions, weights, and road capacities
+    ├── mariposa_small.edges.xml      # SUMO edge XML definitions
+    └── mariposa_small.nodes.xml      # SUMO node XML definitions
 ```
-
 ---
 
 ## Requirements & Dependencies
