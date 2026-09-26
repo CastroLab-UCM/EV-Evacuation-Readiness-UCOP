@@ -23,7 +23,7 @@ The framework provides multi-tiered layers to balance computational complexity w
 ├── layer_lib_test.py             # Unit tests for route sorting and data structures
 ├── layer_lib.py                  # Core optimization solver routines and data processing
 ├── main.py                       # Primary entry point for multi-layer optimization runs
-├── rules.py                      # Pyomo objective functions and mathematical constraints
+├── rules.py                      # objective functions and mathematical constraints
 ├── sumo_lib_test.py              # Unit tests for SUMO network generation logic
 ├── sumo_lib.py                   # Network XML generation and SUMO co-simulation runner
 └── mariposa_small/               # Map definitions and network data folder
