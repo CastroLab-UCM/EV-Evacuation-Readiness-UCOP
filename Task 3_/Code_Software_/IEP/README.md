@@ -29,7 +29,7 @@ The framework provides multi-tiered layers to balance computational complexity w
 ├── rules.py                      # Pyomo objective functions and mathematical constraints
 ├── sumo_lib_test.py              # Unit tests for SUMO network generation logic
 ├── sumo_lib.py                   # Network XML generation and SUMO co-simulation runner
-├── map/                          # Map definitions and network data folder
+├── mariposa_small/               # Map definitions and network data folder
 │   ├── mariposa_small_od_demand.csv  # OD pairs and demand size
 │   ├── mariposa_small_xy.csv         # Spatial node coordinates
 │   ├── mariposa_small.csv            # Graph edge definitions, weights, and road capacities
