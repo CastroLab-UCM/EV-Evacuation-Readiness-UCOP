@@ -29,6 +29,7 @@ The framework provides multi-tiered layers to balance computational complexity w
 ├── main_baseline.py    # Dedicated runner for baseline heuristic executions
 ├── layer_lib_test.py   # Unit tests for route sorting and data structures
 └── sumo_lib_test.py    # Unit tests for SUMO network generation logic
+└── mariposa_small.csv  # Map
 ```
 
 ---
