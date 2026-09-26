@@ -22,7 +22,6 @@ The framework provides multi-tiered layers to balance computational complexity w
 ├── constants.py                  # Physical constants (vehicle range, battery spec, hazard locations)
 ├── layer_lib_test.py             # Unit tests for route sorting and data structures
 ├── layer_lib.py                  # Core optimization solver routines and data processing
-├── main_baseline.py              # Dedicated runner for baseline heuristic executions
 ├── main.py                       # Primary entry point for multi-layer optimization runs
 ├── rules.py                      # Pyomo objective functions and mathematical constraints
 ├── sumo_lib_test.py              # Unit tests for SUMO network generation logic
