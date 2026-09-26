@@ -18,16 +18,23 @@ The framework provides multi-tiered layers to balance computational complexity w
 ## Directory Structure
 
 ```text
-├── configs.py          # Platform paths, layer selection, and simulation parameters
-├── constants.py        # Physical constants (vehicle range, battery spec, hazard locations)
-├── rules.py            # Pyomo objective functions and mathematical constraints
-├── layer_lib.py        # Core optimization solver routines and data processing
-├── sumo_lib.py         # Network XML generation and SUMO co-simulation runner
-├── main.py             # Primary entry point for multi-layer optimization runs
-├── main_baseline.py    # Dedicated runner for baseline heuristic executions
-├── layer_lib_test.py   # Unit tests for route sorting and data structures
-└── sumo_lib_test.py    # Unit tests for SUMO network generation logic
-└── mariposa_small.csv  # Map
+``text
+.
+├── configs.py                    # Platform paths, layer selection, and simulation parameters
+├── constants.py                  # Physical constants (vehicle range, battery spec, hazard locations)
+├── layer_lib_test.py             # Unit tests for route sorting and data structures
+├── layer_lib.py                  # Core optimization solver routines and data processing
+├── main_baseline.py              # Dedicated runner for baseline heuristic executions
+├── main.py                       # Primary entry point for multi-layer optimization runs
+├── rules.py                      # Pyomo objective functions and mathematical constraints
+├── sumo_lib_test.py              # Unit tests for SUMO network generation logic
+├── sumo_lib.py                   # Network XML generation and SUMO co-simulation runner
+├── map/                          # Map definitions and network data folder
+│   ├── mariposa_small_od_demand.csv  # OD pairs and demand size
+│   ├── mariposa_small_xy.csv         # Spatial node coordinates
+│   ├── mariposa_small.csv            # Graph edge definitions, weights, and road capacities
+│   ├── mariposa_small.edges.xml      # SUMO edge XML definitions
+│   └── mariposa_small.nodes.xml      # SUMO node XML definitions
 ```
 
 ---
