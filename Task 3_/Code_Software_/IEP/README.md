@@ -13,8 +13,6 @@ The framework provides multi-tiered layers to balance computational complexity w
 * **Layer 2:** Strategic optimization layer determining global placement of mobile/fixed charging stations.
 * **Layer 3 (IEP - Iterative Evacuation Plan):** Sequential OD pair routing with capacity constraints, queueing delays (BPR + M/M/c queue approximations), and pre-assigned station tracking.
 * **Layer 4 (JEP - Joint Evacuation Plan):** Integrated optimization combining route choice and charging deployment decisions simultaneously.
-* **Layer 5:** Extended flow formulation considering dynamic route choice adjustments.
-
 ---
 
 ## Directory Structure
