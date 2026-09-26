@@ -72,25 +72,11 @@ CHARGER_PROT_NUM = 5  # Number of chargers per station
 
 ## Quick Start
 
-### 1. Running the Main Optimization Pipeline
+### Running the Main Optimization Pipeline
 To run the active layer mode configured in `configs.py`:
 
 ```bash
 python main.py
-```
-
-### 2. Running Baseline Comparison Mode
-To execute the fast heuristic baseline directly:
-
-```bash
-python main_baseline.py
-```
-
-### 3. Running Unit Tests
-To verify graph processing and routing logic:
-
-```bash
-python -m unittest discover -p "*_test.py"
 ```
 
 ---
