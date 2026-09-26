@@ -16,11 +16,6 @@ The framework provides multi-tiered layers to balance computational complexity w
 ---
 
 ## Directory Structure
-
-```text
-``text
-.
-```text
 .
 ├── configs.py                    # Platform paths, layer selection, and simulation parameters
 ├── constants.py                  # Physical constants (vehicle range, battery spec, hazard locations)
