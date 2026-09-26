@@ -37,8 +37,8 @@ The framework provides multi-tiered layers to balance computational complexity w
 
 ### Core Requirements
 * **Python 3.10+**
-* **Gurobi Optimizer** (with valid license)
-* **SUMO** (optional, required only for micro-simulation runs)
+* **Gurobi Optimizer** (with valid license) https://www.gurobi.com/downloads/
+* **SUMO** (optional, required only for micro-simulation runs) https://sumo.dlr.de/docs/Installing/index.html
 
 ### Python Libraries
 Install required dependencies via `pip`:
