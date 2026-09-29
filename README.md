@@ -61,7 +61,7 @@ Task 2 develops decision-support tools to estimate energy and charging requireme
 | 2.1 | Energy and Charging Need Calculator | Excel tool for estimating energy demand and charging requirements during ZEV evacuations. |📊 [Excel](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/3_Tool1_EnergyAndChargingNeeds.xlsm)/ [Excel-pdf-version](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%202_/Presentations/3_Tool1_EnergyAndChargingNeeds.pdf) |
 | 2.2 | Backup Energy Analysis |  Scientific papers [T2.1-T2.3] describing  backup-energy options for EV charging when grid power is unavailable. | 📄 [Paper 2.1](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%202_/Papers/VPPC24_Planning_for_electric-vehicle_evacuations_energy_infrastructure_and_storage_needs.pdf) / [Paper 2.2](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%202_/Papers/EESAT2025_Comparative_Analysis_of_Backup_Energy_Solutions_for_Electric_Vehicle_Evacuations_During_Grid_Failures.pdf) / [Paper 2.3](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%202_/Papers/MWSCAS_Sizing_and_Siting_2024.pdf) |
 | 2.3 | Infrastructure Investment Analysis | Matlab code for estimating charging needs during EV evacuations (based on [T2.1] |💻 [Code](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%202_/Code_Software/MATLAB) |
-| 2.4 | Power-grid Resilience Analysis | Estimating energy and charging requirements under uncertainties during EV evacuations. |🖥️ [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%202_/Presentations/3_EnergyAndChargingNeeds.pdf) /🎥 [Video](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021988445944) |
+| 2.4 | Power-grid Resilience Analysis | Estimating energy and charging requirements under uncertainties during EV evacuations. | [Paper 2.4](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%202_/Papers/ITEC_2026__Power_Systems_Resilience__EV_Evacuation_%20(12).pdf) / 🖥️ [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%202_/Presentations/3_EnergyAndChargingNeeds.pdf) /🎥 [Video](https://ucmerced.app.box.com/s/yj6s6nhwfa6y7yzuir7r5pahd0yoo8hr/file/2021988445944) |
 
 ### References
 
@@ -75,6 +75,8 @@ Task 2 develops decision-support tools to estimate energy and charging requireme
 
 **[T2.3]** S. Aliamooei-Lakeh, K. Corzine, L. Parsa, and R. de Castro (2024), *"A Multi-Objective Optimization Problem for Sizing and Siting of Power Systems with the Integration of DG Units, EV Charging Stations, and ESSs,"*  
 2024 IEEE 67th International Midwest Symposium on Circuits and Systems (MWSCAS), Springfield, MA, USA.
+
+**[T2.4]** S. Aliamooei-Lakeh, K. Corzine, L. Parsa, and R. de Castro (2026), *"Electric Vehicle-Integrated Optimal Power Flow for Emergency Charging Coordination and Power System Resilience,"*  2026 IEEE Transportation Electrification Conference & Expo (ITEC) & Electric Aircraft Technologies Symposium, Novi, MI, USA.
 
 ---
 
