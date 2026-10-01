@@ -1,0 +1,14 @@
+schema: evac/scenario/v1
+id: mariposa/homogeneous
+resources:
+  root: ..
+map: mariposa
+assets:
+  vehicles: mariposa
+  mobile_chargers: mariposa
+demand: mariposa
+supply: mariposa
+traffic: mariposa
+evaluation: completion
+overlays:
+- mariposa

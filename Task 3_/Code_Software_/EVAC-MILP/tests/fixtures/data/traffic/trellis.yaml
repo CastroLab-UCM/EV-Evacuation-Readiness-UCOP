@@ -1,0 +1,4 @@
+schema: evac/traffic/v1
+elapsed_exogenous_profile:
+  kind: constant
+  multiplier: 1.0

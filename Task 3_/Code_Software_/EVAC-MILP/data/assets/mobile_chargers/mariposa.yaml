@@ -1,0 +1,10 @@
+schema: evac/mobile-charger-catalog/v1
+units:
+  battery: kWh
+  power: kW
+types:
+  mcs-420:
+    battery_kwh: 420.0
+    power_kw: 40.0
+    port_count: 5
+    power_scope: per_port

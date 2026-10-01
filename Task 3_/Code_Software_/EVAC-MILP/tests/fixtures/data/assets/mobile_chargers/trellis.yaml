@@ -1,0 +1,10 @@
+schema: evac/mobile-charger-catalog/v1
+units:
+  battery: kWh
+  power: kW
+types:
+  example_mcs:
+    battery_kwh: 100.0
+    power_kw: 50.0
+    port_count: 2
+    power_scope: per_port

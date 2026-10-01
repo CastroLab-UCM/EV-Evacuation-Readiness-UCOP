@@ -1,0 +1,32 @@
+schema: evac/scenario-overlay/v1
+soc_bounds:
+  vehicle:
+    min: 0.1
+    max: 1.0
+  mobile_charger:
+    min: 0.0
+    max: 1.0
+grouping:
+  requested_cluster_count: 1
+  seed: 42
+route_selection:
+  charging_increment_seconds: 60
+  charging_stop_limit: 1
+  geographical_path_limit: 4
+  charging_path_limit: 8
+numerical_policy:
+  event_time_tolerance_seconds: 1.0e-06
+charging_physics:
+  charging_efficiency: 0.9
+  mcs_discharge_efficiency: 1.0
+charging_contention:
+  queueing: forbidden
+  provider_dispatch: stable_provider_id_v1
+departure_windows:
+  count: 4
+  size_seconds: 60
+mcs_site_limits:
+  '1': 0
+  '2': 1
+  '3': 1
+  '4': 0

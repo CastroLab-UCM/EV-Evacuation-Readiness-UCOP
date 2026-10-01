@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "evac-planning"
+version = "0.1.0"
+description = "MILP evacuation planning with mobile charging stations"
+requires-python = ">=3.11"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Xuchang Tang"}]
+dependencies = ["numpy>=1.26", "scipy>=1.11", "pandas>=2", "networkx>=3", "numba>=0.59", "PyYAML>=6", "gurobipy>=12"]
+
+[project.optional-dependencies]
+notebook = ["jupyterlab>=4", "ipykernel>=6", "matplotlib>=3.8"]
+test = ["pytest>=8", "nbclient>=0.10"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

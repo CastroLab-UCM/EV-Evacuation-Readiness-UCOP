@@ -1,0 +1,11 @@
+map_id: mariposa
+display_name: Mariposa
+network: network.geojson
+coordinate_system: source_local_cartesian
+coordinate_units: m
+directionality: directed_edge_records
+charger_absence: no_charger
+units:
+  distance: m
+  free_flow_time: s
+  power: kW

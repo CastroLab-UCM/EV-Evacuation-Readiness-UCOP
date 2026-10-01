@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="650" viewBox="0 0 960 650" role="img" aria-labelledby="map-title" style="max-width:100%;height:auto" font-family="Arial, sans-serif" fill="#263745"><title id="map-title">Mariposa: a hypothetical evacuation</title><rect width="960" height="650" fill="white"/><text x="36" y="34" font-size="22" font-weight="600">Mariposa: a hypothetical evacuation</text><line x1="73.729" y1="267.862" x2="237.118" y2="139.190" stroke="#aeb7bc" stroke-width="1.500"><title>0</title></line>
+<line x1="237.118" y1="139.190" x2="263.540" y2="92.518" stroke="#aeb7bc" stroke-width="1.500"><title>1</title></line>
+<line x1="362.288" y1="123.487" x2="388.206" y2="349.713" stroke="#aeb7bc" stroke-width="1.500"><title>10</title></line>
+<line x1="388.206" y1="349.713" x2="412.760" y2="469.010" stroke="#aeb7bc" stroke-width="1.500"><title>11</title></line>
+<line x1="388.206" y1="349.713" x2="532.271" y2="366.825" stroke="#aeb7bc" stroke-width="1.500"><title>12</title></line>
+<line x1="532.271" y1="366.825" x2="476.281" y2="556.544" stroke="#aeb7bc" stroke-width="1.500"><title>13</title></line>
+<line x1="532.271" y1="366.825" x2="412.760" y2="469.010" stroke="#aeb7bc" stroke-width="1.500"><title>14</title></line>
+<line x1="476.281" y1="556.544" x2="313.833" y2="572.000" stroke="#aeb7bc" stroke-width="1.500"><title>15</title></line>
+<line x1="412.760" y1="469.010" x2="313.833" y2="572.000" stroke="#aeb7bc" stroke-width="1.500"><title>16</title></line>
+<line x1="237.118" y1="139.190" x2="73.729" y2="267.862" stroke="#aeb7bc" stroke-width="1.500"><title>17</title></line>
+<line x1="263.540" y1="92.518" x2="237.118" y2="139.190" stroke="#aeb7bc" stroke-width="1.500"><title>18</title></line>
+<line x1="317.434" y1="131.744" x2="263.540" y2="92.518" stroke="#aeb7bc" stroke-width="1.500"><title>19</title></line>
+<line x1="263.540" y1="92.518" x2="317.434" y2="131.744" stroke="#aeb7bc" stroke-width="1.500"><title>2</title></line>
+<line x1="339.161" y1="82.000" x2="263.540" y2="92.518" stroke="#aeb7bc" stroke-width="1.500"><title>20</title></line>
+<line x1="317.434" y1="131.744" x2="339.161" y2="82.000" stroke="#aeb7bc" stroke-width="1.500"><title>21</title></line>
+<line x1="362.288" y1="123.487" x2="339.161" y2="82.000" stroke="#aeb7bc" stroke-width="1.500"><title>22</title></line>
+<line x1="362.288" y1="123.487" x2="317.434" y2="131.744" stroke="#aeb7bc" stroke-width="1.500"><title>23</title></line>
+<line x1="362.288" y1="123.487" x2="531.167" y2="215.860" stroke="#aeb7bc" stroke-width="1.500"><title>24</title></line>
+<line x1="388.206" y1="349.713" x2="531.167" y2="215.860" stroke="#aeb7bc" stroke-width="1.500"><title>25</title></line>
+<line x1="532.271" y1="366.825" x2="531.167" y2="215.860" stroke="#aeb7bc" stroke-width="1.500"><title>26</title></line>
+<line x1="388.206" y1="349.713" x2="362.288" y2="123.487" stroke="#aeb7bc" stroke-width="1.500"><title>27</title></line>
+<line x1="412.760" y1="469.010" x2="388.206" y2="349.713" stroke="#aeb7bc" stroke-width="1.500"><title>28</title></line>
+<line x1="532.271" y1="366.825" x2="388.206" y2="349.713" stroke="#aeb7bc" stroke-width="1.500"><title>29</title></line>
+<line x1="263.540" y1="92.518" x2="339.161" y2="82.000" stroke="#aeb7bc" stroke-width="1.500"><title>3</title></line>
+<line x1="476.281" y1="556.544" x2="532.271" y2="366.825" stroke="#aeb7bc" stroke-width="1.500"><title>30</title></line>
+<line x1="412.760" y1="469.010" x2="532.271" y2="366.825" stroke="#aeb7bc" stroke-width="1.500"><title>31</title></line>
+<line x1="313.833" y1="572.000" x2="476.281" y2="556.544" stroke="#aeb7bc" stroke-width="1.500"><title>32</title></line>
+<line x1="313.833" y1="572.000" x2="412.760" y2="469.010" stroke="#aeb7bc" stroke-width="1.500"><title>33</title></line>
+<line x1="339.161" y1="82.000" x2="317.434" y2="131.744" stroke="#aeb7bc" stroke-width="1.500"><title>4</title></line>
+<line x1="339.161" y1="82.000" x2="362.288" y2="123.487" stroke="#aeb7bc" stroke-width="1.500"><title>5</title></line>
+<line x1="317.434" y1="131.744" x2="362.288" y2="123.487" stroke="#aeb7bc" stroke-width="1.500"><title>6</title></line>
+<line x1="531.167" y1="215.860" x2="362.288" y2="123.487" stroke="#aeb7bc" stroke-width="1.500"><title>7</title></line>
+<line x1="531.167" y1="215.860" x2="388.206" y2="349.713" stroke="#aeb7bc" stroke-width="1.500"><title>8</title></line>
+<line x1="531.167" y1="215.860" x2="532.271" y2="366.825" stroke="#aeb7bc" stroke-width="1.500"><title>9</title></line>
+<g aria-label="Node 1">
+<rect x="66.729" y="260.862" width="14" height="14" fill="#2e7964" stroke="white" stroke-width="1.5"><title>Safe destination: 300 EVs</title></rect>
+<text x="92.729" y="271.862" font-size="14" font-weight="600">1</text>
+<text x="73.729" y="242.862" font-size="13" text-anchor="middle" paint-order="stroke" stroke="white" stroke-width="4">300 EVs</text>
+</g>
+<g aria-label="Node 10">
+<rect x="469.281" y="549.544" width="14" height="14" fill="#2e7964" stroke="white" stroke-width="1.5"><title>Safe destination: 300 EVs</title></rect>
+<text x="495.281" y="560.544" font-size="14" font-weight="600">10</text>
+<text x="476.281" y="531.544" font-size="13" text-anchor="middle" paint-order="stroke" stroke="white" stroke-width="4">300 EVs</text>
+</g>
+<g aria-label="Node 11">
+<circle cx="412.760" cy="469.010" r="5" fill="#465663"/>
+<text x="431.760" y="473.010" font-size="14" font-weight="600">11</text>
+</g>
+<g aria-label="Node 12">
+<circle cx="313.833" cy="572.000" r="5" fill="#465663"/>
+<text x="332.833" y="576.000" font-size="14" font-weight="600">12</text>
+</g>
+<g aria-label="Node 2">
+<circle cx="237.118" cy="139.190" r="5" fill="#465663"/>
+<text x="256.118" y="143.190" font-size="14" font-weight="600">2</text>
+</g>
+<g aria-label="Node 3">
+<circle cx="263.540" cy="92.518" r="16" fill="none" stroke="#ad7a21" stroke-width="1.5" stroke-dasharray="4 3"><title>Eligible MCS site: up to 5 units</title></circle>
+<circle cx="263.540" cy="92.518" r="5" fill="#465663"/>
+<text x="282.540" y="96.518" font-size="14" font-weight="600">3</text>
+</g>
+<g aria-label="Node 4">
+<circle cx="339.161" cy="82.000" r="16" fill="none" stroke="#ad7a21" stroke-width="1.5" stroke-dasharray="4 3"><title>Eligible MCS site: up to 5 units</title></circle>
+<path d="M 339.161,73.000 l 9,17 h -18 Z" fill="#b64b45" stroke="white" stroke-width="1.5"><title>Threatened origin: 600 EVs</title></path>
+<text x="358.161" y="86.000" font-size="14" font-weight="600">4</text>
+<rect x="384.161" y="76.000" width="12" height="12" rx="2" fill="#256a98"/><text x="390.161" y="85.000" fill="white" font-size="9" text-anchor="middle">C</text><text x="401.161" y="86.000" fill="#256a98" font-size="13" paint-order="stroke" stroke="white" stroke-width="3">20 ports</text>
+<text x="339.161" y="57.000" font-size="13" text-anchor="middle" paint-order="stroke" stroke="white" stroke-width="4">600 EVs</text>
+</g>
+<g aria-label="Node 5">
+<circle cx="317.434" cy="131.744" r="16" fill="none" stroke="#ad7a21" stroke-width="1.5" stroke-dasharray="4 3"><title>Eligible MCS site: up to 5 units</title></circle>
+<circle cx="317.434" cy="131.744" r="5" fill="#465663"/>
+<text x="336.434" y="135.744" font-size="14" font-weight="600">5</text>
+</g>
+<g aria-label="Node 6">
+<circle cx="531.167" cy="215.860" r="16" fill="none" stroke="#ad7a21" stroke-width="1.5" stroke-dasharray="4 3"><title>Eligible MCS site: up to 5 units</title></circle>
+<circle cx="531.167" cy="215.860" r="5" fill="#465663"/>
+<text x="550.167" y="219.860" font-size="14" font-weight="600">6</text>
+<rect x="495.167" y="237.860" width="12" height="12" rx="2" fill="#256a98"/><text x="501.167" y="246.860" fill="white" font-size="9" text-anchor="middle">C</text><text x="512.167" y="247.860" fill="#256a98" font-size="13" paint-order="stroke" stroke="white" stroke-width="3">20 ports</text>
+</g>
+<g aria-label="Node 7">
+<circle cx="362.288" cy="123.487" r="16" fill="none" stroke="#ad7a21" stroke-width="1.5" stroke-dasharray="4 3"><title>Eligible MCS site: up to 5 units</title></circle>
+<circle cx="362.288" cy="123.487" r="5" fill="#465663"/>
+<text x="381.288" y="127.487" font-size="14" font-weight="600">7</text>
+</g>
+<g aria-label="Node 8">
+<circle cx="388.206" cy="349.713" r="16" fill="none" stroke="#ad7a21" stroke-width="1.5" stroke-dasharray="4 3"><title>Eligible MCS site: up to 5 units</title></circle>
+<circle cx="388.206" cy="349.713" r="5" fill="#465663"/>
+<text x="407.206" y="353.713" font-size="14" font-weight="600">8</text>
+</g>
+<g aria-label="Node 9">
+<circle cx="532.271" cy="366.825" r="5" fill="#465663"/>
+<text x="551.271" y="370.825" font-size="14" font-weight="600">9</text>
+<rect x="496.271" y="388.825" width="12" height="12" rx="2" fill="#256a98"/><text x="502.271" y="397.825" fill="white" font-size="9" text-anchor="middle">C</text><text x="513.271" y="398.825" fill="#256a98" font-size="13" paint-order="stroke" stroke="white" stroke-width="3">40 ports</text>
+</g>
+<text x="610" y="95" font-size="17" font-weight="600">Reading the network</text>
+<path d="M 620,126 l 8,16 h -16 Z" fill="#b64b45"/>
+<text x="644" y="140" font-size="14" font-weight="600">Threatened origin</text>
+<text x="644" y="161" font-size="11" fill="#5b6770">Vehicles leave from here.</text>
+<rect x="613" y="195" width="14" height="14" fill="#2e7964"/>
+<text x="644" y="206" font-size="14" font-weight="600">Safe destination</text>
+<text x="644" y="227" font-size="11" fill="#5b6770">Vehicles finish their journeys here.</text>
+<rect x="613" y="261" width="14" height="14" rx="2" fill="#256a98"/><text x="620" y="272" text-anchor="middle" fill="white" font-size="11">C</text>
+<text x="644" y="272" font-size="14" font-weight="600">Fixed charging station</text>
+<text x="644" y="293" font-size="11" fill="#5b6770">The number gives charging ports.</text>
+<circle cx="620" cy="334" r="11" fill="none" stroke="#ad7a21" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="644" y="338" font-size="14" font-weight="600">Eligible MCS site</text>
+<text x="644" y="359" font-size="11" fill="#5b6770">A possible location, not a deployment.</text>
+<line x1="610" y1="400" x2="630" y2="400" stroke="#aeb7bc" stroke-width="3"/>
+<text x="644" y="404" font-size="14" font-weight="600">Road connection</text>
+<text x="644" y="425" font-size="11" fill="#5b6770">Directions and distances are in the inputs.</text>
+<text x="48" y="625" font-size="12" fill="#5b6770">Supplied node geometry; lines connect network nodes and do not trace road alignments.</text></svg>

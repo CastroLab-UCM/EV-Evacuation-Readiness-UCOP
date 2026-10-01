@@ -1,0 +1,11 @@
+include README.md LICENSE
+recursive-include data *.md *.yaml *.csv *.geojson
+recursive-include example *.ipynb *.svg
+recursive-include docs *.md *.docx
+recursive-include tests *.py *.yaml *.csv *.geojson
+
+prune _PENDING_DELETION
+prune build
+prune dist
+prune results
+global-exclude __pycache__ *.py[cod] *.nbc *.nbi .DS_Store
