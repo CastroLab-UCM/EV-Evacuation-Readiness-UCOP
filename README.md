@@ -86,7 +86,7 @@ Task 3 develops optimization and simulation methods for coordinating evacuation 
 
 | # | Title of Resource | Resource Description | Type |
 |---|---|---|---|
-| 3.1 | ZEV Evacuation Optimization Model |  Scientific papers [T3.1-T3.2] for optimization framework of jointly considering evacuation routing, scheduling, and charging decisions. |📄 [Paper 3.1](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Papers/Enhancing%20Large-Scale%20Evacuations%20of%20Electric%20Vehicles%20through%20Integration%20of%20Mobile%20Charging%20Stations.pdf) / 📄 [Paper 3.2](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Papers/Optimization%20of%20Electric%20Vehicle%20Evacuation%20Integrating%20Mobile%20Charging%20Stations%20and%20Considering%20Vehicle%20Diversity.pdf) / 📄 [Paper 3.3](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Papers/ECM_emergency_evacuation_Joseph.pdf)|
+| 3.1 | ZEV Evacuation Optimization Model |  Scientific papers [T3.1-T3.2] for optimization framework of jointly considering evacuation routing, scheduling, and charging decisions. |📄 [Paper 3.1](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Papers/Enhancing%20Large-Scale%20Evacuations%20of%20Electric%20Vehicles%20through%20Integration%20of%20Mobile%20Charging%20Stations.pdf) / 📄 [Paper 3.2](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Papers/Optimization%20of%20Electric%20Vehicle%20Evacuation%20Integrating%20Mobile%20Charging%20Stations%20and%20Considering%20Vehicle%20Diversity.pdf) / 📄 [Paper 3.3](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Papers/ECM_emergency_evacuation_Joseph.pdf) / 📄 [Paper 3.4](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Papers/Iterative_and_Infrastructure_Aware_Planning_for_Zero_Emission_Vehicles.pdf)|
 | 3.2 | Mariposa County Case Study | Case study evaluating ZEV evacuation strategies under wildfire evacuation scenarios using a calibrated traffic-simulation model. |📄 [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Zoom%20Recording%20WK%233/4_Evacuation%20Scenario%20Design%20For%20Mariposa.pdf) |
 | 3.3 | Evacuation Planning and Control Code | Python code for optimal control of emergency evacuations leveraging equivalent circuit models [T3.3] |💻 [Code](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/tree/main/Task%203_/Code_Software_/ECM_Optimization) |
 | 3.4 | Mobile Charging Analysis | Analysis of optimal mobile charging-station deployment during emergency evacuation. |🖥️ [Presentation](https://github.com/CastroLab-UCM/EV-Evacuation-Readiness-UCOP/blob/main/Task%203_/Presentations/MECC2025_ECM_optimization_Joseph_Moyalan.pdf) |
@@ -105,6 +105,10 @@ Task 3 develops optimization and simulation methods for coordinating evacuation 
 **[T3.3]** J. Moyalan, R. de Castro, S. Feng, X. Tang, X. Lin, and S. Moura (2025), 
 *"Optimal Planning of Emergency Evacuations Leveraging Equivalent Circuit Models,"* 
 ASME Letters in Dynamic Systems and Control.
+
+**[T3.4]** S. Feng, J. Moyalan, R. de Castro, X. Tang, X. Lin, Q. Gan, S. Moura, and S. Markolf (2026), 
+*"Iterative and Infrastructure-Aware Planning for Zero-Emission Vehicle Evacuations,"* 
+Under review.
 
 ---
 
