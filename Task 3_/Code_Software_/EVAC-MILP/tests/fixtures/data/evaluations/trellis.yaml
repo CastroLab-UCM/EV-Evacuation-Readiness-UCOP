@@ -1,5 +1,0 @@
-schema: evac/evaluation/v2
-objective:
-  name: completion_time
-  aggregation: mean
-  unit: s
