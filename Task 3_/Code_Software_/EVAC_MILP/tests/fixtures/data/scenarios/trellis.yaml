@@ -1,0 +1,15 @@
+schema: evac/scenario/v1
+id: public/trellis
+resources:
+  root: ..
+map: trellis
+assets:
+  vehicles: trellis
+  mobile_chargers: trellis
+demand: trellis
+supply: trellis
+traffic: trellis
+evaluation: trellis
+overlays:
+- trellis-shared
+- trellis

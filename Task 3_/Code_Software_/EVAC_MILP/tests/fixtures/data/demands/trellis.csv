@@ -1,0 +1,2 @@
+cohort_id,vehicle_type_id,speed_m_per_second,initial_soc,origin_node_id,destination_node_id,size
+public,example_ev,20.0,0.5,1,4,2

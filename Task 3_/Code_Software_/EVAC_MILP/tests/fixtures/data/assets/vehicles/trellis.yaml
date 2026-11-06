@@ -1,0 +1,8 @@
+schema: evac/vehicle-catalog/v1
+units:
+  battery: kWh
+  efficiency: m/kWh
+types:
+  example_ev:
+    battery_kwh: 60.0
+    efficiency_m_per_kwh: 5000.0

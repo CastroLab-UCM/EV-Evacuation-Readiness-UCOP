@@ -1,0 +1,1040 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10884.026377444576,
+          -24642.96293981548
+        ]
+      },
+      "properties": {
+        "node_id": "1",
+        "infrastructure": {
+          "has_charger": false,
+          "ports": 0,
+          "mobile_charger_limit": 0
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          29248.312634327234,
+          -10180.755050671996
+        ]
+      },
+      "properties": {
+        "node_id": "2",
+        "infrastructure": {
+          "has_charger": false,
+          "ports": 0,
+          "mobile_charger_limit": 0
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          32218.02442826544,
+          -4935.070888048258
+        ]
+      },
+      "properties": {
+        "node_id": "3",
+        "infrastructure": {
+          "has_charger": false,
+          "ports": 0,
+          "mobile_charger_limit": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          40717.490066789156,
+          -3752.86456637037
+        ]
+      },
+      "properties": {
+        "node_id": "4",
+        "infrastructure": {
+          "has_charger": true,
+          "ports": 20,
+          "mobile_charger_limit": 5,
+          "power": 40.0
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          38275.5107209343,
+          -9343.924771148599
+        ]
+      },
+      "properties": {
+        "node_id": "5",
+        "infrastructure": {
+          "has_charger": false,
+          "ports": 0,
+          "mobile_charger_limit": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          62298.19388841704,
+          -18798.17827662863
+        ]
+      },
+      "properties": {
+        "node_id": "6",
+        "infrastructure": {
+          "has_charger": true,
+          "ports": 20,
+          "mobile_charger_limit": 5,
+          "power": 40.0
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43316.8567635152,
+          -8415.814352518564
+        ]
+      },
+      "properties": {
+        "node_id": "7",
+        "infrastructure": {
+          "has_charger": false,
+          "ports": 0,
+          "mobile_charger_limit": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          46229.908632278966,
+          -33842.732156426166
+        ]
+      },
+      "properties": {
+        "node_id": "8",
+        "infrastructure": {
+          "has_charger": false,
+          "ports": 0,
+          "mobile_charger_limit": 5
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          62422.26688611111,
+          -35766.06514804484
+        ]
+      },
+      "properties": {
+        "node_id": "9",
+        "infrastructure": {
+          "has_charger": true,
+          "ports": 40,
+          "mobile_charger_limit": 0,
+          "power": 40.0
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          56129.19079028298,
+          -57089.694938359986
+        ]
+      },
+      "properties": {
+        "node_id": "10",
+        "infrastructure": {
+          "has_charger": false,
+          "ports": 0,
+          "mobile_charger_limit": 0
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          48989.71862841089,
+          -47251.24871926809
+        ]
+      },
+      "properties": {
+        "node_id": "11",
+        "infrastructure": {
+          "has_charger": false,
+          "ports": 0,
+          "mobile_charger_limit": 0
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37870.75700107527,
+          -58826.92073628361
+        ]
+      },
+      "properties": {
+        "node_id": "12",
+        "infrastructure": {
+          "has_charger": false,
+          "ports": 0,
+          "mobile_charger_limit": 0
+        }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            10884.026377444576,
+            -24642.96293981548
+          ],
+          [
+            29248.312634327234,
+            -10180.755050671996
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "0",
+        "source": "1",
+        "target": "2",
+        "length_m": 23375.253298168416,
+        "free_flow_time": 1161.7919134278536,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29248.312634327234,
+            -10180.755050671996
+          ],
+          [
+            32218.02442826544,
+            -4935.070888048258
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "1",
+        "source": "2",
+        "target": "3",
+        "length_m": 6027.967358327115,
+        "free_flow_time": 299.6007633363377,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            32218.02442826544,
+            -4935.070888048258
+          ],
+          [
+            38275.5107209343,
+            -9343.924771148599
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "2",
+        "source": "3",
+        "target": "5",
+        "length_m": 7492.071325634858,
+        "free_flow_time": 372.36935018065896,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            32218.02442826544,
+            -4935.070888048258
+          ],
+          [
+            40717.490066789156,
+            -3752.86456637037
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "3",
+        "source": "3",
+        "target": "4",
+        "length_m": 8581.289409375524,
+        "free_flow_time": 426.50543784172584,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            40717.490066789156,
+            -3752.86456637037
+          ],
+          [
+            38275.5107209343,
+            -9343.924771148599
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "4",
+        "source": "4",
+        "target": "5",
+        "length_m": 6101.083292255277,
+        "free_flow_time": 303.234756076306,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            40717.490066789156,
+            -3752.86456637037
+          ],
+          [
+            43316.8567635152,
+            -8415.814352518564
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "5",
+        "source": "4",
+        "target": "7",
+        "length_m": 5338.521137186585,
+        "free_flow_time": 265.3340525440649,
+        "source_speed_mps": 20.119999999999997
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            38275.5107209343,
+            -9343.924771148599
+          ],
+          [
+            43316.8567635152,
+            -8415.814352518564
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "6",
+        "source": "5",
+        "target": "7",
+        "length_m": 5126.066608054927,
+        "free_flow_time": 254.77468230889298,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            62298.19388841704,
+            -18798.17827662863
+          ],
+          [
+            43316.8567635152,
+            -8415.814352518564
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "7",
+        "source": "6",
+        "target": "7",
+        "length_m": 21635.263800144407,
+        "free_flow_time": 1075.3113220747716,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            62298.19388841704,
+            -18798.17827662863
+          ],
+          [
+            46229.908632278966,
+            -33842.732156426166
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "8",
+        "source": "6",
+        "target": "8",
+        "length_m": 22012.00564498281,
+        "free_flow_time": 1094.0360658540164,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            62298.19388841704,
+            -18798.17827662863
+          ],
+          [
+            62422.26688611111,
+            -35766.06514804484
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "9",
+        "source": "6",
+        "target": "9",
+        "length_m": 16968.340490158,
+        "free_flow_time": 843.356883208648,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            43316.8567635152,
+            -8415.814352518564
+          ],
+          [
+            46229.908632278966,
+            -33842.732156426166
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "10",
+        "source": "7",
+        "target": "8",
+        "length_m": 25593.241689883314,
+        "free_flow_time": 1272.029905063783,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            46229.908632278966,
+            -33842.732156426166
+          ],
+          [
+            48989.71862841089,
+            -47251.24871926809
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "11",
+        "source": "8",
+        "target": "11",
+        "length_m": 13689.589753924549,
+        "free_flow_time": 680.3971050658324,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            46229.908632278966,
+            -33842.732156426166
+          ],
+          [
+            62422.26688611111,
+            -35766.06514804484
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "12",
+        "source": "8",
+        "target": "9",
+        "length_m": 16306.185195106022,
+        "free_flow_time": 810.446580273659,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            62422.26688611111,
+            -35766.06514804484
+          ],
+          [
+            56129.19079028298,
+            -57089.694938359986
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "13",
+        "source": "9",
+        "target": "10",
+        "length_m": 22232.858434809925,
+        "free_flow_time": 1105.0128446724614,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            62422.26688611111,
+            -35766.06514804484
+          ],
+          [
+            48989.71862841089,
+            -47251.24871926809
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "14",
+        "source": "9",
+        "target": "11",
+        "length_m": 17673.22252335837,
+        "free_flow_time": 878.3907814790442,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            56129.19079028298,
+            -57089.694938359986
+          ],
+          [
+            37870.75700107527,
+            -58826.92073628361
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "15",
+        "source": "10",
+        "target": "12",
+        "length_m": 18340.89305099,
+        "free_flow_time": 911.5752013414511,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            48989.71862841089,
+            -47251.24871926809
+          ],
+          [
+            37870.75700107527,
+            -58826.92073628361
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "16",
+        "source": "11",
+        "target": "12",
+        "length_m": 16050.778495626875,
+        "free_flow_time": 797.7524103194271,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            29248.312634327234,
+            -10180.755050671996
+          ],
+          [
+            10884.026377444576,
+            -24642.96293981548
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "17",
+        "source": "2",
+        "target": "1",
+        "length_m": 23375.253298168416,
+        "free_flow_time": 1161.7919134278536,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            32218.02442826544,
+            -4935.070888048258
+          ],
+          [
+            29248.312634327234,
+            -10180.755050671996
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "18",
+        "source": "3",
+        "target": "2",
+        "length_m": 6027.967358327115,
+        "free_flow_time": 299.6007633363377,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            38275.5107209343,
+            -9343.924771148599
+          ],
+          [
+            32218.02442826544,
+            -4935.070888048258
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "19",
+        "source": "5",
+        "target": "3",
+        "length_m": 7492.071325634858,
+        "free_flow_time": 372.36935018065896,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            40717.490066789156,
+            -3752.86456637037
+          ],
+          [
+            32218.02442826544,
+            -4935.070888048258
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "20",
+        "source": "4",
+        "target": "3",
+        "length_m": 8581.289409375524,
+        "free_flow_time": 426.50543784172584,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            38275.5107209343,
+            -9343.924771148599
+          ],
+          [
+            40717.490066789156,
+            -3752.86456637037
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "21",
+        "source": "5",
+        "target": "4",
+        "length_m": 6101.083292255277,
+        "free_flow_time": 303.234756076306,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            43316.8567635152,
+            -8415.814352518564
+          ],
+          [
+            40717.490066789156,
+            -3752.86456637037
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "22",
+        "source": "7",
+        "target": "4",
+        "length_m": 5338.521137186585,
+        "free_flow_time": 265.3340525440649,
+        "source_speed_mps": 20.119999999999997
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            43316.8567635152,
+            -8415.814352518564
+          ],
+          [
+            38275.5107209343,
+            -9343.924771148599
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "23",
+        "source": "7",
+        "target": "5",
+        "length_m": 5126.066608054927,
+        "free_flow_time": 254.77468230889298,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            43316.8567635152,
+            -8415.814352518564
+          ],
+          [
+            62298.19388841704,
+            -18798.17827662863
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "24",
+        "source": "7",
+        "target": "6",
+        "length_m": 21635.263800144407,
+        "free_flow_time": 1075.3113220747716,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            46229.908632278966,
+            -33842.732156426166
+          ],
+          [
+            62298.19388841704,
+            -18798.17827662863
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "25",
+        "source": "8",
+        "target": "6",
+        "length_m": 22012.00564498281,
+        "free_flow_time": 1094.0360658540164,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            62422.26688611111,
+            -35766.06514804484
+          ],
+          [
+            62298.19388841704,
+            -18798.17827662863
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "26",
+        "source": "9",
+        "target": "6",
+        "length_m": 16968.340490158,
+        "free_flow_time": 843.356883208648,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            46229.908632278966,
+            -33842.732156426166
+          ],
+          [
+            43316.8567635152,
+            -8415.814352518564
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "27",
+        "source": "8",
+        "target": "7",
+        "length_m": 25593.241689883314,
+        "free_flow_time": 1272.029905063783,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            48989.71862841089,
+            -47251.24871926809
+          ],
+          [
+            46229.908632278966,
+            -33842.732156426166
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "28",
+        "source": "11",
+        "target": "8",
+        "length_m": 13689.589753924549,
+        "free_flow_time": 680.3971050658324,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            62422.26688611111,
+            -35766.06514804484
+          ],
+          [
+            46229.908632278966,
+            -33842.732156426166
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "29",
+        "source": "9",
+        "target": "8",
+        "length_m": 16306.185195106022,
+        "free_flow_time": 810.446580273659,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            56129.19079028298,
+            -57089.694938359986
+          ],
+          [
+            62422.26688611111,
+            -35766.06514804484
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "30",
+        "source": "10",
+        "target": "9",
+        "length_m": 22232.858434809925,
+        "free_flow_time": 1105.0128446724614,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            48989.71862841089,
+            -47251.24871926809
+          ],
+          [
+            62422.26688611111,
+            -35766.06514804484
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "31",
+        "source": "11",
+        "target": "9",
+        "length_m": 17673.22252335837,
+        "free_flow_time": 878.3907814790442,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37870.75700107527,
+            -58826.92073628361
+          ],
+          [
+            56129.19079028298,
+            -57089.694938359986
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "32",
+        "source": "12",
+        "target": "10",
+        "length_m": 18340.89305099,
+        "free_flow_time": 911.5752013414511,
+        "source_speed_mps": 20.12
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            37870.75700107527,
+            -58826.92073628361
+          ],
+          [
+            48989.71862841089,
+            -47251.24871926809
+          ]
+        ]
+      },
+      "properties": {
+        "edge_id": "33",
+        "source": "12",
+        "target": "11",
+        "length_m": 16050.778495626875,
+        "free_flow_time": 797.7524103194271,
+        "source_speed_mps": 20.12
+      }
+    }
+  ]
+}

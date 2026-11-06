@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the journal paper below."
+title: "EV evacuation planning with mobile charging stations"
+type: software
+version: 0.1.0
+license: MIT
+authors:
+  - family-names: Tang
+    given-names: Xuchang
+preferred-citation:
+  type: article
+  title: "Coordinated Optimization of Electric Vehicle Evacuation with Mobile Charging Stations: A MILP-Based Scheduling Framework"
+  journal: "IEEE Transactions on Transportation Electrification"
+  status: preprint
+  authors:
+    - family-names: Tang
+      given-names: Xuchang
+    - family-names: Kuang
+      given-names: Simon
+    - family-names: Feng
+      given-names: Shuang
+    - family-names: Moyalan
+      given-names: Joseph
+    - family-names: Castro
+      name-particle: de
+      given-names: Ricardo
+    - family-names: Gan
+      given-names: Qijian
+    - family-names: Moura
+      given-names: Scott
+    - family-names: Lin
+      given-names: Xinfan

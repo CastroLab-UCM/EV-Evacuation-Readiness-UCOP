@@ -1,0 +1,11 @@
+map_id: trellis
+display_name: Public Trellis
+network: network.geojson
+coordinate_system: local_schematic
+coordinate_units: arbitrary
+directionality: bidirectional_physical_links
+charger_absence: no_charger
+units:
+  distance: m
+  free_flow_time: s
+  power: kW
